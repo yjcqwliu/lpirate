@@ -1,0 +1,54 @@
+<style type="text/css">
+.mybody {
+	width: 570px;
+	float:left;
+	padding: 5px;
+}
+.dock {
+	float: left;
+	width:140px;
+}
+#friendlist {
+float:right;
+width:200px;
+}
+#showinfo{
+text-align:right;
+}
+#islandinfo{
+	color:red;
+	font-weight: bold;
+}
+
+h4 {
+text-align:center;height:25px;background:#D8DFEA none repeat scroll 0%;
+border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;font-weight:bold;
+}
+</style>
+<div>
+<div id="showinfo">您的资产 金币：<%= @current_user.gold%>  海盗币：<%= @current_user.pgold%>  </div>
+<div class="mybody">
+<div id="islandinfo">我的小岛</div>
+<div>
+<div id="dock1" class="dock">码头1</div>
+<div id="dock2" class="dock">码头2</div>
+<div id="dock3" class="dock">码头3</div>
+<div id="dock4" class="dock">码头4<br>
+<br>
+<br>
+</div>
+</div>
+
+<div >
+<div  class="dock">抢劫</div>
+<div  class="dock">抢劫</div>
+<div  class="dock">抢劫</div>
+<div  class="dock">抢劫</div>
+</div>
+</div>
+<div id="friendlist">
+
+<h4>海盗好友</h4>
+<xn:iframe src="http://127.0.0.1:3000/friend/list" width="200" frameborder="0" />
+</div>
+</div>

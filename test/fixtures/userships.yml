@@ -1,0 +1,30 @@
+# == Schema Information
+# Schema version: 20080907155019
+#
+# Table name: userships
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  attack     :integer
+#  capacity   :integer
+#  robspeed   :integer
+#  user_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  attack: 1
+  capacity: 1
+  robspeed: 1
+  user_id: 1
+
+two:
+  name: MyString
+  attack: 1
+  capacity: 1
+  robspeed: 1
+  user_id: 1

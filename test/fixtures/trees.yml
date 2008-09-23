@@ -1,0 +1,27 @@
+# == Schema Information
+# Schema version: 20080907155019
+#
+# Table name: trees
+#
+#  id           :integer         not null, primary key
+#  state        :integer
+#  user_id      :integer
+#  level        :integer
+#  produce_time :datetime
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  state: 1
+  user_id: 1
+  level: 1
+  produce_time: 2008-09-07 23:46:05
+
+two:
+  state: 1
+  user_id: 1
+  level: 1
+  produce_time: 2008-09-07 23:46:05

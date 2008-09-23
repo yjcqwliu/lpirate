@@ -1,0 +1,13 @@
+<p>
+  <b>Title:</b>
+  <%=h @assignment.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @assignment.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_assignment_path(@assignment) %> |
+<%= link_to 'Back', assignments_path %>

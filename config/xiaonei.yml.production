@@ -1,0 +1,5 @@
+production:
+  api_key: 2ff072ae16c842e28676150b70e4f806 
+  secret_key: 7f92b83a26f04a3f854bdc3993dbf9ce 
+  canvas_page_name: agetest
+  callback_url: http://61.172.255.117:100

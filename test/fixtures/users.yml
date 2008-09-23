@@ -1,0 +1,30 @@
+# == Schema Information
+# Schema version: 20080907155019
+#
+# Table name: users
+#
+#  id          :integer         not null, primary key
+#  xid         :integer
+#  friend_ids  :text
+#  gold        :integer
+#  pgold       :integer
+#  bship_ftime :date
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  xid: 1
+  friend_ids: MyText
+  gold: 1
+  pgold: 1
+  bship_ftime: 2008-09-05
+
+two:
+  xid: 1
+  friend_ids: MyText
+  gold: 1
+  pgold: 1
+  bship_ftime: 2008-09-05

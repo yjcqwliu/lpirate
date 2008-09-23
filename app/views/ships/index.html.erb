@@ -1,0 +1,28 @@
+<h1>Listing ships</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Attack</th>
+    <th>Capacity</th>
+    <th>Robspeed</th>
+    <th>Img url</th>
+  </tr>
+
+<% for ship in @ships %>
+  <tr>
+    <td><%=h ship.name %></td>
+    <td><%=h ship.attack %></td>
+    <td><%=h ship.capacity %></td>
+    <td><%=h ship.robspeed %></td>
+    <td><img src="<%=h ship.img_url %>" border="0"%></td>
+    <td><%= link_to 'Show', ship %></td>
+    <td><%= link_to 'Edit', edit_ship_path(ship) %></td>
+    <td><%= link_to 'Destroy', ship, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New ship', new_ship_path %>
