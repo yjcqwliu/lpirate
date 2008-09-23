@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080923070239) do
+ActiveRecord::Schema.define(:version => 20080923090236) do
 
   create_table "assignments", :force => true do |t|
     t.string   "title"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20080923070239) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "xid",         :limit => 11
+    t.string   "xid"
     t.text     "friend_ids"
     t.integer  "gold",        :limit => 11
     t.integer  "pgold",       :limit => 11
@@ -65,14 +65,6 @@ ActiveRecord::Schema.define(:version => 20080923070239) do
     t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "dock1",       :limit => 11
-    t.integer  "dock2",       :limit => 11
-    t.integer  "dock3",       :limit => 11
-    t.integer  "dock4",       :limit => 11
-    t.integer  "dock1_time",  :limit => 11
-    t.integer  "dock2_time",  :limit => 11
-    t.integer  "dock3_time",  :limit => 11
-    t.integer  "dock4_time",  :limit => 11
   end
 
   create_table "userships", :force => true do |t|
@@ -84,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20080923070239) do
     t.date     "revivaltime"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "ship_id",     :limit => 11
   end
 
 end

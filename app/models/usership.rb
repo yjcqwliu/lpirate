@@ -14,4 +14,13 @@
 #
 
 class Usership < ActiveRecord::Base
+require "pp"
+serialize :sids
+belongs_to :user
+
+def ship
+pp("=======ship_id:#{self.ship_id}============")
+@ship ||= Ship.find(:all, :conditions => [" id = ? ", self.ship_id])
+@ship=@ship.first
+end
 end

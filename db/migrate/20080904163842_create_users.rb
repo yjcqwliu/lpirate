@@ -1,7 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
-      t.integer :xid
+      t.string :xid
       t.text :friend_ids
       t.integer :gold
       t.integer :pgold

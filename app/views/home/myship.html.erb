@@ -1,0 +1,26 @@
+<style type="text/css">
+.myshipbody {
+	width: 800px;
+	float:left;
+	padding: 5px;
+}
+#showinfo{
+text-align:right;
+}
+#shiplist{
+float:left;
+width:180;
+}
+</style>
+<div>
+<div id="showinfo">您的资产 金币：<%= @current_user.gold%>  海盗币：<%= @current_user.pgold%>  </div>
+<div class="myshipbody">
+我的船只
+<% @current_user.usership.each do |ship| -%>
+<div id="shiplist">
+<img src="<%= ship.ship.img_url %>" border="0"><br>
+<%= ship.name %>
+</div>
+<% end -%>
+</div>
+</div>
