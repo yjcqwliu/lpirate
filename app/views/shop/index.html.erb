@@ -1,28 +1,15 @@
-<h1>º£µÁÉÌµê</h1>
+<h4>æµ·ç›—å•†åº—</h4>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Attack</th>
-    <th>Capacity</th>
-    <th>Robspeed</th>
-    <th>Img url</th>
-  </tr>
+<div>
+
 
 <% for ship in @ships %>
-  <tr>
-    <td><%=h ship.name %></td>
-    <td><%=h ship.attack %></td>
-    <td><%=h ship.capacity %></td>
-    <td><%=h ship.robspeed %></td>
-    <td><img src="<%=h ship.img_url %>" border="0"%></td>
-    <td><%= link_to 'Show', ship %></td>
-    <td><%= link_to 'Edit', edit_ship_path(ship) %></td>
-    <td><%= link_to 'Destroy', ship, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+ <div style="float:left;width:180px;text-align:center">
+        <img src="<%=h ship.img_url %>" border="0"%>
+	<%=h ship.name %>	<br>
+    <a href="buy/<%= ship.id %>" >è´­ä¹°</a>
+</div>
 <% end %>
-</table>
+</div>
 
-<br />
 
-<%= link_to 'New ship', new_ship_path %>

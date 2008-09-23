@@ -6,6 +6,7 @@
     <th>Attack</th>
     <th>Capacity</th>
     <th>Robspeed</th>
+	<th>price</th>
     <th>Img url</th>
   </tr>
 
@@ -15,6 +16,7 @@
     <td><%=h ship.attack %></td>
     <td><%=h ship.capacity %></td>
     <td><%=h ship.robspeed %></td>
+	<td><%=h ship.price %></td>
     <td><img src="<%=h ship.img_url %>" border="0"%></td>
     <td><%= link_to 'Show', ship %></td>
     <td><%= link_to 'Edit', edit_ship_path(ship) %></td>

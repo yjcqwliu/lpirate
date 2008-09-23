@@ -35,14 +35,17 @@ class User < ActiveRecord::Base
 		user.gold = 500 
 		user.pgold = 0
 		user.save
-		@newship=user.usership.new
-		@ship=Ship.find(1)
-		@newship.ship_id=1
-		@newship.name=@ship.name
+		user.addship(user,1)
+		user
+	end 
+	
+	def self.addship(ship_id)
+	    @newship=self.usership.new
+		@ship=Ship.find(ship_id)
+       	@newship.name=@ship.name
 		@newship.attack=@ship.attack
 		@newship.capacity=@ship.capacity
 		@newship.robspeed=@ship.robspeed
 		@newship.save
-		user
-	end 
+	end
 end

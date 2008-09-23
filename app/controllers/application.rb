@@ -50,4 +50,21 @@ class ApplicationController < ActionController::Base
       xn_redirect_to(url_for(:controller => "homes", :action => :show))
     end
   end
+  
+  def xn_redirect_to(to_url,feilds={})
+    path = "#{to_url}?"
+        feilds.each do |key,value|
+	     path += "#{key}=#{URI.escape(value)}&"
+        end
+    render :text => "<xn:redirect url=\"#{path}\"/>"
+  end
+
+  def showmessage(feilds,to_url)
+        path = "#{to_url}?"
+        feilds.each do |key,value|
+	     path += "#{key}=#{URI.escape(value)}&"
+        end
+	render :text => "<xn:redirect url=\"#{path}\"/>"
+	return;
+  end
 end
