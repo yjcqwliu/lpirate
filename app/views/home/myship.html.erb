@@ -9,11 +9,10 @@ text-align:right;
 }
 #shiplist{
 float:left;
-width:180;
+width:180px;
 }
 </style>
 <div>
-<div id="showinfo">您的资产 金币：<%= @current_user.gold%>  海盗币：<%= @current_user.pgold%>  </div>
 <div class="myshipbody">
 我的船只
 <% @current_user.usership.each do |ship| -%>

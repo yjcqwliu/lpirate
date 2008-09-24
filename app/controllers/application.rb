@@ -2,8 +2,9 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  require "pp"
   helper :all # include all helpers, all the time
-
+  
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   #protect_from_forgery # :secret => '7982602486defa6700eb432a7a0095d7'
@@ -15,17 +16,18 @@ class ApplicationController < ActionController::Base
   #platform = "xiaonei"
      
   #require  "platform/#{platform}.rb"
-  #acts_as_xiaonei_controller
-  #before_filter :set_current_user
+  acts_as_xiaonei_controller
+  before_filter :set_current_user
 
-  #def set_current_user
-  #  if @current_user.nil?
-  #    @current_user = User.find_or_create_by_xid(xiaonei_session.user.to_i)
-  #    if @current_user.session_key != xiaonei_session.session_key
-  #      @current_user.session_key = xiaonei_session.session_key
-   #     @current_user.save
-   #   end
-   # end
+  def set_current_user
+    if @current_user.nil?
+      @current_user = User.find_or_create_by_xid(xiaonei_session.user.to_i)
+	  #pp("===========current_user:#{@current_user.inspect},xiaonei_session:#{@xiaonei_session.inspect}=============")
+      if @current_user.session_key != xiaonei_session.session_key
+      @current_user.session_key = xiaonei_session.session_key
+       @current_user.save
+      end
+    end
 	#if @current_user.friend_ids.nil? or @current_user.friend_ids.size == 0 or @current_user.updated_at > (Time.now - 48.hour)
    #     res = xiaonei_session.invoke_method("xiaonei.friends.get")
     #    if res.kind_of? Xiaonei::Error
@@ -36,11 +38,11 @@ class ApplicationController < ActionController::Base
    #     @current_user.save
 	# end 
 
-  #end
-  before_filter :set_current_user
-  def set_current_user
-  @current_user=User.login(1)
   end
+  #before_filter :set_current_user
+  #def set_current_user
+  #@current_user=User.login(1)
+  #end
   
   def current_user
     @current_user

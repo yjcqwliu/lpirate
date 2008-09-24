@@ -39,13 +39,17 @@ class User < ActiveRecord::Base
 		user
 	end 
 	
-	def self.addship(ship_id)
+	def addship(ship_id)
 	    @newship=self.usership.new
 		@ship=Ship.find(ship_id)
        	@newship.name=@ship.name
+		@newship.ship_id=ship_id
 		@newship.attack=@ship.attack
 		@newship.capacity=@ship.capacity
 		@newship.robspeed=@ship.robspeed
 		@newship.save
 	end
+	 def xn_session
+    @xn_session ||= Xiaonei::Session.new("xn_sig_session_key" => session_key, "xn_sig_user" => xid)
+  end
 end

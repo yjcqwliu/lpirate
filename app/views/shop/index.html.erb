@@ -5,8 +5,9 @@
 
 <% for ship in @ships %>
  <div style="float:left;width:180px;text-align:center">
-        <img src="<%=h ship.img_url %>" border="0"%>
+        <img src="<%=h ship.img_url %>" border="0" >
 	<%=h ship.name %>	<br>
+	价格：<%=h ship.price %>	<br>
     <a href="buy/<%= ship.id %>" >购买</a>
 </div>
 <% end %>
