@@ -14,10 +14,14 @@
 #
 
 class User < ActiveRecord::Base
+    serialize :friend_ids
+	serialize :invite
+	
     has_many :usership
 	
 	
-    def self.login(u_id)
+	
+    def self.login(u_id,invite = 0)
 	    user = User.find(:all,
 		                  :conditions => [" xid= ? ",u_id]
 						  )
@@ -26,16 +30,27 @@ class User < ActiveRecord::Base
 		else
 		     user=user.first
 		end
+		#Ìí¼ÓÑûÇë×Ö¶Î
+		if invite != 0 
+			invite_array = user.invite || []
+			pp "-----------invite_array1:#{invite_array.inspect}------"
+			invite_array.push(invite)
+			user.invite = invite_array
+			#user.invite ={:a =>"13241324",:b=>"2352452354",:c=>"352354"}
+			pp "-----------invite_array2:#{invite_array.inspect}------"
+			user.save
+		end
+		
 		user
 	end 
 	
-	def self.first_login(u_id)
+	def self.first_login(u_id,invite_id=0)
 	    user = User.new
 		user.xid = u_id
 		user.gold = 500 
 		user.pgold = 0
 		user.save
-		user.addship(user,1)
+		user.addship(1)
 		user
 	end 
 	

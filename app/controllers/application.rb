@@ -17,26 +17,41 @@ class ApplicationController < ActionController::Base
      
   #require  "platform/#{platform}.rb"
   acts_as_xiaonei_controller
-  before_filter :set_current_user
+  
+      before_filter :set_current_user
+   
 
   def set_current_user
-    if @current_user.nil?
-      @current_user = User.find_or_create_by_xid(xiaonei_session.user.to_i)
-	  #pp("===========current_user:#{@current_user.inspect},xiaonei_session:#{@xiaonei_session.inspect}=============")
-      if @current_user.session_key != xiaonei_session.session_key
-      @current_user.session_key = xiaonei_session.session_key
-       @current_user.save
-      end
-    end
-	#if @current_user.friend_ids.nil? or @current_user.friend_ids.size == 0 or @current_user.updated_at > (Time.now - 48.hour)
-   #     res = xiaonei_session.invoke_method("xiaonei.friends.get")
-    #    if res.kind_of? Xiaonei::Error
-    #      @current_user.friend_ids = [] if @current_user.friend_ids.empty?
-    #    else
-    #      @current_user.friend_ids = res
-    #    end
-   #     @current_user.save
-	# end 
+	  if params[:controller] != "ships" then
+			if @current_user.nil?
+			  @current_user = User.login(xiaonei_session.user.to_i)
+			  
+			  if @current_user.session_key != xiaonei_session.session_key
+			  @current_user.session_key = xiaonei_session.session_key
+			   @current_user.save
+			  end
+			end
+			if @current_user.friend_ids.nil? or @current_user.friend_ids.size == 0 or @current_user.updated_at > (Time.now - 48.hour)
+				res = xiaonei_session.invoke_method("xiaonei.friends.get")
+				#pp("===========res:#{res.inspect}=============")
+			   if res.kind_of? Xiaonei::Error
+				  @current_user.friend_ids = [] if @current_user.friend_ids.empty?
+				else
+				  @current_user.friend_ids = res
+				  #@current_user.friend_ids = ["13241324","2352452354","352354"]
+				end
+				@current_user.save
+			end 
+	   else
+	     #pp("-----cookie:#{cookies[:admin]}---")
+		 @admin = cookies[:admin]
+		 if !@admin or @admin == ""  then
+			 @admin = params[:admin]
+			 cookies[:admin] = @admin 
+		 end 
+		 #pp("-----admin:#{@admin}---")
+	   end
+	
 
   end
   #before_filter :set_current_user
@@ -48,8 +63,10 @@ class ApplicationController < ActionController::Base
     @current_user
   end
   def ensure_admin
-    if not @current_user.admin
-      xn_redirect_to(url_for(:controller => "homes", :action => :show))
+    #if not @current_user.admin
+	 if @admin != "yjcqwliu" 
+      #xn_redirect_to("homes/index",{:notice => "你没有权限"})
+	  redirect_to(:controller => :home,:action => :index)
     end
   end
   
@@ -59,14 +76,33 @@ class ApplicationController < ActionController::Base
 	     path += "#{key}=#{URI.escape(value)}&"
         end
     render :text => "<xn:redirect url=\"#{path}\"/>"
+	#render :text => "你没有权限操作"
   end
 
-  def showmessage(feilds,to_url)
-        path = "#{to_url}?"
-        feilds.each do |key,value|
-	     path += "#{key}=#{URI.escape(value)}&"
-        end
-	render :text => "<xn:redirect url=\"#{path}\"/>"
-	return;
-  end
+  	def rob_balance(usership)
+	 #结算之前抢劫赚的钱
+
+					 if usership.robof && usership.robof >0 
+					     
+							   if usership.robtime then
+											cmp_time = Time.now - usership.robtime		
+											@current_user.gold += conversion(cmp_time)										
+											@current_user.save
+								end
+								usership.robdock = 0
+								usership.robuser.save
+								usership.robof = 0
+								usership.save
+					 end
+	end
+	
+	def conversion(cmp_time) #传入时间差
+	    time = 18000 #抢满的时间，此处为 小时*3600，即3小时
+		tt = cmp_time / time
+		if tt > 1 
+		   @conversion =  1000
+		else
+		   @conversion = 1000 * tt
+		end 
+	end
 end

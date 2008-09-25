@@ -1,8 +1,10 @@
 <body  leftmargin="0" topmargin="0">
+<% @current_user.friend_ids.each do |friend| %>
+<div>
+<a href="http://apps.xiaonei.com/lpirate/home/index/<%= friend%>" target="_top"><xn:name uid="<%= friend %>" /></a>
+</div>
+<% end %>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
+</div>

@@ -1,33 +1,53 @@
 <style type="text/css">
 .mybody {
-	width: 570px;
+	width: 610px;
 	float:left;
 	padding: 5px;
 }
+.docklist{
+    width: 600px;
+	float: left;
+}
 .dock {
 	float: left;
-	width:140px;
+	width:150px;
 	text-align:center;
 }
 #friendlist {
 float:right;
-width:200px;
+width:160px;
+height:300px;
+overflow:auto;
 }
 
 #islandinfo{
 	color:red;
 	font-weight: bold;
 }
+#shiplist{
+float:left;
+width:180px;
+text-align:center;
+}
 
 h4 {
 text-align:center;height:25px;background:#D8DFEA none repeat scroll 0%;
 border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;font-weight:bold;
 }
+.gray{
+color: #666666;
+}
+.gotofriend{
+color:#0000ff;
+text-align:right;
+}
 </style>
+
 <div>
 
 <div class="mybody">
-<div id="islandinfo">我的小岛</div>
+<div class="gotofriend"><%= link_to ">>去抢劫好友",:controller => :home ,:action => :friend  %></div>
+<div id="islandinfo"><xn:name uid="<%= @user.xid %>" />的小岛</div>
 <div >
 <div id="dock1" class="dock"><img src="http://fmn015.xnimg.cn/fmn015/pic001/20080924/00/50/large_4Zd9_5658n200066.jpg" ><br>
 码头</div>
@@ -41,17 +61,103 @@ border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;fo
 <br>
 </div>
 </div>
+<form action="home/rob/<%= @user.id %>">
+<div class="docklist">
 
-<div >
-<div  class="dock"><input type="button" value="抢劫"></div>
-<div  class="dock"><input type="button" value="抢劫"></div>
-<div  class="dock"><input type="button" value="抢劫"></div>
-<div  class="dock"><input type="button" value="停靠"></div>
+<div  class="dock">
+&nbsp;
+	<% if (@user.dock1 == nil or @user.dock1 == 0) and @current_user.xid != @user.xid -%>
+         <%= submit_tag "抢劫" , :name => "dock" ,:value => "抢劫码头1" %>
+    <% else #别人正在抢 -%>
+	     <% if @user.dock1 and @user.dock1 > 0 -%>
+			 <% usership = Usership.find(@user.dock1) %>
+			 <img src="<%= usership.ship.img_url %>" title="价格:<%=h usership.ship.price %>  <%=h usership.ship.intro %>"><br>
+			 <img src="http://fmn001.xnimg.cn/fmn001/pic001/20080924/16/55/large_7Bq8_3172b198177.jpg"><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :index ,:id => usership.user.xid %>正在该码头抢劫<br>
+			 已经掠夺了<%= conversion(Time.now - @user.dock1_time).to_i %>个金币
+			 <% if @current_user.xid == @user.xid %>
+				  <%= submit_tag "抢劫" , :name => "dock" ,:value => "夺回码头1" %>
+			 <% end %> 
+	      <% end %> 
+	<% end -%>
+
 </div>
+<div  class="dock">
+&nbsp;
+	<% if (@user.dock2 == nil or @user.dock2 == 0) and @current_user.xid != @user.xid -%>
+         <%= submit_tag "抢劫" , :name => "dock" ,:value => "抢劫码头2" %>
+    <% else #别人正在抢 -%>
+	     <% if @user.dock2 and @user.dock2 > 0 -%>
+			 <% usership = Usership.find(@user.dock2) %>
+			 <img src="<%= usership.ship.img_url %>" title="价格:<%=h usership.ship.price %>  <%=h usership.ship.intro %>"><br>
+			 <img src="http://fmn001.xnimg.cn/fmn001/pic001/20080924/16/55/large_7Bq8_3172b198177.jpg"><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :index ,:id => usership.user.xid %>正在该码头抢劫<br>
+			 <% if @user.dock2_time %>已经掠夺了<%= conversion(Time.now - @user.dock2_time).to_i %>个金币<% end %>
+			  <% if @current_user.xid == @user.xid %>
+				  <%= submit_tag "抢劫" , :name => "dock" ,:value => "夺回码头2" %>
+			 <% end %>
+		 <% end %> 
+	<% end -%>
+
 </div>
-<div id="friendlist">
+<div  class="dock">
+&nbsp;
+	<% if (@user.dock3 == nil or @user.dock3 == 0) and @current_user.xid != @user.xid -%>
+         <%= submit_tag "抢劫" , :name => "dock" ,:value => "抢劫码头3" %>
+    <% else #别人正在抢 -%>
+    	 <% if @user.dock3 and @user.dock3 > 0 -%>
+			 <% usership = Usership.find(@user.dock3) %>
+			 <img src="<%= usership.ship.img_url %>" title="价格:<%=h usership.ship.price %>  <%=h usership.ship.intro %>"><br>
+			 <img src="http://fmn001.xnimg.cn/fmn001/pic001/20080924/16/55/large_7Bq8_3172b198177.jpg"><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :index ,:id => usership.user.xid %>正在该码头抢劫<br>
+			 <% if @user.dock3_time %>已经掠夺了<%= conversion(Time.now - @user.dock3_time).to_i %>个金币<% end %>
+			  <% if @current_user.xid == @user.xid %>
+				  <%= submit_tag "抢劫" , :name => "dock" ,:value => "夺回码头3" %>
+			 <% end %> 
+		 <% end %> 
+	<% end -%>
+</div>
+<div  class="dock">
+&nbsp;
+	<% if (@user.dock4 == nil or @user.dock4 == 0) and @current_user.xid != @user.xid-%>
+         <%= submit_tag "抢劫" , :name => "dock" ,:value => "停靠" %>
+    <% else #别人正在抢 -%>
+	     <% if @user.dock4 and @user.dock4 > 0 -%>
+			 <% usership = Usership.find(@user.dock4) %>
+			 <img src="<%= usership.ship.img_url %>" title="价格:<%=h usership.ship.price %>  <%=h usership.ship.intro %>"><br>
+			 <img src="http://fmn001.xnimg.cn/fmn001/pic001/20080924/16/55/large_7Bq8_3172b198177.jpg"><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :index ,:id => usership.user.xid %>正停靠在该码头<br>
+			  <% if @current_user.xid == @user.xid %>
+				  <%= submit_tag "抢劫" , :name => "dock" ,:value => "赶跑TA" %>
+			 <% end %> 
+		 <% end %>
+	<% end -%>
+
+</div>
+
+</div>
+<div class="docklist">
+<hr />
+</div>
+<div class="docklist">
+我的船只<br>
+
+<% @current_user.usership.each do |ship|  -%>
+	<div id="shiplist">
+    
+	<img src="<%= ship.ship.img_url %>" border="0" title="价格:<%=h ship.ship.price %>  <%=h ship.ship.intro %>"><br>
+	<%= radio_button  "usership","id", ship.id , :checked => "checked" %> <%= ship.name %>
+	<% if ship.robof && ship.robof > 0   %>
+	<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :index ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
+     <% if ship.robtime %>已经掠夺了<%= conversion(Time.now - ship.robtime).to_i %>个金币<% end %>
+	<% end %>
+	</div>
+<% end -%></div>
+</form>
+</div>
+<div id="friendlist"  >
 
 <h4>海盗好友</h4>
-<xn:iframe src="http://127.0.0.1:3000/friend/list" width="200" frameborder="0" />
+<% @current_user.friend_ids.each do |friend| %>
+<div>
+<a href="http://apps.xiaonei.com/lpirate/home/index/<%= friend%>" target="_top"><xn:name uid="<%= friend %>" /></a>
+</div>
+<% end %>
 </div>
 </div>

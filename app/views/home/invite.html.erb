@@ -1,0 +1,6 @@
+每邀请一个好友，并且该好友成功安装该应用，你可以获得1000金币和1个海盗币
+<xn:invite-form action="home/invite">
+
+  <xn:multi-friend-selector max="5" exclude_ids="<% @notappuser.each do |no| -%><%= "#{no.xid}," -%><% end %>" />
+  <input type="submit" class="inputsubmit" value="邀请好友安装"/>
+</xn:invite-form>

@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  #map.resources :assignments
+  map.resources :assignments
 
-  #map.resources :ships
+  map.resources :ships
 
   # The priority is based upon order of creation: first created -> highest priority.
 

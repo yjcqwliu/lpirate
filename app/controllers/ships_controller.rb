@@ -1,6 +1,7 @@
 class ShipsController < ApplicationController
   # GET /ships
   # GET /ships.xml
+  before_filter :ensure_admin
   def index
     @ships = Ship.find(:all)
 

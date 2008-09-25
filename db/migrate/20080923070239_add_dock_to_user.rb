@@ -4,10 +4,10 @@ class AddDockToUser < ActiveRecord::Migration
     add_column :users, :dock2, :integer
     add_column :users, :dock3, :integer
     add_column :users, :dock4, :integer
-    add_column :users, :dock1_time, :integer
-    add_column :users, :dock2_time, :integer
-    add_column :users, :dock3_time, :integer
-    add_column :users, :dock4_time, :integer
+    add_column :users, :dock1_time, :datetime
+    add_column :users, :dock2_time, :datetime
+    add_column :users, :dock3_time, :datetime
+    add_column :users, :dock4_time, :datetime
   end
 
   def self.down

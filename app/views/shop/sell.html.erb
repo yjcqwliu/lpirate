@@ -1,0 +1,13 @@
+<h4>出售船只</h4>
+
+
+ <div style="text-align:center">
+        <img src="<%=h @usership.ship.img_url %>" border="0" title="价格:<%=h @usership.ship.price %>  <%=h @usership.ship.intro %>"><br>
+	<%=h @usership.name %>	<br>
+	原价为：<%=h @usership.ship.price %>	<br>
+	出售价格：<%=h (@usership.ship.price*0.5).to_i %>	<br>
+    <%= link_to "确认出售",:controller => :shop,:action => :sell  ,:id => @usership.id , :act =>"confirm" %>
+</div>
+
+
+

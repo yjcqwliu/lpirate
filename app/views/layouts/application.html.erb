@@ -32,14 +32,16 @@ text-align:right;
 </style>
 <div id = "sub-nav" style = "height:21px; overflow:hidden;" >
 			<ul >
-    <li ><a href="../home/index"  >我的岛屿</a></li>
-    <li ><a href="../home/friend" >好友岛屿</a></li>
-	<li ><a href="../home/myship"  >我的船只</a></li>
-	<li ><a href="../shop/index"  >海盗商店</a></li>
-				<li ><a href="http://apps.xiaonei.com/agetest/invit.asp" >邀请好友</a></li>
+    <li ><%= link_to "我的岛屿",:controller => :home ,:action => :me %></li>
+    <li ><%= link_to "好友岛屿",:controller => :home ,:action => :friend %></li>
+	<li ><%= link_to "我的船只",:controller => :home ,:action => :myship %></li>
+	<li ><%= link_to "海盗商店",:controller => :shop ,:action => :index %></li>
+				<li ><%= link_to "邀请好友",:controller => :home ,:action => :invite %></li>
 			</ul>
 </div>
-<% if @notice != nil and @notice != "" then %>
+<% 
+@notice = params[:notice]
+if @notice != nil and @notice != "" then %>
   <div style="BORDER-RIGHT: #d8dfea 7px solid; BORDER-TOP: #d8dfea 7px solid; BACKGROUND: #fff; MARGIN: 0px 0px 10px; BORDER-LEFT: #d8dfea 7px solid; LINE-HEIGHT: 20px; BORDER-BOTTOM: #d8dfea 7px solid">
     <div style="BORDER-RIGHT: #3b5888 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #3b5888 1px solid; PADDING-LEFT: 10px; BACKGROUND: #fffeed; PADDING-BOTTOM: 10px; BORDER-LEFT: #3b5888 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #3b5888 1px solid; POSITION: relative;text-align:center">
       <p><strong>

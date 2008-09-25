@@ -4,21 +4,21 @@
 	float:left;
 	padding: 5px;
 }
-#showinfo{
-text-align:right;
-}
 #shiplist{
 float:left;
 width:180px;
+text-align:center;
 }
 </style>
+<h4>我的船只</h4>
 <div>
 <div class="myshipbody">
-我的船只
+
 <% @current_user.usership.each do |ship| -%>
 <div id="shiplist">
-<img src="<%= ship.ship.img_url %>" border="0"><br>
-<%= ship.name %>
+<img src="<%= ship.ship.img_url %>" border="0" title="价格:<%=h ship.ship.price %>  <%=h ship.ship.intro %>"><br>
+<%= ship.name %><br>
+<%= link_to "卖掉" , :controller => "shop", :action => "sell" , :id => ship.id %>
 </div>
 <% end -%>
 </div>
