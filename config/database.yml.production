@@ -1,6 +1,6 @@
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
-development:
+production:
   adapter: mysql
   database: lpirate_production
   host: localhost
