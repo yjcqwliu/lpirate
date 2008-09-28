@@ -4,7 +4,7 @@ set :application, "lpirate"
 set :scm, "git"
 set :repository,  "git@github.com:yjcqwliu/lpirate.git"
 set :branch, "master"
-set :user, "root"
+set :user, "lpirate"
 set :use_sudo, false
 set :mongrel_conf, "#{current_path}/config/mongrel_cluster.yml"
 
