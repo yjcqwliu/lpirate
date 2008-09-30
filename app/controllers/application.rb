@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
    
 
   def set_current_user
+      @platform="xn"
 	  if params[:controller] != "ships" then
 			if @current_user.nil?
 			  @current_user = User.login(xiaonei_session.user.to_i)

@@ -1,10 +1,14 @@
 <style type="text/css">
-.mybody {
+#mybody {
 	width: 610px;
 	float:left;
 	padding: 5px;
 }
-.docklist{
+#docklist{
+    width: 600px;
+	float: left;
+}
+#roblist{
     width: 600px;
 	float: left;
 }
@@ -45,10 +49,10 @@ text-align:right;
 
 <div>
 
-<div class="mybody">
+<div id="mybody">
 <div class="gotofriend"><%= link_to ">>去抢劫好友",:controller => :home ,:action => :friend  %></div>
 <div id="islandinfo"><xn:name uid="<%= @user.xid %>" />的小岛</div>
-<div >
+<div id="docklist">
 <div id="dock1" class="dock"><img src="http://fmn015.xnimg.cn/fmn015/pic001/20080924/00/50/large_4Zd9_5658n200066.jpg" ><br>
 码头</div>
 <div id="dock2" class="dock"><img src="http://fmn015.xnimg.cn/fmn015/pic001/20080924/00/50/large_4Zd9_5658n200066.jpg" ><br>
@@ -62,7 +66,7 @@ text-align:right;
 </div>
 </div>
 <form action="home/rob/<%= @user.id %>">
-<div class="docklist">
+<div id="roblist">
 
 <div  class="dock">
 &nbsp;
@@ -132,7 +136,7 @@ text-align:right;
 </div>
 
 </div>
-<div class="docklist">
+<div >
 <hr />
 </div>
 <div class="docklist">
@@ -156,7 +160,7 @@ text-align:right;
 <h4>海盗好友</h4>
 <% @current_user.friend_ids.each do |friend| %>
 <div>
-<a href="http://apps.xiaonei.com/lpirate/home/index/<%= friend%>" target="_top"><xn:name uid="<%= friend %>" /></a>
+<a href="http://apps.xiaonei.com/lpirate/home/index/<%= friend%>" target="_top"><%= (Ml.new).name({"uid" => friend}) %></a>
 </div>
 <% end %>
 </div>

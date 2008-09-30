@@ -6,9 +6,7 @@ class HomeController < ApplicationController
 		else
 		    @user = @current_user
 		end
-		if params[:help] 
-		@notice ="这是你的小岛，一共有四个码头，其中前三个是私人码头，你的好友可以到你的私人码头上来抢劫，你必须保卫你的码头不受攻击。当然，你也可以去抢劫你的好友的码头，别让他发现了哦。"
-		end
+		
 		
 	end
 	
