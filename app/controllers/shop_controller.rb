@@ -58,7 +58,7 @@ private
       price = usership.ship.price * 0.5
 	  @current_user.gold += price
 	  @current_user.save
-	  rob_balance(usership)
+	  rob_balance(usership)   #买出船之前结算
 	  usership.destroy
 	  price
   end

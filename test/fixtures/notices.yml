@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  from_xid: MyString
+  content: 
+  to_xid: MyString
+  sented: false
+  noticed: false
+  type: 1
+
+two:
+  user_id: 1
+  from_xid: MyString
+  content: 
+  to_xid: MyString
+  sented: false
+  noticed: false
+  type: 1

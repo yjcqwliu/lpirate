@@ -1,6 +1,34 @@
-每邀请一个好友，并且该好友成功安装该应用，你可以获得1000金币和1个海盗币
+<% ml = Ml.new %>
+<style type="text/css">
+.eachfriend{
+float:left;
+width:150px;
+text-align:center;
+}
+</style>
+<br>
+<h4>每邀请一个好友，并且该好友成功安装该应用，你可以获得1000金币和1个海盗币</h4>
+<div style="border:#d8dfea 5px solid;">
+<strong>快速邀请</strong><br>
+<xn:invite-form action="home/invite">
+<% @notapparray_five.each do |no| %>
+
+<div class="eachfriend">
+<%= ml.userpic({"uid" => no}) %><br>
+<%= ml.name({"uid" => no}) %>
+<input type="hidden" name="ids[]" value="<%= no %>"/>
+</div>
+<%end %>
+<div style="clear:both"></div>
+  <center><input type="submit" class="inputsubmit" value="点击这里立即邀请这5个人 "/></center>
+</xn:invite-form>
+</div>
+<br>
+<div style="border:#eeaaaa 5px solid;">
+<strong>手动邀请</strong>
 <xn:invite-form action="home/invite">
 
-  <xn:multi-friend-selector max="5" exclude_ids="<% @notappuser.each do |no| -%><%= "#{no.xid}," -%><% end %>" />
+  <xn:multi-friend-selector max="5" exclude_ids="<%= @isapparray.join(",") %>" />
   <input type="submit" class="inputsubmit" value="邀请好友安装"/>
 </xn:invite-form>
+</div>
