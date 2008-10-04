@@ -33,7 +33,10 @@ class User < ActiveRecord::Base
 		#Ìí¼ÓÑûÇë×Ö¶Î
 		if invite != 0  && user.invite != 0
 			invite_array = user.invite || []
+			if !invite_array.include?(invite)			
 			invite_array.push(invite)
+			end
+			user.invite_will_change!
 			user.invite = invite_array
 			user.save
 		end
