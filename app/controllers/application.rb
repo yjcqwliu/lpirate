@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
 			
 			tem_friend_ids = @current_user.friend_ids
 			pp("****************friend_ids.type:#{tem_friend_ids.type}*****---------%-------")
-			if tem_friend_ids.nil? or tem_friend_ids.length == 0 or @current_user.updated_at < (Time.now - 48.hour)
+			if !(tem_friend_ids.nil? or tem_friend_ids.length == 0 or @current_user.updated_at < (Time.now - 48.hour))
 			    @current_user.friend_ids_will_change!
 				res = xiaonei_session.invoke_method("xiaonei.friends.get")
 				#pp("****************@current_user.updated_at-(Time.now - 48.hour):#{@current_user.updated_at-(Time.now - 48.hour)}******Time.now - 48.hour:#{Time.now - 48.hour}************")
