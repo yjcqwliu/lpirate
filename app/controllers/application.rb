@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
 			  end
 			  invite_blance #处理邀请数据
 			end
-			if @current_user.friend_ids.nil? or @current_user.friend_ids.size == 0 or @current_user.updated_at < (Time.now - 48.hour)
+			if @current_user.friend_ids.nil? or @current_user.friend_ids.size == 0 or @current_user.updated_at > (Time.now - 48.hour)
 				res = xiaonei_session.invoke_method("xiaonei.friends.get")
 				#pp("****************@current_user.updated_at-(Time.now - 48.hour):#{@current_user.updated_at-(Time.now - 48.hour)}******Time.now - 48.hour:#{Time.now - 48.hour}************")
 			   if res.kind_of? Xiaonei::Error
