@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
 	serialize :invite
 	
     has_many :usership
+	has_many :notice
 	
 	
 	
