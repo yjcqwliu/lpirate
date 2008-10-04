@@ -22,7 +22,8 @@ class ApplicationController < ActionController::Base
    
 
   def set_current_user
-      @platform="xn"
+	  	    
+	  
 	  if params[:controller] != "ships" then
 			if @current_user.nil?
 			  @current_user = User.login(xiaonei_session.user.to_i)
@@ -33,8 +34,10 @@ class ApplicationController < ActionController::Base
 			  end
 			  invite_blance #处理邀请数据
 			end
-			pp("---------------@current_user.friend_ids.typ:#{@current_user.friend_ids.type}================")
-			if @current_user.friend_ids == nil or @current_user.friend_ids.length == 0 or @current_user.updated_at > (Time.now - 48.hour)
+			
+			tem_friend_ids = @current_user.friend_ids
+			pp("****************friend_ids.type:#{tem_friend_ids.type}*****---------%-------")
+			if tem_friend_ids.nil? or tem_friend_ids.length == 0 or @current_user.updated_at < (Time.now - 48.hour)
 			    @current_user.friend_ids_will_change!
 				res = xiaonei_session.invoke_method("xiaonei.friends.get")
 				#pp("****************@current_user.updated_at-(Time.now - 48.hour):#{@current_user.updated_at-(Time.now - 48.hour)}******Time.now - 48.hour:#{Time.now - 48.hour}************")
@@ -78,7 +81,8 @@ class ApplicationController < ActionController::Base
         feilds.each do |key,value|
 	     path += "#{key}=#{URI.escape(value)}&"
         end
-    render :text => "<xn:redirect url=\"#{path}\"/>"
+    render :text => "
+    <xn:redirect url=\"#{path}\"/>"
 	#render :text => "你没有权限操作"
   end
 
@@ -163,8 +167,9 @@ class ApplicationController < ActionController::Base
 						notice.ltype = 2
 						notice.save
 			end
-			@current_user.invite = 0
-			@current_user.save
+			
 		end 
+		@current_user.invite = 0
+		@current_user.save
 	end
 end
