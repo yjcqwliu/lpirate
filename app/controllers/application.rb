@@ -30,15 +30,16 @@ class ApplicationController < ActionController::Base
 			  
 			  if @current_user.session_key != xiaonei_session.session_key
 			  @current_user.session_key = xiaonei_session.session_key
+			  @current_user.friend_ids_will_change!
 			   @current_user.save
 			  end
-			  invite_blance #处理邀请数据
+			  
 			end
 			
 			tem_friend_ids = @current_user.friend_ids
-			pp("****************friend_ids.type:#{tem_friend_ids.type}*****---------%-------")
-			if !(tem_friend_ids.nil? or tem_friend_ids.length == 0 or @current_user.updated_at < (Time.now - 48.hour))
-			    @current_user.friend_ids_will_change!
+			#pp("****************friend_ids.type:#{tem_friend_ids.type}*****---------%-------")
+			if tem_friend_ids.nil? or tem_friend_ids.length == 0 or @current_user.updated_at < (Time.now - 48.hour)
+			    
 				res = xiaonei_session.invoke_method("xiaonei.friends.get")
 				#pp("****************@current_user.updated_at-(Time.now - 48.hour):#{@current_user.updated_at-(Time.now - 48.hour)}******Time.now - 48.hour:#{Time.now - 48.hour}************")
 			   if res.kind_of? Xiaonei::Error
@@ -46,8 +47,10 @@ class ApplicationController < ActionController::Base
 				else
 				  @current_user.friend_ids = res
 				end
+				@current_user.friend_ids_will_change!
 				@current_user.save
 			end 
+			invite_blance #处理邀请数据
 	   else
 	     #pp("-----cookie:#{cookies[:admin]}---")
 		 @admin = cookies[:admin]
@@ -94,7 +97,8 @@ class ApplicationController < ActionController::Base
 							   if usership.robtime then
 											cmp_time = Time.now - usership.robtime	
 											cmp_money = conversion(cmp_time)	
-											@current_user.gold += cmp_money									
+											@current_user.gold += cmp_money	
+																			
 											@current_user.save
 								end
 								usership.robdock = 0
@@ -167,9 +171,9 @@ class ApplicationController < ActionController::Base
 						notice.ltype = 2
 						notice.save
 			end
-			
+					
 		end 
-		@current_user.invite = 0
+        @current_user.invite = 0
 		@current_user.friend_ids_will_change!
 		@current_user.save
 	end
