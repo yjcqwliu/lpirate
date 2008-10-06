@@ -91,7 +91,7 @@ float:right;
 			 <% if @user.dock1 and @user.dock1 > 0 -%>
 				 <% usership = Usership.find(@user.dock1) %>
 				 <img src="<%= usership.ship.img_url %>" title="价格:<%=h usership.ship.price %>  <%=h usership.ship.intro %>"><br>
-				 <img src="http://fmn001.xnimg.cn/fmn001/pic001/20080924/16/55/large_7Bq8_3172b198177.jpg"><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :index ,:id => usership.user.xid %>正在该码头抢劫<br>
+				 <img src="http://fmn001.xnimg.cn/fmn001/pic001/20080924/16/55/large_7Bq8_3172b198177.jpg"><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :friend ,:id => usership.user.xid %>正在该码头抢劫<br>
 				 已经掠夺了<%= conversion(Time.now - @user.dock1_time).to_i %>个金币
 				 <% if @current_user.xid == @user.xid %>
 					  <%= submit_tag "抢劫" , :name => "dock" ,:value => "夺回码头1" %>
@@ -108,7 +108,7 @@ float:right;
 			 <% if @user.dock2 and @user.dock2 > 0 -%>
 				 <% usership = Usership.find(@user.dock2) %>
 				 <img src="<%= usership.ship.img_url %>" title="价格:<%=h usership.ship.price %>  <%=h usership.ship.intro %>"><br>
-				 <%= ml.image("small_skull") %><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :index ,:id => usership.user.xid %>正在该码头抢劫<br>
+				 <%= ml.image("small_skull") %><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :friend ,:id => usership.user.xid %>正在该码头抢劫<br>
 				 <% if @user.dock2_time %>已经掠夺了<%= conversion(Time.now - @user.dock2_time).to_i %>个金币<% end %>
 				  <% if @current_user.xid == @user.xid %>
 					  <%= submit_tag "抢劫" , :name => "dock" ,:value => "夺回码头2" %>
@@ -125,7 +125,7 @@ float:right;
 			 <% if @user.dock3 and @user.dock3 > 0 -%>
 				 <% usership = Usership.find(@user.dock3) %>
 				 <img src="<%= usership.ship.img_url %>" title="价格:<%=h usership.ship.price %>  <%=h usership.ship.intro %>"><br>
-				 <img src="http://fmn001.xnimg.cn/fmn001/pic001/20080924/16/55/large_7Bq8_3172b198177.jpg"><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :index ,:id => usership.user.xid %>正在该码头抢劫<br>
+				 <img src="http://fmn001.xnimg.cn/fmn001/pic001/20080924/16/55/large_7Bq8_3172b198177.jpg"><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :friend ,:id => usership.user.xid %>正在该码头抢劫<br>
 				 <% if @user.dock3_time %>已经掠夺了<%= conversion(Time.now - @user.dock3_time).to_i %>个金币<% end %>
 				  <% if @current_user.xid == @user.xid %>
 					  <%= submit_tag "抢劫" , :name => "dock" ,:value => "夺回码头3" %>
@@ -141,7 +141,7 @@ float:right;
 			 <% if @user.dock4 and @user.dock4 > 0 -%>
 				 <% usership = Usership.find(@user.dock4) %>
 				 <img src="<%= usership.ship.img_url %>" title="价格:<%=h usership.ship.price %>  <%=h usership.ship.intro %>"><br>
-				 <img src="http://fmn001.xnimg.cn/fmn001/pic001/20080924/16/55/large_7Bq8_3172b198177.jpg"><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :index ,:id => usership.user.xid %>正停靠在该码头<br>
+				 <img src="http://fmn001.xnimg.cn/fmn001/pic001/20080924/16/55/large_7Bq8_3172b198177.jpg"><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :friend ,:id => usership.user.xid %>正停靠在该码头<br>
 				  <% if @current_user.xid == @user.xid %>
 					  <%= submit_tag "抢劫" , :name => "dock" ,:value => "赶跑TA" %>
 				 <% end %> 
@@ -160,7 +160,7 @@ float:right;
 	<img src="<%= ship.ship.img_url %>" border="0" title="价格:<%=h ship.ship.price %>  <%=h ship.ship.intro %>"><br>
 	<%= radio_button  "usership","id", ship.id , :checked => "checked" %> <%= ship.name %>
 	<% if ship.robof && ship.robof > 0   %>
-	<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :index ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
+	<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :friend ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
      <% if ship.robtime %>已经掠夺了<%= conversion(Time.now - ship.robtime).to_i %>个金币<% end %>
 	<% end %>
 	</div>

@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
 			  if @current_user.session_key != xiaonei_session.session_key
 			  @current_user.session_key = xiaonei_session.session_key
 			  @current_user.friend_ids_will_change!
-			   @current_user.save
+			   #@current_user.save
 			  end
 			  
 			end
@@ -48,9 +48,10 @@ class ApplicationController < ActionController::Base
 				  @current_user.friend_ids = res
 				end
 				@current_user.friend_ids_will_change!
-				@current_user.save
+				#
 			end 
 			invite_blance #处理邀请数据
+			@current_user.save
 	   else
 	     #pp("-----cookie:#{cookies[:admin]}---")
 		 @admin = cookies[:admin]
@@ -89,7 +90,7 @@ class ApplicationController < ActionController::Base
 	#render :text => "你没有权限操作"
   end
 
-  	def balance(usership)
+  def balance(usership)
 	 #结算之前抢劫赚的钱
 
 					 if usership.robof && usership.robof >0 
@@ -175,6 +176,6 @@ class ApplicationController < ActionController::Base
 		end 
         @current_user.invite = 0
 		@current_user.friend_ids_will_change!
-		@current_user.save
+		#@current_user.save
 	end
 end
