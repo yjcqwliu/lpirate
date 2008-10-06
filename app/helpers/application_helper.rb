@@ -6,7 +6,7 @@ module ApplicationHelper
 	
 	    time = fulltime(top , speed)*3600 #抢满的时间，此处为 小时*3600
 		tt = cmp_time / time
-		pp("@@@@@@tt:#{tt}@@@@@time:#{time}@@@@cmp_time:#{cmp_time}@@")
+		#pp("@@@@@@tt:#{tt}@@@@@time:#{time}@@@@cmp_time:#{cmp_time}@@")
 		if tt > 1 
 		   @conversion =  top
 		else
@@ -17,7 +17,7 @@ module ApplicationHelper
 
 	def fulltime(top,speed)
 	    t = top / (speed * 1.0)
-	    pp("----t:#{t}-----")
+	    #pp("----t:#{t}-----")
 	    t
 	end
 	

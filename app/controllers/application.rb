@@ -37,18 +37,20 @@ class ApplicationController < ActionController::Base
 			end
 			
 			tem_friend_ids = @current_user.friend_ids
-			pp("****************friend_ids.type:#{tem_friend_ids.type}*****---------%-------")
-			if tem_friend_ids.nil? or tem_friend_ids.length == 0 or @current_user.updated_at < (Time.now - 48.hour)
-			    
+			#pp("****************friend_ids.type:#{tem_friend_ids.type}*****-------tem_friend_ids.type == \"String\":#{tem_friend_ids.type == String}--%-------")
+			if tem_friend_ids.nil? or tem_friend_ids.type == String or tem_friend_ids.length == 0 or @current_user.updated_at < (Time.now - 48.hour) 
+			    #pp("-------------use friend.get-------------")
 				res = xiaonei_session.invoke_method("xiaonei.friends.get")
 				#pp("****************@current_user.updated_at-(Time.now - 48.hour):#{@current_user.updated_at-(Time.now - 48.hour)}******Time.now - 48.hour:#{Time.now - 48.hour}************")
-			   if res.kind_of? Xiaonei::Error
+			        if res.kind_of? Xiaonei::Error
 				  @current_user.friend_ids = [] if @current_user.friend_ids.empty?
 				else
 				  @current_user.friend_ids = res
 				end
 				#@current_user.friend_ids_will_change!
 				#
+			#else
+			   #pp("-------------don't use friend.get-------------")
 			end 
 			invite_blance #处理邀请数据
 			@current_user.friend_ids_will_change!
