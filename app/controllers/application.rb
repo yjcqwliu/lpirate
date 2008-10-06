@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 			  
 			  if @current_user.session_key != xiaonei_session.session_key
 			  @current_user.session_key = xiaonei_session.session_key
-			  @current_user.friend_ids_will_change!
+			  #@current_user.friend_ids_will_change!
 			   #@current_user.save
 			  end
 			  
@@ -47,10 +47,11 @@ class ApplicationController < ActionController::Base
 				else
 				  @current_user.friend_ids = res
 				end
-				@current_user.friend_ids_will_change!
+				#@current_user.friend_ids_will_change!
 				#
 			end 
 			invite_blance #处理邀请数据
+			@current_user.friend_ids_will_change!
 			@current_user.save
 	   else
 	     #pp("-----cookie:#{cookies[:admin]}---")
@@ -97,7 +98,7 @@ class ApplicationController < ActionController::Base
 					     
 							   if usership.robtime then
 											cmp_time = Time.now - usership.robtime	
-											cmp_money = conversion(cmp_time)	
+											cmp_money = conversion(cmp_time,usership.capacity)	
 											@current_user.gold += cmp_money	
 																			
 											@current_user.save
@@ -110,13 +111,14 @@ class ApplicationController < ActionController::Base
 					 end
 	end
 	
-	def conversion(cmp_time) #传入时间差
+	def conversion(cmp_time,top=1000) #传入时间差
+	#pp("============top:#{top}=======")
 	    time = 18000 #抢满的时间，此处为 小时*3600，即5小时
 		tt = cmp_time / time
 		if tt > 1 
-		   @conversion =  1000
+		   @conversion =  top
 		else
-		   @conversion = 1000 * tt
+		   @conversion = top * tt
 		end 
 		@conversion.to_i
 	end
@@ -155,6 +157,7 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def invite_blance
+	#邀请奖励
 	    if @current_user.invite && @current_user.invite != 0
 		    invite_array = @current_user.invite || []
 			invite_user = User.find(:all,
@@ -175,7 +178,7 @@ class ApplicationController < ActionController::Base
 					
 		end 
         @current_user.invite = 0
-		@current_user.friend_ids_will_change!
+		#@current_user.friend_ids_will_change!
 		#@current_user.save
 	end
 end

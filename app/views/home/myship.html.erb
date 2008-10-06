@@ -23,7 +23,7 @@ color: #666666;
 <%= ship.name %><br>
 <% if ship.robof && ship.robof > 0   %>
 	<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :index ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
-     <% if ship.robtime %>已经掠夺了<%= conversion(Time.now - ship.robtime).to_i %>个金币</br><% end %>
+     <% if ship.robtime %>已经掠夺了<%= conversion(Time.now - ship.robtime,usership.capacity).to_i %>个金币</br><% end %>
 <% end %>
 <%= link_to "卖掉" , :controller => "shop", :action => "sell" , :id => ship.id %>
 </div>
