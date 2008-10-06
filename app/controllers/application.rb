@@ -114,8 +114,10 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def conversion(cmp_time,top=1000,speed=200) #传入时间差
+	
 	    time = fulltime(top , speed)*3600 #抢满的时间，此处为 小时*3600
 		tt = cmp_time / time
+		#pp("@@@@@@tt:#{tt}@@@@@time:#{time}@@@@cmp_time:#{cmp_time}@@")
 		if tt > 1 
 		   @conversion =  top
 		else
@@ -125,7 +127,9 @@ class ApplicationController < ActionController::Base
 	end
 
 	def fulltime(top,speed)
-	    t = (top/speed).to_i
+	    t = top / (speed * 1.0)
+	    #pp("----t:#{t}-----")
+	    t
 	end
 	
 	def rob_balance(usership,to_user=0)
