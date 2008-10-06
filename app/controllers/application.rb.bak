@@ -98,7 +98,7 @@ class ApplicationController < ActionController::Base
 					     
 							   if usership.robtime then
 											cmp_time = Time.now - usership.robtime	
-											cmp_money = conversion(cmp_time,usership.capacity,usership.robspeed)	
+											cmp_money = conversion(cmp_time,usership.capacity)	
 											@current_user.gold += cmp_money	
 											@current_user.friend_ids_will_change!							
 											@current_user.save
@@ -111,8 +111,9 @@ class ApplicationController < ActionController::Base
 					 end
 	end
 	
-	def conversion(cmp_time,top=1000,speed=200) #传入时间差
-	    time = fulltime(top , speed)*3600 #抢满的时间，此处为 小时*3600
+	def conversion(cmp_time,top=1000) #传入时间差
+	#pp("============top:#{top}=======")
+	    time = 18000 #抢满的时间，此处为 小时*3600，即5小时
 		tt = cmp_time / time
 		if tt > 1 
 		   @conversion =  top
@@ -120,10 +121,6 @@ class ApplicationController < ActionController::Base
 		   @conversion = top * tt
 		end 
 		@conversion.to_i
-	end
-
-	def fulltime(top,speed)
-	    t = (top/speed).to_i
 	end
 	
 	def rob_balance(usership,to_user=0)

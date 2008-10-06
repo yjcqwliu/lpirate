@@ -93,6 +93,7 @@ class HomeController < ApplicationController
 						         rob_balance(@usership)
 								 @user.dock1 = usership[:id]
 								 @user.dock1_time = Time.now
+								 @user.friend_ids_will_change!
 								 @user.save
 								
 								 @usership.robof = @user.xid
@@ -103,6 +104,7 @@ class HomeController < ApplicationController
 						         rob_balance(@usership)
 								 @user.dock2 = usership[:id]
 								 @user.dock2_time = Time.now
+								 @user.friend_ids_will_change!
 								 @user.save
 								
 								 @usership.robof = @user.xid
@@ -113,6 +115,7 @@ class HomeController < ApplicationController
 						         rob_balance(@usership)
 								 @user.dock3 = usership[:id]
 								 @user.dock3_time = Time.now
+								 @user.friend_ids_will_change!
 								 @user.save
 								
 								 @usership.robof = @user.xid
@@ -123,6 +126,7 @@ class HomeController < ApplicationController
 						         balance(@usership)
 								 @user.dock4 = usership[:id]
 								 @user.dock4_time = Time.now
+								 @user.friend_ids_will_change!
 								 @user.save
 								
 								 @usership.robof = @user.xid

@@ -16,6 +16,7 @@ class ShopController < ApplicationController
 	    if @current_user.gold >= @ship.price then
 		    @current_user.addship(id)
 			@current_user.gold -= @ship.price
+			@current_user.friend_ids_will_change!
 			@current_user.save
 			xn_redirect_to("shop/index",{"notice" => "购买成功，<a href=\"#{url_for :controller => :home,:action => :myship}\">快去你的码头看看新船吧</a>"})
 		else
@@ -57,6 +58,7 @@ private
       usership = Usership.find(@usership_id)
       price = usership.ship.price * 0.5
 	  @current_user.gold += price
+	  @current_user.friend_ids_will_change!
 	  @current_user.save
 	  rob_balance(usership)   #买出船之前结算
 	  usership.destroy

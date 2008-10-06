@@ -2,14 +2,26 @@
 module ApplicationHelper
     require 'xnml'
 	require 'gamehelp'
-	def conversion(cmp_time,top=1000) #´«ÈëÊ±¼ä²î
-	    time = 1 #ÇÀÂúµÄÊ±¼ä£¬´Ë´¦Îª Ð¡Ê±*3600£¬¼´5Ð¡Ê±
+	def conversion(cmp_time,top=1000,speed=200) #ä¼ å…¥æ—¶é—´å·®
+	
+	    time = fulltime(top , speed)*3600 #æŠ¢æ»¡çš„æ—¶é—´ï¼Œæ­¤å¤„ä¸º å°æ—¶*3600
 		tt = cmp_time / time
+		pp("@@@@@@tt:#{tt}@@@@@time:#{time}@@@@cmp_time:#{cmp_time}@@")
 		if tt > 1 
 		   @conversion =  top
 		else
 		   @conversion = top * tt
 		end 
 		@conversion.to_i
+	end
+
+	def fulltime(top,speed)
+	    t = top / (speed * 1.0)
+	    pp("----t:#{t}-----")
+	    t
+	end
+	
+	def usershipimg(usership)
+	     outml = "<img src=\"#{usership.ship.img_url}\" title=\"#{h usership.name } ä»·æ ¼:#{h usership.ship.price}é‡‘å¸ è´§ä»“å®¹é‡ï¼š#{usership.capacity}é‡‘å¸ #{h usership.ship.intro}\">"
 	end
 end

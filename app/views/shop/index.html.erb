@@ -7,7 +7,9 @@
  <div style="float:left;width:180px;text-align:center">
         <img src="<%=h ship.img_url %>" border="0" title="价格:<%=h ship.price %>  <%=h ship.intro %>"><br>
 	<%=h ship.name %>	<br>
-	价格：<%=h ship.price %>	<br>
+	价格：<%=h ship.price %>金币	<br>
+	货仓容量：<%=h ship.capacity %>金币	<br>
+	满载时间：<%=h fulltime(ship.capacity,ship.robspeed) %>小时<br>
     <%= link_to "购买",:controller => :shop,:action => :buy ,:id => ship.id %>
 </div>
 <% end %>
