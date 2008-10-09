@@ -27,32 +27,24 @@ class ApplicationController < ActionController::Base
 	  if params[:controller] != "ships" then
 			if @current_user.nil?
 			  @current_user = User.login(xiaonei_session.user.to_i)
-			  #pp("@@@@@@@@@@@@@@friend_ids.type:#{@current_user.friend_ids.type}*****---------%-------")
 			  if @current_user.session_key != xiaonei_session.session_key
 			  @current_user.session_key = xiaonei_session.session_key
-			  #@current_user.friend_ids_will_change!
 			   #@current_user.save
 			  end
 			  
 			end
 			
 			tem_friend_ids = @current_user.friend_ids
-			#pp("****************friend_ids.type:#{tem_friend_ids.type}*****-------tem_friend_ids.type == \"String\":#{tem_friend_ids.type == String}--%-------")
 			if tem_friend_ids.nil? or tem_friend_ids.type == String or tem_friend_ids.length == 0 or @current_user.updated_at < (Time.now - 48.hour) 
-			    #pp("-------------use friend.get-------------")
 				res = xiaonei_session.invoke_method("xiaonei.friends.get")
-				#pp("****************@current_user.updated_at-(Time.now - 48.hour):#{@current_user.updated_at-(Time.now - 48.hour)}******Time.now - 48.hour:#{Time.now - 48.hour}************")
 			        if res.kind_of? Xiaonei::Error
 				  @current_user.friend_ids = [] if @current_user.friend_ids.empty?
 				else
 				  @current_user.friend_ids = res
 				end
-				#@current_user.friend_ids_will_change!
-				#
-			#else
-			   #pp("-------------don't use friend.get-------------")
 			end 
 			invite_blance #处理邀请数据
+			login_award   #登陆奖励
 			@current_user.friend_ids_will_change!
 			@current_user.save
 	   else
@@ -62,7 +54,6 @@ class ApplicationController < ActionController::Base
 			 @admin = params[:admin]
 			 cookies[:admin] = @admin 
 		 end 
-		 #pp("-----admin:#{@admin}---")
 	   end
 	
 
@@ -189,5 +180,18 @@ class ApplicationController < ActionController::Base
         @current_user.invite = 0
 		#@current_user.friend_ids_will_change!
 		#@current_user.save
+	end
+	def login_award 
+	    if @current_user.updated_at < (Time.now - 3.hour)
+		    @current_user.gold += 300
+			
+			notice = Notice.new()
+			notice.user_id = current_user.id
+			notice.from_xid = current_user.xid
+			notice.to_xid = current_user.xid
+			notice.content = ["#{url_to_island(notice.from_xid)}踏入了海盗时代，从自己的港口收取了300金币保护费"].rand
+			notice.ltype = 10
+			notice.save
+		end
 	end
 end
