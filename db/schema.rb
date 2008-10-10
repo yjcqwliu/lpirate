@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081002085937) do
+ActiveRecord::Schema.define(:version => 20081010085914) do
 
   create_table "assignments", :force => true do |t|
     t.string   "title"
@@ -88,6 +88,12 @@ ActiveRecord::Schema.define(:version => 20081002085937) do
     t.datetime "dock4_time"
     t.string   "session_key"
     t.text     "invite"
+    t.integer  "business_level"
+    t.integer  "business_top"
+    t.integer  "business_count"
+    t.datetime "business_update_at"
+    t.integer  "business_exp"
+    t.datetime "award_updated_at"
   end
 
   create_table "userships", :force => true do |t|

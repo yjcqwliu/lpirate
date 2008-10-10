@@ -61,13 +61,27 @@ text-align:right;
 #mybody #noticelist #noticetime {
 float:right;
 }
+#notify
+{
+float:right;
+width:160px;
+height:100px;
+}
+#business_dock
+{
+border:2px solid #225599;
+float: left;
+width:151px;
+text-align:center;
+}
 </style>
 
 <div>
 
 <div id="mybody">
-<div class="gotofriend"><a href="http://group.xiaonei.com/GetThread.do?id=327642436&curpage=0&tribeId=254748934" target="_blank"><span style="color:red" title="点击查看活动详情">参加“海盗总动员” 赢取紫豆</span></a>　　　　　　　　　　<%= link_to ">>去抢劫好友",:controller => :home ,:action => :friend  %></div>
-<div id="islandinfo"><xn:name uid="<%= @user.xid %>" />的小岛</div>
+<div class="gotofriend"></div>
+<div id="islandinfo"><%= ml.userpic("uid" => @user.xid,"linked"=>"true") %><%= ml.name("uid"=>@user.xid)%>的小岛<span style="float:right"><%= link_to ">>去抢劫好友",:controller => :home ,:action => :friend  %></span><br>
+<hr /></div>
 <div id="docklist">
 <div id="dock1" class="dock"><%= ml.image("dock") %><br>
 码头</div>
@@ -75,9 +89,37 @@ float:right;
 码头</div>
 <div id="dock3" class="dock"><%= ml.image("dock") %><br>
 码头</div>
-<div id="dock4" class="dock"><%= ml.image("dock") %><br>
-免费码头
-</div>
+<div id="business_dock" ><%= ml.image("dock") %><br>
+贸易码头<br>
+&nbsp;
+		<% if (@user.dock4 == nil or @user.dock4 == 0) and @current_user.xid != @user.xid-%>
+<xn:if-is-app-user uid="<%= @user.xid %>"> 
+<form action="business/business/<%= @user.id %>"> 
+ <%= submit_tag "贸易" , :name => "dock" ,:value => "贸易" %>
+</form>
+<xn:else>
+<xn:invite-form action="business/invite/<%= @user.id %>">
+  <input type="hidden" name="ids[]" value="<%= @user.xid %>"/>
+  <%= submit_tag "倒卖" , :name => "dock" ,:value => "倒卖" %>
+</xn:invite-form>
+
+</xn:else> 
+</xn:if-is-app-user>
+<%= link_to "换下一个",:controller=>:home,:action => :friend,:id=>nil %> 
+
+
+			 
+		<% else #别人正在抢 -%>
+			 <% if @user.dock4 and @user.dock4 > 0 -%>
+				 <% usership = Usership.find(@user.dock4) %>
+				 <%= usershipimg(usership)%><br>
+				 <img src="http://fmn001.xnimg.cn/fmn001/pic001/20080924/16/55/large_7Bq8_3172b198177.jpg"><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :friend ,:id => usership.user.xid %>正停靠在该码头<br>
+				  <% if @current_user.xid == @user.xid %>
+					  <%= submit_tag "抢劫" , :name => "dock" ,:value => "赶跑TA" %>
+				 <% end %> 
+			 <% end %>
+		<% end -%>
+	</div>
 <div style="clear:both;"></div>
 </div>
 <form action="home/rob/<%= @user.id %>">
@@ -134,19 +176,6 @@ float:right;
 		<% end -%>
 	</div>
 	<div  class="dock">
-	&nbsp;
-		<% if (@user.dock4 == nil or @user.dock4 == 0) and @current_user.xid != @user.xid-%>
-			 <%= submit_tag "抢劫" , :name => "dock" ,:value => "停靠" %>
-		<% else #别人正在抢 -%>
-			 <% if @user.dock4 and @user.dock4 > 0 -%>
-				 <% usership = Usership.find(@user.dock4) %>
-				 <%= usershipimg(usership)%><br>
-				 <img src="http://fmn001.xnimg.cn/fmn001/pic001/20080924/16/55/large_7Bq8_3172b198177.jpg"><%= link_to "<xn:name uid=\"#{usership.user.xid}\" />", :controller => :home , :action => :friend ,:id => usership.user.xid %>正停靠在该码头<br>
-				  <% if @current_user.xid == @user.xid %>
-					  <%= submit_tag "抢劫" , :name => "dock" ,:value => "赶跑TA" %>
-				 <% end %> 
-			 <% end %>
-		<% end -%>
 	
 	</div>
 	<div style="clear:both;"></div>
@@ -185,6 +214,13 @@ float:right;
 		<% end %>
 	</div>
 <% end %>
+</div>
+<div id="notify">
+<h4>公告</h4>
+<ul>
+<li><a href="http://group.xiaonei.com/GetThread.do?id=327642436&curpage=0&tribeId=254748934" target="_blank"><span style="color:red" title="点击查看活动详情">参加“海盗总动员” 赢取紫豆</span></a>
+</li>
+</ul>
 </div>
 <div id="friendlist"  >
 

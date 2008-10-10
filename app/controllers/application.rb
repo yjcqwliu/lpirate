@@ -36,15 +36,18 @@ class ApplicationController < ActionController::Base
 			
 			tem_friend_ids = @current_user.friend_ids
 			if tem_friend_ids.nil? or tem_friend_ids.type == String or tem_friend_ids.length == 0 or @current_user.updated_at < (Time.now - 48.hour) 
+			pp("-----------use friends API---------")
 				res = xiaonei_session.invoke_method("xiaonei.friends.get")
-			        if res.kind_of? Xiaonei::Error
+			    if res.kind_of? Xiaonei::Error
 				  @current_user.friend_ids = [] if @current_user.friend_ids.empty?
 				else
 				  @current_user.friend_ids = res
 				end
-			end 
-			invite_blance #处理邀请数据
-			login_award   #登陆奖励
+			else
+			pp("-----------didn't use friends API---------")
+			end
+			init #登陆游戏时的一些数据初始化 
+			
 			@current_user.friend_ids_will_change!
 			@current_user.save
 	   else
@@ -182,9 +185,9 @@ class ApplicationController < ActionController::Base
 		#@current_user.save
 	end
 	def login_award 
-	    if @current_user.updated_at < (Time.now - 3.hour)
+	    if !@current_user.award_updated_at or @current_user.award_updated_at < (Time.now - 3.hour)
 		    @current_user.gold += 300
-			
+			@current_user.award_updated_at=Time.now
 			notice = Notice.new()
 			notice.user_id = current_user.id
 			notice.from_xid = current_user.xid
@@ -193,5 +196,19 @@ class ApplicationController < ActionController::Base
 			notice.ltype = 10
 			notice.save
 		end
+	end
+	def init 
+	    ###############贸易相关数据初始化#################
+		@current_user.business_update_at = Time.now.strftime("%Y/%m/%d") if @current_user.business_update_at.nil?
+		business_update_time = @current_user.business_update_at.strftime("%Y/%m/%d")
+		now = Time.now.strftime("%Y/%m/%d")
+		pp("-----------business_update_time:#{business_update_time}-----now:#{now}---------")
+	    @current_user.business_top = 20 if @current_user.business_top.nil?
+	    @current_user.business_count = 0 if @current_user.business_count.nil? || now != business_update_time
+
+		
+		###############贸易相关数据初始化结束#################
+		invite_blance #处理邀请数据
+		login_award   #登陆奖励
 	end
 end
