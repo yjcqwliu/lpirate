@@ -1,7 +1,7 @@
 --- 
-cwd: "/u/apps/lpirate/current"
+cwd: "/u/apps/lpirate2/current"
 log_file: log/mongrel.log
 environment: production
-port: 5000
+port: 4000
 pid_file: tmp/pids/mongrel.pid
 servers: 5
