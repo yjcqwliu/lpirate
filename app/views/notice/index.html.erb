@@ -1,0 +1,39 @@
+<style type="text/css">
+#noticelist #noticeone {
+height:25px;
+}
+#noticelist #noticecontent {
+float:left;
+height:28px;
+width:500px;
+}
+#noticelist #noticetime {
+float:right;
+}
+#piratenews{
+	color:green;
+	font-weight: bold;
+}
+</style>
+<% if @mynotice %>
+	<div  id="noticelist">
+		<div id = "sub-nav" style = "height:21px; overflow:hidden;" >
+			<ul >
+			<li ><%= link_to "我的快讯",:controller => :notice,:action => :index %></li>
+			<li><%= link_to "海盗快讯",:controller => :notice,:action => :all %></li>
+			<li><%= link_to "贸易快讯",:controller => :notice,:action => :business %></li>
+			</ul>
+		</div>
+		<% if @mynotice.length ==0 %>
+			<br><span class="gray">暂无信息</span>
+		<% else %>
+			
+				<%@mynotice.each do |n|%>
+
+					<div id="noticecontent"><%= n.content %></div><div id="noticetime"><%= distance_of_time_in_words(Time.now,n.updated_at) %></div><div style="clear:both;"></div>
+
+				<% end %>
+			
+		<% end %>
+	</div>
+<% end %>

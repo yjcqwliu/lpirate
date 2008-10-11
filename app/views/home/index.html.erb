@@ -200,7 +200,7 @@ text-align:center;
 <% if @mynotice %>
 	<div  id="noticelist">
 		<hr />
-		<span id="piratenews">海盗快讯</span>
+		<span id="piratenews">海盗快讯  <%= link_to "查看更多",:controller => :notice %></span>
 		<% if @mynotice.length ==0 %>
 			<br><span class="gray">暂无信息</span>
 		<% else %>
@@ -219,6 +219,8 @@ text-align:center;
 <h4>公告</h4>
 <ul>
 <li><a href="http://group.xiaonei.com/GetThread.do?id=327642436&curpage=0&tribeId=254748934" target="_blank"><span style="color:red" title="点击查看活动详情">参加“海盗总动员” 赢取紫豆</span></a>
+</li>
+<li><a href="http://group.xiaonei.com/GetThread.do?id=327711718&curpage=0&tribeId=254748934" target="_blank"><span style="color:red" title="点击查看活动详情">贸易功能上线</span></a>
 </li>
 </ul>
 </div>
