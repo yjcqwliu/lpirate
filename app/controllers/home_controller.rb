@@ -28,7 +28,7 @@ class HomeController < ApplicationController
 		    @user  = User.login(@current_user.friend_ids.rand)
 		end	   
 		@mynotice = Notice.find(:all,
-		                     :conditions => [" from_xid in (?,?) or to_xid in (?,?)",@current_user.friend_ids,@current_user.xid,@current_user.friend_ids,@current_user.xid],
+		                     :conditions => ["( from_xid in (?,?) or to_xid in (?,?) ) and ltype <> 11",@current_user.friend_ids,@current_user.xid,@current_user.friend_ids,@current_user.xid],
 							  :order => " updated_at desc ",
 							  :limit => 20
 							 )
