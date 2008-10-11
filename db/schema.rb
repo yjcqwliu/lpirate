@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081010085914) do
+ActiveRecord::Schema.define(:version => 20081011144943) do
 
   create_table "assignments", :force => true do |t|
     t.string   "title"
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(:version => 20081010085914) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "notices", ["from_xid", "to_xid"], :name => "index_notices_on_from_xid_and_to_xid"
+  add_index "notices", ["ltype"], :name => "index_notices_on_ltype"
 
   create_table "ships", :force => true do |t|
     t.string   "name"
@@ -96,6 +99,12 @@ ActiveRecord::Schema.define(:version => 20081010085914) do
     t.datetime "award_updated_at"
   end
 
+  add_index "users", ["xid"], :name => "xid"
+  add_index "users", ["xid"], :name => "xid_2"
+  add_index "users", ["xid"], :name => "index_users_on_xid"
+  add_index "users", ["updated_at"], :name => "index_users_on_updated_at"
+  add_index "users", ["gold"], :name => "index_users_on_gold"
+
   create_table "userships", :force => true do |t|
     t.string   "name"
     t.integer  "attack"
@@ -108,5 +117,7 @@ ActiveRecord::Schema.define(:version => 20081010085914) do
     t.integer  "ship_id"
     t.integer  "robof"
   end
+
+  add_index "userships", ["user_id"], :name => "index_userships_on_user_id"
 
 end
