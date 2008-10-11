@@ -1,6 +1,6 @@
 require 'mongrel_cluster/recipes'
 
-set :application, "lpirate2"
+set :application, "lpirate"
 set :scm, "git"
 set :repository,  "git@github.com:yjcqwliu/lpirate.git"
 set :branch, "master"

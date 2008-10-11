@@ -1,5 +1,5 @@
 --- 
-cwd: "/u/apps/lpirate2/current"
+cwd: "/u/apps/lpirate/current"
 log_file: log/mongrel.log
 environment: production
 port: 4000
