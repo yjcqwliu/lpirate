@@ -3,5 +3,5 @@ cwd: "/u/apps/lpirate/current"
 log_file: log/mongrel.log
 environment: production
 port: 4000
-pid_file: tmp/pids/mongrel.pid
+pid_file: /var/run/mongrel_cluster/mongrel.pid
 servers: 5
