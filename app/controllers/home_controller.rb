@@ -9,29 +9,13 @@ class HomeController < ApplicationController
 							 )
 	end
 	
-	def me
-	   @user = @current_user
-	   		@mynotice = Notice.find(:all,
-		                     :conditions => [" ( from_xid in (?,?) or to_xid in (?,?) ) and ltype <> 11",@current_user.friend_ids,@current_user.xid,@current_user.friend_ids,@current_user.xid],
-							  :order => " updated_at desc ",
-							  :limit => 20
-							 )
-		
-	   render :action => :index
-	   
-	end
-	
 	def friend
 	   if id = params[:id]
 		    @user  = User.login(id)
 		else
 		    @user  = User.login(@current_user.friend_ids.rand)
 		end	   
-		@mynotice = Notice.find(:all,
-		                     :conditions => ["( from_xid in (?,?) or to_xid in (?,?) ) and ltype <> 11",@current_user.friend_ids,@current_user.xid,@current_user.friend_ids,@current_user.xid],
-							  :order => " updated_at desc ",
-							  :limit => 20
-							 )
+		@mynotice = nil
 	   render :action => :index
 	end
 	
