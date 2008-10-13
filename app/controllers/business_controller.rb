@@ -36,7 +36,7 @@ class BusinessController < ApplicationController
 	     if ids and ids.length >0
 		    ids = ids.first
 		    @user = User.find(:all,
-			                  :conditions => [" xid = ? ",ids]
+			                  :conditions => [" xid = ? ",ids.to_s]
 							  )
 			if @user && @user.length >0 
 			    @user = @user.first

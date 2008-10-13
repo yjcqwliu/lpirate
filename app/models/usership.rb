@@ -22,7 +22,7 @@ def ship
 	@ship ||= Ship.find(:all, :conditions => [" id = ? ", self.ship_id]).first
 end
 def robuser
-	@robuser ||= User.find(:all, :conditions => [" xid = ? ", self.robof]).first
+	@robuser ||= User.find(:all, :conditions => [" xid = ? ", self.robof.to_s]).first
 end
 
 def robdock=(robof)
