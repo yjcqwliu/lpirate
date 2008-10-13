@@ -224,13 +224,5 @@ text-align:center;
 </li>
 </ul>
 </div>
-<div id="friendlist"  >
 
-<h4>海盗好友</h4>
-<% @current_user.friend_ids.each do |friend| %>
-<div>
-<%= link_to ml.name({"uid" => friend}),:controller => :home,:action => :friend,:id => friend %>
-</div>
-<% end %>
-</div>
 </div>

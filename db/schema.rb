@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081011144943) do
+ActiveRecord::Schema.define(:version => 20081013054638) do
 
   create_table "assignments", :force => true do |t|
     t.string   "title"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20081011144943) do
 
   add_index "notices", ["from_xid", "to_xid"], :name => "index_notices_on_from_xid_and_to_xid"
   add_index "notices", ["ltype"], :name => "index_notices_on_ltype"
+  add_index "notices", ["from_xid"], :name => "index_notices_on_from_xid"
+  add_index "notices", ["to_xid"], :name => "index_notices_on_to_xid"
 
   create_table "ships", :force => true do |t|
     t.string   "name"
@@ -100,7 +102,6 @@ ActiveRecord::Schema.define(:version => 20081011144943) do
   end
 
   add_index "users", ["xid"], :name => "xid"
-  add_index "users", ["xid"], :name => "xid_2"
   add_index "users", ["xid"], :name => "index_users_on_xid"
   add_index "users", ["updated_at"], :name => "index_users_on_updated_at"
   add_index "users", ["gold"], :name => "index_users_on_gold"
