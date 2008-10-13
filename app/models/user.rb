@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 	
     def self.login(u_id,invite = 0)
 	    user = User.find(:all,
-		                  :conditions => [" xid= ? ",u_id]
+		                  :conditions => [" xid= ? ",u_id.to_s]
 						  )
 		if ! user or user.length == 0 then
 		     user = User.first_login(u_id)
