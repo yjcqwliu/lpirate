@@ -10,10 +10,10 @@ class BusinessController < ApplicationController
 				getgold = add_gold
 				@current_user.gold += getgold
 									
-				@current_user.business_update_at = Time.now.strftime("%Y/%m/%d")
-				pp("--------save---business_update_time:#{@current_user.business_update_at}-----Time.now:#{Time.now.strftime('%Y/%m/%d')}--------")
+				@current_user.business_update_at = Time.now + 8.hour
+				#pp("--------save---business_update_time:#{@current_user.business_update_at}-----Time.now:#{Time.now + 8.hour}--------")
 				@current_user.save
-				pp("--------save2---business_update_time:#{@current_user.business_update_at}-----Time.now:#{Time.now.strftime('%Y/%m/%d')}--------")
+				#pp("--------save2---business_update_time:#{@current_user.business_update_at}-----Time.now:#{Time.now + 8.hour}--------")
 				#################新鲜事##############################
 				@notice = "成功与#{url_to_island(@user.xid)}交易，赚了#{getgold}金币"
 				notice = Notice.new()
@@ -50,10 +50,10 @@ class BusinessController < ApplicationController
 					getgold = add_gold * 2
 					@current_user.gold += getgold
 					
-					@current_user.business_update_at = Time.now.strftime("%Y/%m/%d")
-					pp("--------save---business_update_time:#{@current_user.business_update_at}-----Time.now:#{Time.now.strftime('%Y/%m/%d')}--------")
+					@current_user.business_update_at = Time.now + 8.hour
+					#pp("--------save---business_update_time:#{@current_user.business_update_at}-----Time.now:#{Time.now.strftime('%Y/%m/%d')}--------")
 					@current_user.save
-					pp("--------save2---business_update_time:#{@current_user.business_update_at}-----Time.now:#{Time.now.strftime('%Y/%m/%d')}--------")
+					#pp("--------save2---business_update_time:#{@current_user.business_update_at}-----Time.now:#{Time.now.strftime('%Y/%m/%d')}--------")
 					#################新鲜事##############################
 					@notice = "成功向#{url_to_island(@user.xid)}倒卖大量商品，赚得#{getgold}金币"
 					notice = Notice.new()
