@@ -206,7 +206,7 @@ class ApplicationController < ActionController::Base
 		#pp("-----------business_update_time:#{@current_user.business_update_at.to_i / 86400}-----now:#{Time.now.to_i / 86400}-----#{Time.now - @current_user.business_update_at}----")
 	    @current_user.business_top = 20 if @current_user.business_top.nil?
 		
-	    @current_user.business_count = 0 if @current_user.business_count.nil? || Time.now.to_i / 86400 > @current_user.business_update_at.to_i / 86400
+	    @current_user.business_count = 0 if @current_user.business_count.nil? #|| Time.now.to_i / 86400 > @current_user.business_update_at.to_i / 86400
 
 		
 		###############贸易相关数据初始化结束#################
