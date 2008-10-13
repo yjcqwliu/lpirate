@@ -200,12 +200,13 @@ class ApplicationController < ActionController::Base
 	def init 
 	    ###############贸易相关数据初始化#################
 		@current_user.business_update_at = Time.now.strftime("%Y/%m/%d") if @current_user.business_update_at.nil?
-		business_update_time = @current_user.business_update_at.strftime("%Y/%m/%d")
-		now = Time.now.strftime("%Y/%m/%d")
-		#pp("-----------business_update_time:#{business_update_time}-----now:#{now}-----#{Time.now - @current_user.business_update_at}----")
+		#business_update_time = @current_user.business_update_at.strftime("%Y/%m/%d")
+		#now = Time.now.strftime("%Y/%m/%d")
+		#pp("-----------business_update_time:#{@current_user.business_update_at}-----now:#{Time.now}--------")
+		#pp("-----------business_update_time:#{@current_user.business_update_at.to_i / 86400}-----now:#{Time.now.to_i / 86400}-----#{Time.now - @current_user.business_update_at}----")
 	    @current_user.business_top = 20 if @current_user.business_top.nil?
 		
-	    @current_user.business_count = 0 if @current_user.business_count.nil? || now != business_update_time
+	    @current_user.business_count = 0 if @current_user.business_count.nil? || Time.now.to_i / 86400 > @current_user.business_update_at.to_i / 86400
 
 		
 		###############贸易相关数据初始化结束#################
