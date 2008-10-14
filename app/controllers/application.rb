@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
 			else
 			pp("-----------didn't use friends API---------")
 			end
-			init #登陆游戏时的一些数据初始化 
+			initdata #登陆游戏时的一些数据初始化 
 			
 			@current_user.friend_ids_will_change!
 			@current_user.save
@@ -196,7 +196,7 @@ class ApplicationController < ActionController::Base
 			notice.save
 		end
 	end
-	def init 
+	def initdata
 	    ###############贸易相关数据初始化#################
 		@current_user.business_update_at = Time.now.utc if @current_user.business_update_at.nil?
 		#business_update_time = @current_user.business_update_at.strftime("%Y/%m/%d")
@@ -208,7 +208,7 @@ class ApplicationController < ActionController::Base
 		@tnu = Time.now.utc + 8.hour
 		@cbu = @current_user.business_update_at + 8.hour
 		
-	    @current_user.business_count = 0 if @current_user.business_count.nil? || (Time.now.utc + 8.hour).to_i / 86400 > (@current_user.business_update_at + 8.hour).to_i / 86400
+	    @current_user.business_count = 0 if (@current_user.business_count.nil? and @current_user.business_update_at.nil?) || (Time.now.utc + 8.hour).to_i / 86400 > (@current_user.business_update_at + 8.hour).to_i / 86400
 
 		
 		###############贸易相关数据初始化结束#################

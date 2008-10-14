@@ -97,18 +97,17 @@ text-size:15px;
 贸易码头<br>
 &nbsp;
 		<% if (@user.dock4 == nil or @user.dock4 == 0) and @current_user.xid != @user.xid-%>
-<xn:if-is-app-user uid="<%= @user.xid %>"> 
+<%= ml.if_app_user({"uid" => @user.xid}) %> 
 <form action="business/business/<%= @user.id %>"> 
  <%= submit_tag "贸易" , :name => "dock" ,:value => "贸易" %>
 </form>
-<xn:else>
-<xn:invite-form action="business/invite/<%= @user.id %>">
-  <input type="hidden" name="ids[]" value="<%= @user.xid %>"/>
-  <%= submit_tag "倒卖" , :name => "dock" ,:value => "倒卖" %>
-</xn:invite-form>
+<%= ml.mlelse %>
+<%= ml.request_form({"action" => "business/invite/#{@user.id}"}) %>
+<%= ml.request_form_submit({"uid" => @user.id,"label" => "倒卖" }) %>
+<%= ml.end_request_form %>
 
-</xn:else> 
-</xn:if-is-app-user>
+<%= ml.end_mlelse %>
+<%= ml.end_if_is_app_user %> 
 <%= link_to "换下一个",:controller=>:home,:action => :friend,:id=>nil %> 
 
 
