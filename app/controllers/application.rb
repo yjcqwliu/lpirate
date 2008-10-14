@@ -208,7 +208,7 @@ class ApplicationController < ActionController::Base
 		@tnu = Time.now.utc + 8.hour
 		@cbu = @current_user.business_update_at + 8.hour
 		
-	    @current_user.business_count = 0 if (@current_user.business_count.nil? and @current_user.business_update_at.nil?) || (Time.now.utc + 8.hour).to_i / 86400 > (@current_user.business_update_at + 8.hour).to_i / 86400
+	    #@current_user.business_count = 0 if (@current_user.business_count.nil? and @current_user.business_update_at.nil?) || (Time.now.utc + 8.hour).to_i / 86400 > (@current_user.business_update_at + 8.hour).to_i / 86400
 
 		
 		###############贸易相关数据初始化结束#################
