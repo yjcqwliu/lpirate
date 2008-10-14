@@ -1,0 +1,70 @@
+<% ml = Ml.new %>
+<style type="text/css">
+#myshipspan{
+	color:blue;
+	font-weight: bold;
+}
+.ship{
+float:left;
+width:180px;
+text-align:center;
+}
+
+h4 {
+text-align:center;height:25px;background:#D8DFEA none repeat scroll 0%;
+border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;font-weight:bold;
+}
+.pm{
+font-size:20px;
+color:red;
+}
+.gold{
+font-size:16px;
+color:yellow;
+}
+</style>
+<div id = "sub-nav" style = "height:21px; overflow:hidden;" >
+			<ul >
+			<li ><%= link_to "好友金币排行",:controller => :lorder,:action => :index %></li>
+			<li><%= link_to "世界金币排行",:controller => :lorder,:action => :allgold %></li>
+			</ul>
+</div>
+
+
+
+<center>
+  <%if @page.to_i > 1 then %>
+    <%= link_to "上一页", {:controller => :lorder, :action => controller.action_name, :page => (@page.to_i - 1)}, {:class => "chn"} %>
+  <% else %>
+    上一页
+  <% end %>
+  &nbsp;
+  <%if @page.to_i < @user.total_pages then %>
+    <%= link_to "下一页", {:controller => :lorder, :action => controller.action_name, :page => (@page.to_i + 1)}, {:class => "chn"} %>
+  <% else %>
+    下一页
+  <% end %>
+</center>
+<hr />
+<% pmcount = 0 %>
+<% @user.each do |user| %>
+<% pmcount += 1 %>
+<div id="shiplist">
+&nbsp;<span class="pm"><%= ( @page.to_i - 1) * @user.per_page + pmcount %></span>&nbsp;<%= link_to ml.userpic({"uid" => user.xid}),:controller => :home,:action => :friend,:id => user.xid %>
+<%= link_to ml.name({"uid" => user.xid}),:controller => :home,:action => :friend,:id => user.xid %>&nbsp;
+金币<strong>:<span class="gold"><%= user.gold %></span></strong>
+<% user.usership.each do |ship|  -%>
+	<div class="ship">
+    
+	<%= usershipimg(ship)%><br>
+	<%= ship.name %>
+	<% if ship.robof && ship.robof > 0   %>
+	<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :friend ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
+     <% if ship.robtime %>已经掠夺了<%= conversion(Time.now - ship.robtime,ship.capacity,ship.robspeed).to_i %>个金币<% end %>
+	<% end %>
+	</div>
+<% end -%>
+<div style="clear:both;"></div>
+<hr style="width:95%"/>
+</div>
+<% end %>

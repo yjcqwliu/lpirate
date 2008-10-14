@@ -10,7 +10,7 @@ class BusinessController < ApplicationController
 				getgold = add_gold
 				@current_user.gold += getgold
 									
-				@current_user.business_update_at = Time.now if Time.now > @current_user.business_update_at 
+				@current_user.business_update_at = Time.now.utc if Time.now.utc > @current_user.business_update_at 
 				#pp("--------save---business_update_time:#{@current_user.business_update_at}-----Time.now:#{Time.now + 8.hour}--------")
 				@current_user.save
 				#pp("--------save2---business_update_time:#{@current_user.business_update_at}-----Time.now:#{Time.now + 8.hour}--------")
@@ -50,7 +50,7 @@ class BusinessController < ApplicationController
 					getgold = add_gold * 2
 					@current_user.gold += getgold
 					
-					@current_user.business_update_at = Time.now if Time.now > @current_user.business_update_at #pp("--------save---business_update_time:#{@current_user.business_update_at}-----Time.now:#{Time.now.strftime('%Y/%m/%d')}--------")
+					@current_user.business_update_at = Time.now.utc if Time.now.utc > @current_user.business_update_at #pp("--------save---business_update_time:#{@current_user.business_update_at}-----Time.now:#{Time.now.strftime('%Y/%m/%d')}--------")
 					@current_user.save
 					#pp("--------save2---business_update_time:#{@current_user.business_update_at}-----Time.now:#{Time.now.strftime('%Y/%m/%d')}--------")
 					#################新鲜事##############################

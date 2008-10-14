@@ -20,10 +20,9 @@ class ApplicationController < ActionController::Base
   
       before_filter :set_current_user
    
-
   def set_current_user
 	  	    
-	  
+	
 	  if params[:controller] != "ships" then
 			if @current_user.nil?
 			  @current_user = User.login(xiaonei_session.user.to_i)
@@ -199,18 +198,40 @@ class ApplicationController < ActionController::Base
 	end
 	def init 
 	    ###############贸易相关数据初始化#################
-		@current_user.business_update_at = Time.now.strftime("%Y/%m/%d") if @current_user.business_update_at.nil?
+		@current_user.business_update_at = Time.now.utc if @current_user.business_update_at.nil?
 		#business_update_time = @current_user.business_update_at.strftime("%Y/%m/%d")
 		#now = Time.now.strftime("%Y/%m/%d")
 		#pp("-----------business_update_time:#{@current_user.business_update_at}-----now:#{Time.now}--------")
 		#pp("-----------business_update_time:#{@current_user.business_update_at.to_i / 86400}-----now:#{Time.now.to_i / 86400}-----#{Time.now - @current_user.business_update_at}----")
 	    @current_user.business_top = 20 if @current_user.business_top.nil?
 		
-	    @current_user.business_count = 0 if @current_user.business_count.nil? #|| Time.now.to_i / 86400 > @current_user.business_update_at.to_i / 86400
+	    @current_user.business_count = 0 if @current_user.business_count.nil? || Time.now.utc.to_i / 86400 > @current_user.business_update_at.to_i / 86400
 
 		
 		###############贸易相关数据初始化结束#################
 		invite_blance #处理邀请数据
 		login_award   #登陆奖励
 	end
+	def rescue_action_in_public(exception)
+		case exception.class.name
+		when
+	'ActiveRecord::RecordNotFound','::ActionController::UnknownAction','::ActionController::RoutingError' 
+			 RAILS_DEFAULT_LOGGER.error("404 displayed")
+			 render(:file => "#{RAILS_ROOT}/public/404.html") 
+		 else
+			RAILS_DEFAULT_LOGGER.error("500 displayed")
+			render(:file => "#{RAILS_ROOT}/public/500.html")
+		end
+	end
+
+	def rescue_action_locally(exception)
+    case exception.class.name
+    when 'ActiveRecord::RecordNotFound','::ActionController::UnknownAction','::ActionController::RoutingError' 
+        RAILS_DEFAULT_LOGGER.error("404 displayed")
+        render(:file => "#{RAILS_ROOT}/public/404.html") 
+     else
+        RAILS_DEFAULT_LOGGER.error("500 displayed")
+        render(:file => "#{RAILS_ROOT}/public/500.html")
+    end
+end
 end
