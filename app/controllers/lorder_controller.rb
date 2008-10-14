@@ -1,5 +1,4 @@
 class LorderController < ApplicationController
-@perpage = 20
 def index
     @page = params[:page] || 1
 	@user = User.find(:all,
@@ -7,7 +6,7 @@ def index
 					  :order => " gold desc ",
 					  :limit => 200
 					  )
-	@user = @user.paginate(:page => @page, :per_page => @perpage)
+	@user = @user.paginate(:page => @page, :per_page => 20)
 	
 end
 
@@ -22,7 +21,7 @@ def allgold
 					  :order => " gold desc ",
 					  :limit => 500
 					  )
-	@user = @user.paginate(:page => @page, :per_page => @perpage)
+	@user = @user.paginate(:page => @page, :per_page => 20)
 	render :action => :index
 
 end 

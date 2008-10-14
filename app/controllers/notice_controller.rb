@@ -28,4 +28,13 @@ class NoticeController < ApplicationController
 		
 		render :action => :index
 	end
+	
+	def myall
+	   @page = params[:page] || 1
+	   @mynotice = Notice.find(:all,
+								 :conditions => [" from_xid = ? and ltype = ? ",params[:from_xid] || 0,params[:ltype] || 0 ],
+								  :order => " updated_at desc "
+								 )
+	   @mynotice = @mynotice.paginate(:page => @page, :per_page => 100)
+	end
 end

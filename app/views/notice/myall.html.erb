@@ -1,0 +1,52 @@
+<style type="text/css">
+#noticelist #noticeone {
+height:25px;
+}
+#noticelist #noticecontent {
+float:left;
+height:28px;
+width:500px;
+}
+#noticelist #noticetime {
+float:right;
+}
+#piratenews{
+	color:green;
+	font-weight: bold;
+}
+</style>
+<% if @mynotice %>
+	<div  id="noticelist">
+		<div id = "sub-nav" style = "height:21px; overflow:hidden;" >
+			<ul >
+			<li ><%= link_to "我的快讯",:controller => :notice,:action => :index %></li>
+			<li><%= link_to "海盗快讯",:controller => :notice,:action => :all %></li>
+			<li><%= link_to "贸易快讯",:controller => :notice,:action => :business %></li>
+			</ul>
+		</div>
+		<% if @mynotice.length ==0 %>
+			<br><span class="gray">暂无信息</span>
+		<% else %>
+			<center>
+  <%if @page.to_i > 1 then %>
+    <%= link_to "上一页", {:controller => controller, :action => controller.action_name, :page => (@page.to_i - 1)}, {:class => "chn"} %>
+  <% else %>
+    上一页
+  <% end %>
+  &nbsp;
+  <%if @page.to_i < @mynotice.total_pages then %>
+    <%= link_to "下一页", {:controller => controller, :action => controller.action_name, :page => (@page.to_i + 1)}, {:class => "chn"} %>
+  <% else %>
+    下一页
+  <% end %>
+  total:<%= @mynotice.length %>
+</center>
+				<% @mynotice.each do |n|%>
+
+					<div id="noticecontent"><%= n.content %></div><div id="noticetime"><%= distance_of_time_in_words(Time.now,n.updated_at) %></div><div style="clear:both;"></div>
+
+				<% end %>
+			
+		<% end %>
+	</div>
+<% end %>

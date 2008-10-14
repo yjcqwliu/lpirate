@@ -22,11 +22,14 @@ color:red;
 font-size:16px;
 color:yellow;
 }
+.pgold{
+font-size:16px;
+color:blue;
+}
 </style>
 <div id = "sub-nav" style = "height:21px; overflow:hidden;" >
 			<ul >
 			<li ><%= link_to "好友金币排行",:controller => :lorder,:action => :index %></li>
-			<li><%= link_to "世界金币排行",:controller => :lorder,:action => :allgold %></li>
 			</ul>
 </div>
 
@@ -52,7 +55,8 @@ color:yellow;
 <div id="shiplist">
 &nbsp;<span class="pm"><%= ( @page.to_i - 1) * @user.per_page + pmcount %></span>&nbsp;<%= link_to ml.userpic({"uid" => user.xid}),:controller => :home,:action => :friend,:id => user.xid %>
 <%= link_to ml.name({"uid" => user.xid}),:controller => :home,:action => :friend,:id => user.xid %>&nbsp;
-金币<strong>:<span class="gold"><%= user.gold %></span></strong>
+金币<strong>:<span class="gold"><%= user.gold %></span></strong>&nbsp;
+海盗币<strong>:<span class="pgold"><%= user.pgold %></span></strong>
 <% user.usership.each do |ship|  -%>
 	<div class="ship">
     
