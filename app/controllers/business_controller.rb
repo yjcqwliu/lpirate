@@ -3,9 +3,8 @@ class BusinessController < ApplicationController
 	    if id = params[:id] 
 		    @user = User.find(id)
 			if canbusiness
-			    @current_user.business_count = 0 if @current_user.business_count.nil?
-				@current_user.business_exp = 0 if @current_user.business_exp.nil?
-			    @current_user.business_count += 1
+			    #@current_user.business_count = 0 if @current_user.business_count.nil?
+				@current_user.business_count = @current_user.business_count + 1
 				add_business_exp(1)
 				getgold = add_gold
 				@current_user.gold += getgold
@@ -43,9 +42,8 @@ class BusinessController < ApplicationController
 			    @user = @user.first
 			
 				if canbusiness
-					@current_user.business_count = 0 if @current_user.business_count.nil?
-					@current_user.business_exp = 0 if @current_user.business_exp.nil?
-					@current_user.business_count += 1
+					#@current_user.business_count = 0 if @current_user.business_count.nil?
+					@current_user.business_count = @current_user.business_count + 1
 					add_business_exp(2)
 					getgold = add_gold * 2
 					@current_user.gold += getgold
