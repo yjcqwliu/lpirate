@@ -74,13 +74,17 @@ float: left;
 width:151px;
 text-align:center;
 }
+.gorob{
+float:right;
+text-size:15px;
+}
 </style>
 
 <div>
 
 <div id="mybody">
 <div class="gotofriend"></div>
-<div id="islandinfo"><%= ml.userpic("uid" => @user.xid,"linked"=>"true") %><%= ml.name("uid"=>@user.xid)%>的小岛<span style="float:right"><%= link_to ">>去抢劫好友",:controller => :home ,:action => :friend  %></span><br>
+<div id="islandinfo"><%= ml.userpic("uid" => @user.xid,"linked"=>"true") %><%= ml.name("uid"=>@user.xid)%>的小岛<span class="gorob"><%= link_to ">>去抢劫好友",:controller => :home ,:action => :friend  %></span><br>
 <hr /></div>
 <div id="docklist">
 <div id="dock1" class="dock"><%= ml.image("dock") %><br>
