@@ -60,5 +60,5 @@ if @notice != nil and @notice != "" then %>
     </div>
   </div>
 <% end %>
-<div id="showgoldinfo">您的资产 金币：<%= @current_user.gold%>  海盗币：<%= @current_user.pgold%>  今日贸易：<%= @current_user.business_count %>/<%= @current_user.business_top %></div>
+<div id="showgoldinfo">您的资产 金币：<%= @current_user.gold%>  海盗币：<%= @current_user.pgold%>  今日贸易：<%= @current_user.business_count %>/<%= @current_user.business_top %>< <%= @tnu%>----<%= @cbu %> ></div>
 <%= yield -%>
