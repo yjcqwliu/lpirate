@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
 	
 	  if params[:controller] != "ships" then
 			if @current_user.nil?
-			  @current_user = User.login(xiaonei_session.user.to_i)
+			  @current_user = User.login(xiaonei_session.user)
 			  if @current_user.session_key != xiaonei_session.session_key
 			  @current_user.session_key = xiaonei_session.session_key
 			   #@current_user.save
@@ -204,11 +204,11 @@ class ApplicationController < ActionController::Base
 		#pp("-----------business_update_time:#{@current_user.business_update_at}-----now:#{Time.now}--------")
 		#pp("-----------business_update_time:#{@current_user.business_update_at.to_i / 86400}-----now:#{Time.now.to_i / 86400}-----#{Time.now - @current_user.business_update_at}----")
 	    @current_user.business_top = 20 if @current_user.business_top.nil?
-		pp("-----------business_update_time:#{@current_user.business_update_at}-----Time.now.utc:#{Time.now.utc}--------")
-		@tnu = Time.now.utc + 8.hour
-		@cbu = @current_user.business_update_at + 8.hour
-		
-	    #@current_user.business_count = 0 if (@current_user.business_count.nil? and @current_user.business_update_at.nil?) || (Time.now.utc + 8.hour).to_i / 86400 > (@current_user.business_update_at + 8.hour).to_i / 86400
+		#pp("-----------business_update_time:#{@current_user.business_update_at}-----Time.now.utc:#{Time.now.utc}--------")
+		#@tnu = Time.now.utc + 8.hour
+		#@cbu = @current_user.business_update_at + 8.hour
+		#pp("-----------b_count_t_f:#{(@current_user.business_count.nil? and @current_user.business_update_at.nil?)}---------")
+	    @current_user.business_count = 0 if (@current_user.business_count.nil? and @current_user.business_update_at.nil?) || (Time.now.utc + 8.hour).to_i / 86400 > (@current_user.business_update_at + 8.hour).to_i / 86400
 
 		
 		###############贸易相关数据初始化结束#################
