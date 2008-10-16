@@ -29,6 +29,9 @@
 #showgoldinfo{
 text-align:right;
 }
+.goldcolor{
+color:red;
+}
 </style>
 <div id = "sub-nav" style = "height:21px; overflow:hidden;" >
 			<ul >
@@ -60,5 +63,5 @@ if @notice != nil and @notice != "" then %>
     </div>
   </div>
 <% end %>
-<div id="showgoldinfo">您的资产 金币：<%= @current_user.gold%>  海盗币：<%= @current_user.pgold%>  今日贸易：<%= @current_user.business_count %>/<%= @current_user.business_top %> </div>
+<div id="showgoldinfo">您的资产 金币：<span class="goldcolor"><%= @current_user.gold%></span>  海盗币：<span class="goldcolor"><%= @current_user.pgold%></span>  今日贸易：<%= @current_user.business_count %>/<%= @current_user.business_top %> </div>
 <%= yield -%>
