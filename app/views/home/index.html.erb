@@ -201,10 +201,13 @@ text-size:15px;
 <div style="clear:both;"></div>
 </div>
 </form>
+<div  id="noticelist">
+<hr />
+
+<span id="piratenews">海盗快讯  <%= link_to "查看更多",:controller => :notice %></span>
 <% if @mynotice %>
-	<div  id="noticelist">
-		<hr />
-		<span id="piratenews">海盗快讯  <%= link_to "查看更多",:controller => :notice %></span>
+
+		
 		<% if @mynotice.length ==0 %>
 			<br><span class="gray">暂无信息</span>
 		<% else %>
@@ -216,8 +219,9 @@ text-size:15px;
 				<% end %>
 			
 		<% end %>
-	</div>
+	
 <% end %>
+</div>
 </div>
 <div id="notify">
 <h4>公告</h4>

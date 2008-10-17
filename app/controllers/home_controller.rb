@@ -2,11 +2,12 @@ class HomeController < ApplicationController
 	require 'pp'
 	def index
 		@user = @current_user
-		@mynotice = Notice.find(:all,
-		                     :conditions => ["( from_xid in (?,?) or to_xid in (?,?) ) and ltype <> 11",@current_user.friend_ids,@current_user.xid.to_s,@current_user.friend_ids,@current_user.xid.to_s],
-							  :order => " updated_at desc ",
-							  :limit => 20
-							 )
+		#@mynotice = Notice.find(:all,
+		 #                    :conditions => ["( from_xid in (?,?) or to_xid in (?,?) ) and ltype <> 11",@current_user.friend_ids,@current_user.xid.to_s,@current_user.friend_ids,@current_user.xid.to_s],
+		#					  :order => " updated_at desc ",
+		#					  :limit => 20
+		#					 )
+		@mynotice = nil
 	end
 	
 	def friend

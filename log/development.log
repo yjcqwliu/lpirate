@@ -9154,3 +9154,211 @@ Rendering home/index
   [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 158) [0m
   [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE ( id = 1 ) [0m
 Completed in 0.34300 (2 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.18600 (54%) | 200 OK [http://61.172.255.117/home/friend/]
+  [4;36;1mSQL (0.031000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.031000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.125000)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20080904163842)
+Migrating to CreateShips (20080907154149)
+Migrating to CreateMessages (20080907154301)
+Migrating to CreateAssignments (20080907154405)
+Migrating to CreateTrees (20080907154605)
+Migrating to CreateUserships (20080907154825)
+Migrating to CreateUserassignments (20080907155019)
+Migrating to AddDockToUser (20080923070239)
+Migrating to AddShipIdToUsership (20080923090236)
+Migrating to AddPriceToShips (20080923122904)
+Migrating to AddSessionKeyToUser (20080924042414)
+Migrating to AddUnfreeUsership (20080924074234)
+Migrating to AddInviteToUser (20080924202437)
+Migrating to CreateNotices (20081002085937)
+Migrating to AddBusinessToUser (20081010085914)
+Migrating to AddIndex (20081011144943)
+Migrating to AddIndexToNotices (20081013054638)
+Migrating to AddIndexUpdatedAtToNotices (20081013163737)
+Migrating to AddCaptainToUser (20081017023125)
+  [4;35;1mSQL (0.422000)[0m   [0mALTER TABLE `users` ADD `captain_master` varchar(255)[0m
+  [4;36;1mSQL (0.234000)[0m   [0;1mALTER TABLE `users` ADD `captain_level` int(11)[0m
+  [4;35;1mSQL (0.203000)[0m   [0mALTER TABLE `users` ADD `captain_exp` int(11)[0m
+  [4;36;1mSQL (0.375000)[0m   [0;1mALTER TABLE `users` ADD `captain_aexp` int(11)[0m
+  [4;35;1mSQL (0.219000)[0m   [0mALTER TABLE `users` ADD `captain_price` int(11)[0m
+  [4;36;1mSQL (0.219000)[0m   [0;1mALTER TABLE `users` ADD `captain_capacity` int(11)[0m
+  [4;35;1mSQL (0.219000)[0m   [0mALTER TABLE `users` ADD `captain_robspeed` int(11)[0m
+  [4;36;1mSQL (0.375000)[0m   [0;1mALTER TABLE `users` ADD `captain_attack` int(11)[0m
+  [4;35;1mSQL (0.234000)[0m   [0mALTER TABLE `users` ADD `captain_lattribute` int(11)[0m
+  [4;36;1mSQL (0.250000)[0m   [0;1mALTER TABLE `users` ADD `captain_usership_id` int(11)[0m
+  [4;35;1mSQL (0.360000)[0m   [0mALTER TABLE `users` ADD `captain_sell_count` int(11)[0m
+  [4;36;1mSQL (0.265000)[0m   [0;1mALTER TABLE `users` ADD `captain_sell_updated_at` int(11)[0m
+  [4;35;1mSQL (0.078000)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20081017023125')[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.140000)[0m   [0mSHOW FIELDS FROM `assignments`[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mdescribe `assignments`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `assignments`[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mSQL (0.015000)[0m   [0mdescribe `messages`[0m
+  [4;36;1mSQL (0.032000)[0m   [0;1mSHOW KEYS FROM `messages`[0m
+  [4;35;1mSQL (0.093000)[0m   [0mSHOW FIELDS FROM `notices`[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mdescribe `notices`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `notices`[0m
+  [4;36;1mSQL (0.109000)[0m   [0;1mSHOW FIELDS FROM `ships`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mdescribe `ships`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW KEYS FROM `ships`[0m
+  [4;35;1mSQL (0.047000)[0m   [0mSHOW FIELDS FROM `trees`[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mdescribe `trees`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `trees`[0m
+  [4;36;1mSQL (0.062000)[0m   [0;1mSHOW FIELDS FROM `userassignments`[0m
+  [4;35;1mSQL (0.016000)[0m   [0mdescribe `userassignments`[0m
+  [4;36;1mSQL (0.093000)[0m   [0;1mSHOW KEYS FROM `userassignments`[0m
+  [4;35;1mSQL (0.016000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.062000)[0m   [0;1mSHOW FIELDS FROM `userships`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mdescribe `userships`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW KEYS FROM `userships`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20080904163842)
+Migrating to CreateShips (20080907154149)
+Migrating to CreateMessages (20080907154301)
+Migrating to CreateAssignments (20080907154405)
+Migrating to CreateTrees (20080907154605)
+Migrating to CreateUserships (20080907154825)
+Migrating to CreateUserassignments (20080907155019)
+Migrating to AddDockToUser (20080923070239)
+Migrating to AddShipIdToUsership (20080923090236)
+Migrating to AddPriceToShips (20080923122904)
+Migrating to AddSessionKeyToUser (20080924042414)
+Migrating to AddUnfreeUsership (20080924074234)
+Migrating to AddInviteToUser (20080924202437)
+Migrating to CreateNotices (20081002085937)
+Migrating to AddBusinessToUser (20081010085914)
+Migrating to AddIndex (20081011144943)
+Migrating to AddIndexToNotices (20081013054638)
+Migrating to AddIndexUpdatedAtToNotices (20081013163737)
+Migrating to AddCaptainToUser (20081017023125)
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mSHOW FIELDS FROM `assignments`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mdescribe `assignments`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW KEYS FROM `assignments`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mdescribe `messages`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `messages`[0m
+  [4;36;1mSQL (0.015000)[0m   [0;1mSHOW FIELDS FROM `notices`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mdescribe `notices`[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mSHOW KEYS FROM `notices`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW FIELDS FROM `ships`[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mdescribe `ships`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `ships`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW FIELDS FROM `trees`[0m
+  [4;35;1mSQL (0.015000)[0m   [0mdescribe `trees`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW KEYS FROM `trees`[0m
+  [4;35;1mSQL (0.016000)[0m   [0mSHOW FIELDS FROM `userassignments`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mdescribe `userassignments`[0m
+  [4;35;1mSQL (0.109000)[0m   [0mSHOW KEYS FROM `userassignments`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.016000)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.016000)[0m   [0mSHOW FIELDS FROM `userships`[0m
+  [4;36;1mSQL (0.015000)[0m   [0;1mdescribe `userships`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `userships`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20080904163842)
+Migrating to CreateShips (20080907154149)
+Migrating to CreateMessages (20080907154301)
+Migrating to CreateAssignments (20080907154405)
+Migrating to CreateTrees (20080907154605)
+Migrating to CreateUserships (20080907154825)
+Migrating to CreateUserassignments (20080907155019)
+Migrating to AddDockToUser (20080923070239)
+Migrating to AddShipIdToUsership (20080923090236)
+Migrating to AddPriceToShips (20080923122904)
+Migrating to AddSessionKeyToUser (20080924042414)
+Migrating to AddUnfreeUsership (20080924074234)
+Migrating to AddInviteToUser (20080924202437)
+Migrating to CreateNotices (20081002085937)
+Migrating to AddBusinessToUser (20081010085914)
+Migrating to AddIndex (20081011144943)
+Migrating to AddIndexToNotices (20081013054638)
+Migrating to AddIndexUpdatedAtToNotices (20081013163737)
+Migrating to AddCaptainToUser (20081017023125)
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW FIELDS FROM `assignments`[0m
+  [4;35;1mSQL (0.015000)[0m   [0mdescribe `assignments`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW KEYS FROM `assignments`[0m
+  [4;35;1mSQL (0.016000)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mdescribe `messages`[0m
+  [4;35;1mSQL (0.016000)[0m   [0mSHOW KEYS FROM `messages`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW FIELDS FROM `notices`[0m
+  [4;35;1mSQL (0.015000)[0m   [0mdescribe `notices`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW KEYS FROM `notices`[0m
+  [4;35;1mSQL (0.016000)[0m   [0mSHOW FIELDS FROM `ships`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mdescribe `ships`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `ships`[0m
+  [4;36;1mSQL (0.015000)[0m   [0;1mSHOW FIELDS FROM `trees`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mdescribe `trees`[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mSHOW KEYS FROM `trees`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW FIELDS FROM `userassignments`[0m
+  [4;36;1mSQL (0.109000)[0m   [0;1mdescribe `userassignments`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `userassignments`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.016000)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.016000)[0m   [0mSHOW FIELDS FROM `userships`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mdescribe `userships`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `userships`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to AddCaptainToUser (20081017023125)
+  [4;35;1mSQL (0.234000)[0m   [0mALTER TABLE `users` DROP `captain_usership_id`[0m
+  [4;36;1mSQL (0.328000)[0m   [0;1mALTER TABLE `users` DROP `captain_lattribute`[0m
+  [4;35;1mSQL (0.219000)[0m   [0mALTER TABLE `users` DROP `captain_attack`[0m
+  [4;36;1mSQL (0.203000)[0m   [0;1mALTER TABLE `users` DROP `captain_robspeed`[0m
+  [4;35;1mSQL (0.203000)[0m   [0mALTER TABLE `users` DROP `captain_capacity`[0m
+  [4;36;1mSQL (0.313000)[0m   [0;1mALTER TABLE `users` DROP `captain_price`[0m
+  [4;35;1mSQL (0.234000)[0m   [0mALTER TABLE `users` DROP `captain_aexp`[0m
+  [4;36;1mSQL (0.297000)[0m   [0;1mALTER TABLE `users` DROP `captain_exp`[0m
+  [4;35;1mSQL (0.453000)[0m   [0mALTER TABLE `users` DROP `captain_level`[0m
+  [4;36;1mSQL (0.406000)[0m   [0;1mALTER TABLE `users` DROP `captain_master`[0m
+  [4;35;1mSQL (0.203000)[0m   [0mALTER TABLE `users` DROP `captain_sell_count`[0m
+  [4;36;1mSQL (0.266000)[0m   [0;1mALTER TABLE `users` DROP `captain_sell_updated_at`[0m
+  [4;35;1mSQL (0.062000)[0m   [0mDELETE FROM schema_migrations WHERE version = '20081017023125'[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.015000)[0m   [0mSHOW FIELDS FROM `assignments`[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mdescribe `assignments`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `assignments`[0m
+  [4;36;1mSQL (0.015000)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mdescribe `messages`[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mSHOW KEYS FROM `messages`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW FIELDS FROM `notices`[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mdescribe `notices`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `notices`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW FIELDS FROM `ships`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mdescribe `ships`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW KEYS FROM `ships`[0m
+  [4;35;1mSQL (0.016000)[0m   [0mSHOW FIELDS FROM `trees`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mdescribe `trees`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `trees`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW FIELDS FROM `userassignments`[0m
+  [4;35;1mSQL (0.109000)[0m   [0mdescribe `userassignments`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW KEYS FROM `userassignments`[0m
+  [4;35;1mSQL (0.016000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.015000)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSHOW FIELDS FROM `userships`[0m
+  [4;35;1mSQL (0.016000)[0m   [0mdescribe `userships`[0m
+  [4;36;1mSQL (0.015000)[0m   [0;1mSHOW KEYS FROM `userships`[0m
