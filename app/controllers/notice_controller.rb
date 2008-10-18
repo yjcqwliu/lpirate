@@ -1,7 +1,15 @@
 class NoticeController < ApplicationController
 	def all
+	    limit_friend_ids = []
+	    User.find(:all,
+				  :conditions => [" session_key is not null and xid in (?)",@current_user.friend_ids],
+				  :limit => 20
+				  ).each do |u|
+		limit_friend_ids << u.xid 
+		end
+		
 		@mynotice = Notice.find(:all,
-								 :conditions => ["( from_xid in (?,?) or to_xid in (?,?) ) and ltype <> 11",@current_user.friend_ids,@current_user.xid.to_s,@current_user.friend_ids,@current_user.xid.to_s],
+								 :conditions => ["( from_xid in (?,?) or to_xid in (?,?) ) and ltype <> 11",limit_friend_ids,@current_user.xid.to_s,limit_friend_ids,@current_user.xid.to_s],
 								  :order => " updated_at desc ",
 								  :limit => 30
 								 )
