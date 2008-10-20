@@ -1,19 +1,19 @@
 class Ml
-def name(attribute)
+def self.name(attribute)
    ml = "<xn:name "
    attribute.each do |key,value| 
       ml += "#{key}=\"#{value}\" "
    end
    ml += "/>"
 end
-def userpic(attribute)
+def self.userpic(attribute)
    ml = "<xn:profile-pic "
    attribute.each do |key,value| 
       ml += "#{key}=\"#{value}\" "
    end
    ml += "/>"
 end
-def image(imgcase)
+def self.image(imgcase)
    ml = "<img src=\""
    case imgcase 
        when "dock"
@@ -23,4 +23,25 @@ def image(imgcase)
    end
    ml += "\" border=\"0\" >"
 end
+
+def self.invite_form(attribute)
+   ml = "<xn:invite-form  "
+   attribute.each do |key,value| 
+      ml += "#{key}=\"#{value}\" "
+   end
+   ml += ">"
+end
+
+def self.multi_friend_selector(attribute)
+   ml = "<xn:multi-friend-selector  "
+   attribute.each do |key,value| 
+      ml += "#{key}=\"#{value}\" "
+   end
+   ml += "/>"
+end
+
+def self.end_invite_form
+   ml = '</xn:invite-form>'
+end
+
 end

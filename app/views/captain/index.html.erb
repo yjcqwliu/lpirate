@@ -1,0 +1,57 @@
+<style type="text/css">
+.friendlist {width:120px;
+float:left;
+}
+.selllink {border:1px solid #3B5888;
+}
+#friendselect {width:480px;
+float:left;
+}
+#next {float:right;
+height:20px;
+width:60px;
+background-color:#2B4878;
+text-align:center;
+}
+#next a{
+color:#FFFFFF;
+}
+h4 {
+text-align:center;height:25px;background:#D8DFEA none repeat scroll 0%;
+border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;font-weight:bold;
+}
+#xnfriendselect{
+width:300px;
+float:right;
+}
+</style>
+<div id="friendselect">
+  <h4>雇佣船长</h4>
+  <span id="next"><%= link_to "雇佣更多",:action => :friendlist %></span>
+  <div style="clear:both"></div>
+<% if @captain_user %>
+  <ul>
+    <% 
+
+n = 0
+@captain_user.each do |f| 
+n += 1 %>
+    <li class="friendlist"><%= render(:partial => "attribute", :object => f )%>
+	<% if f.xid != @current_user.xid %>
+		<%= link_to "解雇",:action=>:disbuy,:id => f.xid %> 
+	<% end %>     
+	</li>
+    <% if n % 4 == 0 %>
+    <hr style="clear:both"/>
+    <% end %>
+    <% end %>
+  </ul>
+  <% else %>
+  你还没有雇佣船长，点击这里<%= link_to "购买更多雇佣船长",:action => :friendlist %>
+  <% end %>
+</div>
+
+<div id="xnfriendselect">
+<h4>属性查看</h4>
+<%= render(:partial => "attribute", :object => @now_user )%>
+</div>

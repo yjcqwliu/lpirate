@@ -1,4 +1,4 @@
-<% ml = Ml.new %>
+
 <style type="text/css">
 .eachfriend{
 float:left;
@@ -14,8 +14,8 @@ text-align:center;
 <% @notapparray_five.each do |no| %>
 
 <div class="eachfriend">
-<%= ml.userpic({"uid" => no}) %><br>
-<%= ml.name({"uid" => no}) %>
+<%= Ml.userpic({"uid" => no}) %><br>
+<%= Ml.name({"uid" => no}) %>
 <input type="hidden" name="ids[]" value="<%= no %>"/>
 </div>
 <%end %>

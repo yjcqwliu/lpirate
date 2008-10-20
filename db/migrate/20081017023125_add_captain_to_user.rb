@@ -11,7 +11,7 @@ class AddCaptainToUser < ActiveRecord::Migration
     add_column :users, :captain_lattribute, :integer
     add_column :users, :captain_usership_id, :integer
 	add_column :users, :captain_sell_count, :integer
-	add_column :users, :captain_sell_updated_at, :datatime
+	add_column :users, :captain_sell_updated_at, :datetime
   end
 
   def self.down

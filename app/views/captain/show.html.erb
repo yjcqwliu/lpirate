@@ -1,0 +1,61 @@
+
+<style type="text/css">
+.friendlist{
+width:120px;
+}
+#friendselect{
+width:480px;
+float:left;
+text-align:center;
+}
+#xnfriendselect{
+width:300px;
+float:right;
+
+}
+#next{
+float:right;
+height:20px;
+width:60px;
+background-color:#2B4878;
+text-align:center;
+}
+#next a{
+color:#FFFFFF;
+}
+h4 {
+text-align:center;height:25px;background:#D8DFEA none repeat scroll 0%;
+border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;font-weight:bold;
+}
+.selllink{
+border:1px solid #3B5888;
+}
+</style>
+<div id="friendselect">
+  <h4>雇佣船长</h4>
+ <span id="next"><%= link_to "换一个",:action => :show,:id => nil %></span>
+ <div>
+ <% if @user %>
+	 <%= render(:partial => "attribute", :object => @user )%>
+	 	  <% if @user.captain_master == @current_user.xid %>
+		  TA已经是你的雇佣船长了<span class="selllink" ><br>
+		  &nbsp;<%= link_to "解雇",:action=>:disbuy,:id => @user.xid %>&nbsp;</span>
+	  <% else %>
+		  雇主：<%= link_to Ml.name({"uid" => @user.captain_master}),:action => :show ,:id => @user.captain_master %><br><br>
+		<span class="selllink" >
+		  &nbsp;<%= link_to " 确认购买 ",:action => :buy,:id => @user.xid %>&nbsp;</span>
+	  <% end %>
+	  &nbsp;&nbsp;&nbsp;<span class="selllink" ><%= link_to "去看看其他船长",:action=>:friendlist %></span>
+<% else %>
+没有找到你要的船长
+<% end %>
+</div>
+</div>
+
+<div id="xnfriendselect">
+<h4>在这里选择你想买的好友</h4>
+<form action="captain/show">
+<%= Ml.multi_friend_selector({"max" => "1"}) %>
+<%= submit_tag "查找",:class => "inputsubmit",:value => "查找" %>
+</form>
+</div>

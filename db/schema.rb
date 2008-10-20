@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081013163737) do
+ActiveRecord::Schema.define(:version => 20081017023125) do
 
   create_table "assignments", :force => true do |t|
     t.string   "title"
@@ -100,6 +100,18 @@ ActiveRecord::Schema.define(:version => 20081013163737) do
     t.datetime "business_update_at"
     t.integer  "business_exp"
     t.datetime "award_updated_at"
+    t.string   "captain_master"
+    t.integer  "captain_level"
+    t.integer  "captain_exp"
+    t.integer  "captain_aexp"
+    t.integer  "captain_price"
+    t.integer  "captain_capacity"
+    t.integer  "captain_robspeed"
+    t.integer  "captain_attack"
+    t.integer  "captain_lattribute"
+    t.integer  "captain_usership_id"
+    t.integer  "captain_sell_count"
+    t.datetime "captain_sell_updated_at"
   end
 
   add_index "users", ["xid"], :name => "xid"

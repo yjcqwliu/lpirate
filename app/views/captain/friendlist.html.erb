@@ -1,0 +1,64 @@
+
+<style type="text/css">
+.friendlist{
+width:120px;
+float:left;
+}
+#friendselect{
+width:480px;
+float:left;
+}
+#xnfriendselect{
+width:300px;
+float:right;
+}
+#next{
+float:right;
+height:20px;
+width:60px;
+background-color:#2B4878;
+text-align:center;
+}
+#next a{
+color:#FFFFFF;
+}
+h4 {
+text-align:center;height:25px;background:#D8DFEA none repeat scroll 0%;
+border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;font-weight:bold;
+}
+.selllink{
+border:1px solid #3B5888;
+}
+</style>
+<div id="friendselect">
+  <h4>雇佣船长</h4>
+  <span id="next"><%= link_to "下一页",:action => :friendlist %></span>
+  <div style="clear:both"></div>
+ <ul>
+<% 
+n = 0
+@friend_list.each do |f| 
+n += 1 %>
+   <li class="friendlist">
+	  <%= link_to Ml.userpic({"uid" => f}) + Ml.name({"uid" => f}),:action => :show ,:id => f %><br>
+	  <%  u = User.login(f) 
+	      if u %>
+			  等级：<%= u.captain_level %><br>
+			  身价：<%= u.captain_price %>
+	  <%  end  %><br>
+	  <span class="selllink" ><%= link_to " 雇佣船长 ",:action=>:buy,:id=>f %></span>
+   </li>
+   <% if n % 4 == 0 %>
+	   <hr style="clear:both"/>
+   <% end %>
+<% end %>
+</ul>
+</div>
+
+<div id="xnfriendselect">
+<h4>在这里选择你想买的好友</h4>
+<form action="captain/friendlist">
+<%= Ml.multi_friend_selector({"max" => "1"}) %>
+<%= submit_tag "查找",:class => "inputsubmit",:value => "查找" %>
+</form>
+</div>
