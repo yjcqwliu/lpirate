@@ -140,6 +140,34 @@ class User < ActiveRecord::Base
 	def mycaptain
 	    @mycaptain = User.find(:all,:conditions => [" captain_master = ? ",xid])
 	end
+	def captain_ship
+		   @captain_ship ||= Usership.find(captain_usership_id) if captain_usership_id != 0
+	end
+	def appoint_ship(current_user,usership_id)
+    	if captain_master != current_user.xid 
+	       notice = "你没有权限给TA分配船只，TA不是你的雇佣船长"
+		else
+		   User.distroy_appoint_ship(current_user,usership_id)
+		   self.captain_usership_id = usership_id
+		   pp("*******self.captain_usership_id#{self.captain_usership_id}***********")
+		   self.save
+		   notice = "分配船长成功"
+		end
+	end
+	def self.distroy_appoint_ship(current_user,usership_id)
+	    if usership_id != 0
+			user = User.find(:all,:conditions => [" captain_usership_id = ? ",usership_id])
+			if user.length >0
+				user = user.first
+				if user.captain_master != current_user.xid 
+				   notice = "你没有权限给TA分配船只，TA不是你的雇佣船长"
+				else
+				   user.captain_usership_id = 0
+				   user.save
+				end
+			end
+		end
+	end
 private
     def up_sell_price
 	    @sell_price = captain_price * 1.21 + 323

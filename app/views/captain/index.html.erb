@@ -2,6 +2,9 @@
 .friendlist {width:120px;
 float:left;
 }
+#shiplist {
+float:left;
+}
 .selllink {border:1px solid #3B5888;
 }
 #friendselect {width:480px;
@@ -24,33 +27,70 @@ border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;fo
 width:300px;
 float:right;
 }
+.ship{
+float:left;
+width:180px;
+text-align:center;
+}
 </style>
 <div id="friendselect">
-  <h4>雇佣船长</h4>
-  <span id="next"><%= link_to "雇佣更多",:action => :friendlist %></span>
-  <div style="clear:both"></div>
-<% if @captain_user %>
-  <ul>
-    <% 
-
-n = 0
-@captain_user.each do |f| 
-n += 1 %>
-    <li class="friendlist"><%= render(:partial => "attribute", :object => f )%>
-	<% if f.xid != @current_user.xid %>
-		<%= link_to "解雇",:action=>:disbuy,:id => f.xid %> 
-	<% end %>     
-	</li>
-    <% if n % 4 == 0 %>
-    <hr style="clear:both"/>
-    <% end %>
-    <% end %>
-  </ul>
-  <% else %>
-  你还没有雇佣船长，点击这里<%= link_to "购买更多雇佣船长",:action => :friendlist %>
-  <% end %>
+	<form action="captain/appoint" method="post">
+		<div >
+		  <h4>雇佣船长</h4>
+		  <span id="next"><%= link_to "雇佣更多",:action => :friendlist %></span>
+		  <div style="clear:both"></div>
+		<% if @captain_user %>
+		  <ul>
+			<% 
+		
+		n = 0
+		@captain_user.each do |f| 
+		n += 1 %>
+			<li class="friendlist">
+			<%= radio_button  "usership","captain", f.id , :checked => "checked" %> 
+			<%= render(:partial => "attribute", :object => f )%>
+            <% if f.captain_ship %>
+			    船只：<img src="<%= f.captain_ship.ship.img_url %>" width="20">
+		    <% else %>
+			    <span class="grey">暂未分配船只</span>
+			<% end %>
+			<br>
+			<% if f.xid != @current_user.xid %>
+				<%= link_to "解雇",:action=>:disbuy,:id => f.xid %> 
+			<% end %>     
+			</li>
+			<% if n % 4 == 0 %>
+			<hr style="clear:both"/>
+			<% end %>
+			<% end %>
+		  </ul>
+		  <% else %>
+		  你还没有雇佣船长，点击这里<%= link_to "购买更多雇佣船长",:action => :friendlist %>
+		  <% end %>
+		  <hr style="clear:both;">
+		</div>
+		<div id="shipselect">
+		<% @current_user.usership.each do |ship|  -%>
+			<div class="ship">
+			
+			<%= usershipimg(ship)%><br>
+			船长：<% if ship.captain %>
+			     <%= Ml.name({"uid" => ship.captain.xid}) %>
+				 <% else %>
+				 <span class="grey">暂无</span>
+				 <% end %><br>
+			<%= radio_button  "usership","id", ship.id , :checked => "checked" %> <%= ship.name %>
+			<% if ship.robof && ship.robof > 0   %>
+			<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :friend ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
+			 <% if ship.robtime %>已经掠夺了<%= conversion(Time.now - ship.robtime,ship.capacity,ship.robspeed).to_i %>个金币<% end %>
+			<% end %>
+			</div>
+		<% end -%>
+		<div style="clear:both;"></div>
+		</div>
+		 <center><%= submit_tag "分配船长" , :name => "dock" ,:value => "分配船长" %></center>
+	</form>
 </div>
-
 <div id="xnfriendselect">
 <h4>属性查看</h4>
 <%= render(:partial => "attribute", :object => @now_user )%>

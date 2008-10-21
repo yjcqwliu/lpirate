@@ -52,4 +52,11 @@ class CaptainController < ApplicationController
 		#@page = params[:page] || 1
 		#@friend = @friend.paginate(:page => @page, :per_page => 30)
     end
+	
+	def appoint
+	    usership = params[:usership] 
+	    captain = User.find(usership[:captain])
+		notice =captain.appoint_ship(@current_user,usership[:id])
+		xn_redirect_to("captain/index",{"notice" => notice})
+	end
 end

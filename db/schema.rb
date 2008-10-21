@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081017023125) do
+ActiveRecord::Schema.define(:version => 20081021013500) do
 
   create_table "assignments", :force => true do |t|
     t.string   "title"
@@ -56,6 +56,13 @@ ActiveRecord::Schema.define(:version => 20081017023125) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "price"
+  end
+
+  create_table "tmpf", :force => true do |t|
+    t.string   "fid"
+    t.string   "tid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "trees", :force => true do |t|
@@ -111,10 +118,8 @@ ActiveRecord::Schema.define(:version => 20081017023125) do
     t.integer  "captain_lattribute"
     t.integer  "captain_usership_id"
     t.integer  "captain_sell_count"
-    t.datetime "captain_sell_updated_at"
   end
 
-  add_index "users", ["xid"], :name => "xid"
   add_index "users", ["xid"], :name => "index_users_on_xid"
   add_index "users", ["updated_at"], :name => "index_users_on_updated_at"
   add_index "users", ["gold"], :name => "index_users_on_gold"
