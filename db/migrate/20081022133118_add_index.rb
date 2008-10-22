@@ -1,4 +1,4 @@
-class CreateAddIndexToCaptains < ActiveRecord::Migration
+class AddIndex < ActiveRecord::Migration
   def self.up
   add_index :users, :captain_master 
   add_index :users, :captain_price 
