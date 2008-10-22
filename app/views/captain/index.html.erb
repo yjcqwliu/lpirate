@@ -53,7 +53,7 @@
 				 <% else %>
 				 <span class="gray">暂无</span>
 				 <% end %><br>
-			<% if ship.robof == '0' or ship.robof == nil %>
+			<% if !ship.robof || ship.robof <= 0   %>
 				<%= radio_button  "usership","id", ship.id , :checked => "checked" %> <%= ship.name %>
 			<% else %>
 				<span class="gray">不在港口，不能分配英雄</span><br>
