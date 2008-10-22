@@ -1,18 +1,3 @@
-<style type="text/css">
-.myshipbody {
-	width: 800px;
-	float:left;
-	padding: 5px;
-}
-#shiplist{
-float:left;
-width:180px;
-text-align:center;
-}
-.gray{
-color: #666666;
-}
-</style>
 <h4>我的船只</h4>
 <div class="myshipbody">
 <%= render(:partial => "usership", :collection => @current_user.usership )%>

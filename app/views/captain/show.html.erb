@@ -1,39 +1,7 @@
 
-<style type="text/css">
-.friendlist{
-width:120px;
-}
-#friendselect{
-width:480px;
-float:left;
-text-align:center;
-}
-#xnfriendselect{
-width:300px;
-float:right;
-
-}
-#next{
-float:right;
-height:20px;
-width:60px;
-background-color:#2B4878;
-text-align:center;
-}
-#next a{
-color:#FFFFFF;
-}
-h4 {
-text-align:center;height:25px;background:#D8DFEA none repeat scroll 0%;
-border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;font-weight:bold;
-}
-.selllink{
-border:1px solid #3B5888;
-}
-</style>
-<div id="friendselect">
+<div id="captain_show_friendselect">
   <h4>雇佣船长</h4>
- <span id="next"><%= link_to "换一个",:action => :show,:id => nil %></span>
+ <span id="linkbutton"><%= link_to "换一个",:action => :show,:id => nil %></span>
  <div>
  <% if @user %>
 	 <%= render(:partial => "attribute", :object => @user )%>

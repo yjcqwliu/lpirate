@@ -1,43 +1,8 @@
-<style type="text/css">
-.friendlist {width:120px;
-float:left;
-}
-#shiplist {
-float:left;
-}
-.selllink {border:1px solid #3B5888;
-}
-#friendselect {width:480px;
-float:left;
-}
-#next {float:right;
-height:20px;
-width:60px;
-background-color:#2B4878;
-text-align:center;
-}
-#next a{
-color:#FFFFFF;
-}
-h4 {
-text-align:center;height:25px;background:#D8DFEA none repeat scroll 0%;
-border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;font-weight:bold;
-}
-#xnfriendselect{
-width:300px;
-float:right;
-}
-.ship{
-float:left;
-width:180px;
-text-align:center;
-}
-</style>
 <div id="friendselect">
 	<form action="captain/appoint" method="post">
 		<div >
-		  <h4>雇佣船长</h4>
-		  <span id="next"><%= link_to "雇佣更多",:action => :friendlist %></span>
+		  <h4>我拥有的雇佣船长</h4>
+		  <span class="linkbutton"><%= link_to "雇佣更多",:action => :friendlist %></span>
 		  <div style="clear:both"></div>
 		<% if @captain_user %>
 		  <ul>
@@ -50,7 +15,7 @@ text-align:center;
 			
 			<%= render(:partial => "attribute", :object => f )%>
 			<% if f.captain_ship && !(f.captain_ship.robof == '0' or f.captain_ship.robof == nil) %>
-				     <span class="grey">(不在港口，不能分配船长)</span>
+				     <span class="gray">(不在港口，不能分配船长)</span>
 				<% else %>
 				     <%= radio_button  "usership","captain", f.id , :checked => "checked" %> 
 				<% end %>
@@ -58,7 +23,7 @@ text-align:center;
             <% if f.captain_ship %>
 			    船只：<img src="<%= f.captain_ship.ship.img_url %>" width="20">
 		    <% else %>
-			    <span class="grey">暂未分配船只</span>
+			    <span class="gray">暂未分配船只</span>
 			<% end %><br>
 			
 			<% if f.xid != @current_user.xid %>
@@ -73,25 +38,25 @@ text-align:center;
 		  <% else %>
 		  你还没有雇佣船长，点击这里<%= link_to "购买更多雇佣船长",:action => :friendlist %>
 		  <% end %>
-		  <hr style="clear:both;">
+		  <% if n % 4 != 0 %><hr style="clear:both;"><% end %>
 		</div>
 		<div id="shipselect">
 		只有空闲的船只才能分配船长
 		<% @current_user.usership.each do |ship|  
 		    
 			%>
-			<div class="ship">
+			<div class="shiplist">
 			
 			<%= usershipimg(ship)%><br>
 			船长：<% if ship.captain %>
 			     <%= Ml.name({"uid" => ship.captain.xid}) %>
 				 <% else %>
-				 <span class="grey">暂无</span>
+				 <span class="gray">暂无</span>
 				 <% end %><br>
 			<% if ship.robof == '0' or ship.robof == nil %>
 				<%= radio_button  "usership","id", ship.id , :checked => "checked" %> <%= ship.name %>
 			<% else %>
-				<span class="grey">不在港口，不能分配英雄</span><br>
+				<span class="gray">不在港口，不能分配英雄</span><br>
 			<% end %>
 			<% if ship.robof && ship.robof > 0   %>
 			<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :friend ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
@@ -109,4 +74,14 @@ text-align:center;
 <div id="xnfriendselect">
 <h4>属性查看</h4>
 <%= render(:partial => "attribute_master", :object => @now_user )%>
+</div>
+<div id="xnfriendselect">
+<h4>帮助</h4>
+雇佣船长：<br>
+  你的任何好友都可以被你雇佣来作为船长，雇佣的船长可以分配到你的船只上，然后用船带着你的船长去抢劫就可以获得经验（每100金币可获得1点经验），然后船长就可以升级<br>
+  同样别人可以雇下你已经雇佣的船长，只有TA有足够的钱，每个人最多每天可以被雇佣三次<br><br>
+属性分配：<br>
+  船长通过抢劫升级后即可获得1点属性点，这一点，雇主有权利加到任意的三个属性上（容量，抢劫速度，攻击）<br>
+  这些属性对船长所在的船有加成作用
+
 </div>

@@ -49,14 +49,14 @@ n += 1 %>
 	  <span class="selllink" ><%= link_to " 雇佣船长 ",:action=>:buy,:id=>f %></span>
    </li>
    <% if n % 4 == 0 %>
-	   <hr style="clear:both"/>
+	 <li><hr style="clear:both"/></li>
    <% end %>
 <% end %>
 </ul>
 </div>
 
 <div id="xnfriendselect">
-<h4>在这里选择你想买的好友</h4>
+<h4>在这里选择你想雇佣的船长</h4>
 <form action="captain/friendlist">
 <%= Ml.multi_friend_selector({"max" => "1"}) %>
 <%= submit_tag "查找",:class => "inputsubmit",:value => "查找" %>

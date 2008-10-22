@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
 				user.captain_capacity = 0 
 				user.captain_robspeed = 0 
 				user.captain_attack = 0 
-				user.captain_lattribute = 0 
+				user.captain_lattribute = 1 
 				user.captain_usership_id = 0 
 				user.captain_sell_count = 0 
 			end
@@ -107,11 +107,13 @@ class User < ActiveRecord::Base
 			       resault = "你已经不能再雇佣更多的船长了，你每多拥有一艘船可以多雇佣一个船长"
 			   else
 			       begin
-					   if captain_master != "0"
+					   if captain_master != xid
 						   master_user = User.login(captain_master)
 						   master_user.gold += captain_price
 						   master_user.save
 					   end
+					   self.captain_usership_id = 0					   
+					   del_att_to_usership
 					   current_user.gold -= captain_price
 					   current_user.save
 					   self.captain_price = up_sell_price
@@ -132,8 +134,9 @@ class User < ActiveRecord::Base
 	    if current_user.xid != captain_master or xid == current_user.xid
 		   notice = "对不起，你不是TA的雇主"
 		else
+		   del_att_to_usership
 	       self.captain_master = xid
-		   self.captain_sell_updated_at = Time.now.utc
+		   self.captain_usership_id = 0
 		   self.save
 		   notice = "解雇成功"
 		end	
@@ -290,9 +293,26 @@ class User < ActiveRecord::Base
 			tmp_usership.save
 		end
 	end
+	def buy_back
+	    if captain_master != xid
+		    if gold >= captain_price
+			    self.gold -= self.captain_price
+			    self.del_att_to_usership
+				self.captain_master = self.xid
+				self.captain_usership_id = 0
+				save
+				notice ="你成功的把自己赎回来了"
+			else
+			    notice = "你没有足够的金币赎身"
+			end
+		else
+		    notice = "你是自己的雇主，无法再赎身"
+		end
+		
+	end
 private
     def up_sell_price
-	    @sell_price = captain_price * 1.21 + 323
+	    @sell_price = captain_price * 1.31 + 323
 	end
 	
 	

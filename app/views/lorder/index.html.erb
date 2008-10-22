@@ -1,40 +1,8 @@
-
-<style type="text/css">
-#myshipspan{
-	color:blue;
-	font-weight: bold;
-}
-.ship{
-float:left;
-width:180px;
-text-align:center;
-}
-
-h4 {
-text-align:center;height:25px;background:#D8DFEA none repeat scroll 0%;
-border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;font-weight:bold;
-}
-.pm{
-font-size:20px;
-color:red;
-}
-.gold{
-font-size:16px;
-color:yellow;
-}
-.pgold{
-font-size:16px;
-color:blue;
-}
-</style>
 <div id = "sub-nav" style = "height:21px; overflow:hidden;" >
 			<ul >
 			<li ><%= link_to "好友金币排行",:controller => :lorder,:action => :index %></li>
 			</ul>
 </div>
-
-
-
 <center>
   <%if @page.to_i > 1 then %>
     <%= link_to "上一页", {:controller => :lorder, :action => controller.action_name, :page => (@page.to_i - 1)}, {:class => "chn"} %>
@@ -60,7 +28,7 @@ color:blue;
 海盗币<strong>:<span class="pgold"><%= user.pgold %></span></strong>
 </div>
 <% user.usership.each do |ship|  -%>
-	<div class="ship">
+	<div class="shiplist">
     
 	<%= usershipimg(ship)%><br>
 	<%= ship.name %>

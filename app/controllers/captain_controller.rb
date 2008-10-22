@@ -77,4 +77,9 @@ class CaptainController < ApplicationController
 	   notice = User.find_by_xid(id).add_attack(@current_user)
 	   xn_redirect_to("captain/index/#{id}",{"notice" => notice})
 	end
+	
+	def buy_back
+	   notice = @current_user.buy_back
+	   xn_redirect_to("captain/index",{"notice" => notice})
+	end
 end
