@@ -59,4 +59,22 @@ class CaptainController < ApplicationController
 		notice =captain.appoint_ship(@current_user,usership[:id])
 		xn_redirect_to("captain/index",{"notice" => notice})
 	end
+	
+	def add_capacity
+	    id = params[:id]
+	    notice = User.find_by_xid(id).add_capacity(@current_user)
+		xn_redirect_to("captain/index/#{id}",{"notice" => notice})
+	end
+	
+	def add_robspeed
+	    id = params[:id]
+	    notice = User.find_by_xid(id).add_robspeed(@current_user)
+		xn_redirect_to("captain/index/#{id}",{"notice" => notice})
+	end
+	
+	def add_attack
+	   id = params[:id]
+	   notice = User.find_by_xid(id).add_attack(@current_user)
+	   xn_redirect_to("captain/index/#{id}",{"notice" => notice})
+	end
 end

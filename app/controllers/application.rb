@@ -138,6 +138,10 @@ class ApplicationController < ActionController::Base
 			
 			notice.ltype = 1
 			notice.save
+			#增加经验
+			if usership.captain
+			    usership.captain.add_exp(@current_user,money)
+			end
 		end
 	    
 	end

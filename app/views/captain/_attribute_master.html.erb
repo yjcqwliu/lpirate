@@ -1,0 +1,27 @@
+ <%= link_to Ml.userpic({"uid" => attribute_master.xid}) + Ml.name({"uid" => attribute_master.xid}),:action => controller.action_name, :id => attribute_master.xid %><br>
+	  
+
+			  等级：<%= attribute_master.captain_level %><br>
+			  身价：<%= attribute_master.captain_price %><br>
+              属性：<br>
+			  <% if attribute_master.captain_master == @current_user.xid %>
+			  <ul>
+			  <li>容　　量:<%= attribute_master.captain_capacity %><% if  attribute_master.captain_lattribute > 0 %><%= link_to Ml.image("add_att"),:action => :add_capacity, :id => attribute_master.xid %><% end %><span class="grey">(每点增加100金币货舱容量)</span></li>
+			  <li>抢劫速度:<%= attribute_master.captain_robspeed %><% if  attribute_master.captain_lattribute > 0 %><%= link_to Ml.image("add_att"),:action => :add_robspeed, :id => attribute_master.xid%><% end %><span class="grey">(每点增加50金币/小时)</span></li>
+			  <li>攻　　击:<%= attribute_master.captain_attack %><% if  attribute_master.captain_lattribute > 0 %><%= link_to Ml.image("add_att"),:action => :add_attack ,:id => attribute_master.xid %><% end %><span class="grey">(每点增加攻击2点)</span></li>
+			  </ul>
+			  <% end %>
+			  可分配属性点：<%= attribute_master.captain_lattribute %><br>
+			  升级经验：<%= attribute_master.captain_exp %>/<%= attribute_master.captain_aexp %><br>
+			  <% if attribute_master.xid = @current_user.xid %>
+			       雇主：
+				   <% if attribute_master.captain_master == attribute_master.xid %>
+				        我自己
+				   <% else %>
+				        <%= link_to Ml.name("uid" => attribute_master.captain_master),:action => :show, :id => attribute_master.captain_master %>
+						<span class="next"><%= link_to "赎身",:action => :buy_back %></span>
+				   <% end %>
+			  <% end %>
+			  <br>
+
+	  

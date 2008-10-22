@@ -47,14 +47,20 @@ text-align:center;
 		@captain_user.each do |f| 
 		n += 1 %>
 			<li class="friendlist">
-			<%= radio_button  "usership","captain", f.id , :checked => "checked" %> 
+			
 			<%= render(:partial => "attribute", :object => f )%>
+			<% if f.captain_ship && !(f.captain_ship.robof == '0' or f.captain_ship.robof == nil) %>
+				     <span class="grey">(不在港口，不能分配船长)</span>
+				<% else %>
+				     <%= radio_button  "usership","captain", f.id , :checked => "checked" %> 
+				<% end %>
+			<br>
             <% if f.captain_ship %>
 			    船只：<img src="<%= f.captain_ship.ship.img_url %>" width="20">
 		    <% else %>
 			    <span class="grey">暂未分配船只</span>
-			<% end %>
-			<br>
+			<% end %><br>
+			
 			<% if f.xid != @current_user.xid %>
 				<%= link_to "解雇",:action=>:disbuy,:id => f.xid %> 
 			<% end %>     
@@ -70,7 +76,10 @@ text-align:center;
 		  <hr style="clear:both;">
 		</div>
 		<div id="shipselect">
-		<% @current_user.usership.each do |ship|  -%>
+		只有空闲的船只才能分配船长
+		<% @current_user.usership.each do |ship|  
+		    
+			%>
 			<div class="ship">
 			
 			<%= usershipimg(ship)%><br>
@@ -79,19 +88,25 @@ text-align:center;
 				 <% else %>
 				 <span class="grey">暂无</span>
 				 <% end %><br>
-			<%= radio_button  "usership","id", ship.id , :checked => "checked" %> <%= ship.name %>
+			<% if ship.robof == '0' or ship.robof == nil %>
+				<%= radio_button  "usership","id", ship.id , :checked => "checked" %> <%= ship.name %>
+			<% else %>
+				<span class="grey">不在港口，不能分配英雄</span><br>
+			<% end %>
 			<% if ship.robof && ship.robof > 0   %>
 			<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :friend ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
 			 <% if ship.robtime %>已经掠夺了<%= conversion(Time.now - ship.robtime,ship.capacity,ship.robspeed).to_i %>个金币<% end %>
 			<% end %>
 			</div>
-		<% end -%>
-		<div style="clear:both;"></div>
+		
+		<%
+		 end -%>
+		<hr style="clear:both;">
 		</div>
 		 <center><%= submit_tag "分配船长" , :name => "dock" ,:value => "分配船长" %></center>
 	</form>
 </div>
 <div id="xnfriendselect">
 <h4>属性查看</h4>
-<%= render(:partial => "attribute", :object => @now_user )%>
+<%= render(:partial => "attribute_master", :object => @now_user )%>
 </div>

@@ -53,7 +53,7 @@ color:blue;
 <% @user.each do |user| %>
 <% pmcount += 1 %>
 <div id="shiplist">
-<div style="float:left">
+<div>
 &nbsp;<span class="pm"><%= ( @page.to_i - 1) * @user.per_page + pmcount %></span>&nbsp;<%= link_to Ml.userpic({"uid" => user.xid}),:controller => :home,:action => :friend,:id => user.xid %>
 <%= link_to Ml.name({"uid" => user.xid}),:controller => :home,:action => :friend,:id => user.xid %>&nbsp;
 金币<strong>:<span class="gold"><%= user.gold %></span></strong>&nbsp;

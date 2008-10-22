@@ -20,6 +20,8 @@ def self.image(imgcase)
 	      ml += "http://fmn015.xnimg.cn/fmn015/pic001/20080924/00/50/large_4Zd9_5658n200066.jpg"
 	   when "small_skull"
 	      ml += "http://fmn001.xnimg.cn/fmn001/pic001/20080924/16/55/large_7Bq8_3172b198177.jpg"
+	   when "add_att"
+	      ml += "http://fmn020.xnimg.cn/fmn020/groupalbum/20081022/16/18/L351360320024OXC.jpg"
    end
    ml += "\" border=\"0\" >"
 end

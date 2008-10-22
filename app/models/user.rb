@@ -94,12 +94,12 @@ class User < ActiveRecord::Base
 	end
     
 	def captain_buy(current_user)
-	   captain_sell_count = 0 if captain_sell_updated_at.nil? || (Time.now.utc + 8.hour).to_i / 86400 > (captain_sell_updated_at + 8.hour).to_i / 86400
-	   if captain_sell_count == 3 
-	       resault = "今天雇佣次数已满，每个船长每天最多只能被雇佣三次"
+	   self.captain_sell_count = 0 if captain_sell_updated_at.nil? || (Time.now.utc + 8.hour).to_i / 86400 > (captain_sell_updated_at + 8.hour).to_i / 86400
+	   save
+	   if self.captain_sell_count.to_i >= 3 
+	       resault = "TA今天雇佣次数已满，每个船长每天最多只能被雇佣三次，明天再来TA吧"
 	   else
-	       
-		   if current_user.gold < captain_price 
+	       if current_user.gold < captain_price 
 			   resault = "你的金币不够"
 		   else
 		       
@@ -117,6 +117,7 @@ class User < ActiveRecord::Base
 					   self.captain_price = up_sell_price
 					   self.captain_master = current_user.xid
 					   self.captain_sell_updated_at = Time.now.utc
+					   self.captain_sell_count += 1
 					   save
 			       end
 			       resault = "雇佣成功"
@@ -141,16 +142,36 @@ class User < ActiveRecord::Base
 	    @mycaptain = User.find(:all,:conditions => [" captain_master = ? ",xid])
 	end
 	def captain_ship
-		   @captain_ship ||= Usership.find(captain_usership_id) if captain_usership_id != 0
+		   if @captain_ship 
+		       @captain_ship
+		   else
+		       if captain_usership_id != 0
+				   cap_sh_tmp = Usership.find(:all,:conditions => [" id = ?",captain_usership_id])
+				   if cap_sh_tmp.length == 1
+				       cap_sh_tmp.first
+				   else
+				       self.captain_usership_id = 0
+				       self.save
+					   nil
+				   end
+			   else
+			       nil
+			   end 
+		   end
 	end
 	def appoint_ship(current_user,usership_id)
     	if captain_master != current_user.xid 
 	       notice = "你没有权限给TA分配船只，TA不是你的雇佣船长"
 		else
-		   User.distroy_appoint_ship(current_user,usership_id)
-		   self.captain_usership_id = usership_id
-		   pp("*******self.captain_usership_id#{self.captain_usership_id}***********")
-		   self.save
+		   #pp("*******self.captain_usership_id#{captain_usership_id}*******usership_id:#{usership_id}****")
+		   if captain_usership_id.to_i != usership_id.to_i
+			   
+			   User.distroy_appoint_ship(current_user,usership_id)
+			   self.captain_usership_id = usership_id
+			   #pp("*******self.captain_usership_id#{self.captain_usership_id}***********")
+			   save
+			   add_att_to_usership
+		   end
 		   notice = "分配船长成功"
 		end
 	end
@@ -162,15 +183,117 @@ class User < ActiveRecord::Base
 				if user.captain_master != current_user.xid 
 				   notice = "你没有权限给TA分配船只，TA不是你的雇佣船长"
 				else
+				   pp("------user:#{user.inspect}---------")
+				   user.del_att_to_usership
 				   user.captain_usership_id = 0
 				   user.save
 				end
 			end
 		end
 	end
+	
+	def add_exp(current_user,lgold)
+	    lexp = lgold / 100
+	    if captain_master != current_user.xid 
+		    notice = "你不是TA的船长，经验无法获得"
+		else
+		    self.captain_exp += lexp
+			while self.captain_exp >= self.captain_aexp 
+			    self.captain_exp -= self.captain_aexp
+				self.captain_lattribute += 1 
+				self.captain_level += 1
+				self.captain_aexp = (1.5 **(self.captain_level-1)) * 10 
+			end 
+			save
+		end
+		notice
+	end
+	def self.find_by_xid(t_xid)
+	    t_u = User.find(:all,:conditions => [" xid = ?",t_xid.to_s])
+		if t_u.length == 1
+		   t_u.first
+		else
+		   nil
+		end
+	end
+	
+	def add_capacity(current_user)
+	    if captain_master != current_user.xid 
+		    notice = "你不是TA的船长，无法给TA分配属性"
+		else
+	        if captain_lattribute > 0
+			    del_att_to_usership
+			    self.captain_lattribute -= 1
+			    self.captain_capacity += 1
+				save
+				
+				add_att_to_usership
+				notice = "成功分配了一点属性到“货舱容量”上"
+			else
+			    notice = "你没有足够的剩余属性点"
+			end
+		end
+		notice
+	end
+	
+	def add_robspeed(current_user)
+	    if captain_master != current_user.xid 
+		    notice = "你不是TA的船长，无法给TA分配属性"
+		else
+	        if captain_lattribute > 0
+			    del_att_to_usership
+			    self.captain_lattribute -= 1
+			    self.captain_robspeed += 1
+				save
+				add_att_to_usership				
+				notice = "成功分配了一点属性到“抢劫速度”上"
+			else
+			    notice = "你没有足够的剩余属性点"
+			end
+		end
+		notice
+	end
+	
+	def add_attack(current_user)
+	   if captain_master != current_user.xid 
+		    notice = "你不是TA的船长，无法给TA分配属性"
+		else
+	        if captain_lattribute > 0
+			    del_att_to_usership
+			    self.captain_lattribute -= 1
+			    self.captain_attack += 1
+				save				
+				add_att_to_usership
+				notice = "成功分配了一点属性到“攻击”上"
+			else
+			    notice = "你没有足够的剩余属性点"
+			end
+		end
+		notice
+	end
+	def add_att_to_usership
+	    if captain_usership_id != 0
+			tmp_usership = Usership.find(captain_usership_id)
+			tmp_usership.capacity = tmp_usership.capacity + ( captain_capacity * 100 )
+			tmp_usership.robspeed = tmp_usership.robspeed + ( captain_robspeed * 50 )
+			tmp_usership.attack = tmp_usership.attack + ( captain_attack * 2 )
+			tmp_usership.save
+			pp("---------------tmp_usership.capacity:#{tmp_usership.capacity}---------------")
+		end 
+	end
+	def del_att_to_usership
+	    if captain_usership_id != 0
+			tmp_usership = Usership.find(captain_usership_id)
+			tmp_usership.capacity = tmp_usership.capacity - ( captain_capacity * 100 )
+			tmp_usership.robspeed = tmp_usership.robspeed - ( captain_robspeed * 50 )
+			tmp_usership.attack = tmp_usership.attack - ( captain_attack * 2 )
+			tmp_usership.save
+		end
+	end
 private
     def up_sell_price
 	    @sell_price = captain_price * 1.21 + 323
 	end
+	
 	
 end

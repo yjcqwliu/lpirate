@@ -1,0 +1,11 @@
+<div id="shiplist">
+<%= usershipimg(usership)%><br>
+<%= usership.name %><br>
+货仓容量：<%=h usership.capacity %>金币	<br>
+满载时间：<%=h "%.2f" % fulltime(usership.capacity,usership.robspeed) %>小时<br>
+<% if usership.robof && usership.robof > 0   %>
+	<span class="gray">(正在<%= link_to "<xn:name uid=\"#{usership.robof}\" />", :controller => :home , :action => :index ,:id => usership.robof %>的岛上烧杀抢掠)</span><br>
+     <% if usership.robtime %>已经掠夺了<%= conversion(Time.now - usership.robtime,usership.capacity,usership.robspeed).to_i %>个金币</br><% end %>
+<% end %>
+<%= link_to "卖掉" , :controller => "shop", :action => "sell" , :id => usership.id %>
+</div>
