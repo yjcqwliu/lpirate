@@ -18,6 +18,7 @@ require "pp"
 serialize :sids
 belongs_to :user
 
+
 def ship
 	@ship ||= Ship.find(:all, :conditions => [" id = ? ", self.ship_id]).first
 end

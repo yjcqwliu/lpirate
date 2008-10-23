@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081021013500) do
+ActiveRecord::Schema.define(:version => 20081023012635) do
 
   create_table "assignments", :force => true do |t|
     t.string   "title"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(:version => 20081021013500) do
   add_index "notices", ["from_xid"], :name => "index_notices_on_from_xid"
   add_index "notices", ["to_xid"], :name => "index_notices_on_to_xid"
   add_index "notices", ["updated_at"], :name => "index_notices_on_updated_at"
+  add_index "notices", ["ltype"], :name => "ltype"
+  add_index "notices", ["from_xid", "to_xid", "ltype"], :name => "index_notices_on_from_xid_and_to_xid_and_ltype"
 
   create_table "ships", :force => true do |t|
     t.string   "name"
@@ -123,6 +125,11 @@ ActiveRecord::Schema.define(:version => 20081021013500) do
   add_index "users", ["xid"], :name => "index_users_on_xid"
   add_index "users", ["updated_at"], :name => "index_users_on_updated_at"
   add_index "users", ["gold"], :name => "index_users_on_gold"
+  add_index "users", ["captain_master"], :name => "index_users_on_captain_master"
+  add_index "users", ["captain_price"], :name => "index_users_on_captain_price"
+  add_index "users", ["captain_level"], :name => "index_users_on_captain_level"
+  add_index "users", ["captain_usership_id"], :name => "index_users_on_captain_usership_id"
+  add_index "users", ["captain_sell_count"], :name => "index_users_on_captain_sell_count"
 
   create_table "userships", :force => true do |t|
     t.string   "name"

@@ -16,11 +16,9 @@
 class User < ActiveRecord::Base
     serialize :friend_ids
 	serialize :invite
-	
-    has_many :usership
-	has_many :notice
-	
-	
+    
+	has_many :usership,:order => 'updated_at desc ' 
+	has_many :notice,:order => 'created_at desc '
 	
     def self.login(u_id,invite = 0)
 			if u_id 

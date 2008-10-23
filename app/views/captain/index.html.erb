@@ -31,7 +31,7 @@
 			<% end %>     
 			</li>
 			<% if n % 4 == 0 %>
-			<hr style="clear:both"/>
+			<li><hr style="clear:both"/></li>
 			<% end %>
 			<% end %>
 		  </ul>
@@ -41,7 +41,7 @@
 		  <% if n % 4 != 0 %><hr style="clear:both;"><% end %>
 		</div>
 		<div id="shipselect">
-		只有空闲的船只才能分配船长
+		<h4>只有空闲的船只才能分配船长</h4>
 		<% @current_user.usership.each do |ship|  
 		    
 			%>
@@ -56,7 +56,7 @@
 			<% if !ship.robof || ship.robof <= 0   %>
 				<%= radio_button  "usership","id", ship.id , :checked => "checked" %> <%= ship.name %>
 			<% else %>
-				<span class="gray">不在港口，不能分配英雄</span><br>
+				<span class="gray">不在港口，不能分配船长</span><br>
 			<% end %>
 			<% if ship.robof && ship.robof > 0   %>
 			<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :friend ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>

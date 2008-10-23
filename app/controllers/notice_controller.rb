@@ -1,16 +1,19 @@
 class NoticeController < ApplicationController
 	def all
 	    limit_friend_ids = []
-	    User.find(:all,
-				  :conditions => [" session_key is not null and xid in (?)",@current_user.friend_ids],
-				  :limit => 20,
+	    u=User.find(:all,
+				  :conditions => [" session_key is not null and xid in (?) ",@current_user.friend_ids],
+				  :limit => 3,
 				  :order => " updated_at desc "
-				  ).each do |u|
+				  )
+		pp("-----------u:#{u.length}-------------")
+	    u.each do |u|
 		limit_friend_ids << u.xid 
 		end
-		
-		@mynotice = Notice.find(:all,
-								 :conditions => ["( from_xid in (?,?) or to_xid in (?,?) ) and ltype >1 and ltype<10",limit_friend_ids,@current_user.xid.to_s,limit_friend_ids,@current_user.xid.to_s],
+	
+	#@current_user.friend_ids,
+	   @mynotice = Notice.find(:all,
+								 :conditions => ["( from_xid in (?,?) or to_xid in (?,?) ) and ltype<>11",limit_friend_ids,@current_user.xid.to_s,limit_friend_ids,@current_user.xid.to_s],
 								  :order => " updated_at desc ",
 								  :limit => 30
 								 )
@@ -30,7 +33,7 @@ class NoticeController < ApplicationController
 	
 	def business
 		@mynotice = Notice.find(:all,
-								 :conditions => ["( from_xid in (?,?) or to_xid in (?,?) )",@current_user.xid.to_s,@current_user.xid.to_s],
+								 :conditions => ["( from_xid = ? or to_xid = ? ) and ltype =11",@current_user.xid.to_s,@current_user.xid.to_s],
 								  :order => " updated_at desc ",
 								  :limit => 30
 								 )
@@ -51,7 +54,7 @@ class NoticeController < ApplicationController
         limit_friend_ids = []
 	    User.find(:all,
 				  :conditions => [" session_key is not null and xid in (?)",@current_user.friend_ids],
-				  :limit => 20,
+				  :limit => 3,
 				  :order => " updated_at desc "
 				  ).each do |u|
 		limit_friend_ids << u.xid 
@@ -59,8 +62,8 @@ class NoticeController < ApplicationController
 	
 	#@current_user.friend_ids,
 	   @mynotice = Notice.find(:all,
-								 :conditions => ["( from_xid in (?,?) or to_xid in (?,?) ) and ltype=11",limit_friend_ids,@current_user.xid.to_s,limit_friend_ids,@current_user.xid.to_s],
-								  :order => " updated_at desc ",
+								 #:conditions => ["( from_xid in (?,?) or to_xid in (?,?) ) and ltype=11",limit_friend_ids,@current_user.xid.to_s,limit_friend_ids,@current_user.xid.to_s],
+								 # :order => " updated_at desc ",
 								  :limit => 30
 								 )
 		

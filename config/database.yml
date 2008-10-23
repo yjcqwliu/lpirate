@@ -19,7 +19,7 @@ test:
 
 production:
   adapter: mysql
-  database: lpirate
+  database: lpirate_production
   host: localhost
   username: root
   password:

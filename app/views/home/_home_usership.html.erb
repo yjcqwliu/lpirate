@@ -5,7 +5,7 @@
 货仓容量：<%=h home_usership.capacity %>金币	<br>
 满载时间：<%=h "%.2f" % fulltime(home_usership.capacity,home_usership.robspeed) %>小时<br>
 <% if home_usership.robof && home_usership.robof > 0   %>
-	<span class="gray">(正在<%= link_to "<xn:name uid=\"#{home_usership.robof}\" />", :controller => :home , :action => :index ,:id => home_usership.robof %>的岛上烧杀抢掠)</span><br>
+	<span class="gray">(正在<%= link_to "<xn:name uid=\"#{home_usership.robof}\" />", :controller => :home , :action => :friend ,:id => home_usership.robof %>的岛上烧杀抢掠)</span><br>
      <% if home_usership.robtime %>已经掠夺了<%= conversion(Time.now - home_usership.robtime,home_usership.capacity,home_usership.robspeed).to_i %>个金币</br><span class="selllink"><%= link_to "返航",:action => :back_home,:id => home_usership.id %></span><% end %>
 <% end %>
 </div>
