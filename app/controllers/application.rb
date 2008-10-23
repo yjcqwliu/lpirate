@@ -142,6 +142,7 @@ class ApplicationController < ActionController::Base
 			if usership.captain
 			    usership.captain.add_exp(@current_user,money)
 			end
+			money
 		end
 	    
 	end
