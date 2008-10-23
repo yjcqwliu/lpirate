@@ -143,7 +143,7 @@ class HomeController < ApplicationController
 	def back_home
 	    u_ship = Usership.find(params[:id])
 		if u_ship.user_id == @current_user.id
-			l_gold = balance(u_ship)
+			l_gold = rob_balance(u_ship)
 		end
 		xn_redirect_to("home/index",{"notice" => "成功返航，抢劫了#{l_gold}金币"})
 	end
