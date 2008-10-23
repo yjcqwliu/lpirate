@@ -14,7 +14,7 @@
 			<li class="friendlist">
 			
 			<%= render(:partial => "attribute", :object => f )%>
-			<% if f.captain_ship && !(f.captain_ship.robof == '0' or f.captain_ship.robof == nil) %>
+			<% if f.captain_ship && f.captain_ship.robof && f.captain_ship.robof > 0 %>
 				     <span class="gray">(不在港口，不能分配船长)</span>
 				<% else %>
 				     <%= radio_button  "usership","captain", f.id , :checked => "checked" %> 
