@@ -1,8 +1,23 @@
 class HomeController < ApplicationController
-	require 'pp'
 	def index
 		@user = @current_user
-		@mynotice = nil
+		limit_friend_ids = []
+	    u=User.find(:all,
+				  :conditions => [" session_key is not null and xid in (?) ",@current_user.friend_ids],
+				  :limit => 2,
+				  :order => " updated_at desc "
+				  )
+	    u.each do |u|
+		limit_friend_ids << u.xid 
+		end
+	
+	#@current_user.friend_ids,
+	   @mynotice = Notice.find(:all,
+								 :conditions => ["ltype<>11 and ( from_xid in (?,?) or to_xid in (?,?) )  ",limit_friend_ids,@current_user.xid.to_s,limit_friend_ids,@current_user.xid.to_s],
+								  :order => " updated_at desc ",
+								  :limit => 20
+								 )
+		
 	end
 	
 	def friend

@@ -18,7 +18,6 @@ class User < ActiveRecord::Base
 	serialize :invite
     
 	has_many :usership,:order => 'updated_at desc ' 
-	has_many :notice,:order => 'created_at desc '
 	
     def self.login(u_id,invite = 0)
 			if u_id 
@@ -45,7 +44,7 @@ class User < ActiveRecord::Base
 			###############贸易相关数据初始化#################
 			user.business_update_at = Time.now.utc if user.business_update_at.nil?
 			user.business_top = 20 if user.business_top.nil?
-			user.business_count = 0 if (user.business_count.nil? and user.business_update_at.nil?) || (Time.now.utc + 8.hour).to_i / 86400 > (user.business_update_at + 8.hour).to_i / 86400
+			user.business_count = 0 if user.business_count.nil? || (Time.now.utc + 8.hour).to_i / 86400 > (user.business_update_at + 8.hour).to_i / 86400
 			##############船长买卖相关数据初始化##############
 			if user.captain_level.nil?
 				user.captain_level =1 
