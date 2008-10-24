@@ -165,8 +165,8 @@ class User < ActiveRecord::Base
 		else
 		   #pp("*******self.captain_usership_id#{captain_usership_id}*******usership_id:#{usership_id}****")
 		   if captain_usership_id.to_i != usership_id.to_i
-			   
-			   User.distroy_appoint_ship(current_user,usership_id)
+			   #pp("*******current_user#{current_user.inspect}*******usership_id:#{captain_usership_id}****")
+			   User.distroy_appoint_ship(current_user,captain_usership_id)
 			   self.captain_usership_id = usership_id
 			   #pp("*******self.captain_usership_id#{self.captain_usership_id}***********")
 			   save
@@ -178,12 +178,13 @@ class User < ActiveRecord::Base
 	def self.distroy_appoint_ship(current_user,usership_id)
 	    if usership_id != 0
 			user = User.find(:all,:conditions => [" captain_usership_id = ? ",usership_id])
+			#pp("------user:#{user.inspect}---------")
 			if user.length >0
 				user = user.first
 				if user.captain_master != current_user.xid 
 				   notice = "你没有权限给TA分配船只，TA不是你的雇佣船长"
 				else
-				   pp("------user:#{user.inspect}---------")
+				   #pp("------user:#{user.inspect}---------")
 				   user.del_att_to_usership
 				   user.captain_usership_id = 0
 				   user.save
