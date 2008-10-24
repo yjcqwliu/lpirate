@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
 	serialize :invite
     
 	has_many :usership,:order => 'updated_at desc ' 
+	has_many :notice
 	
     def self.login(u_id,invite = 0)
 			if u_id 

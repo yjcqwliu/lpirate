@@ -75,12 +75,16 @@ def robtime
 end 
 
 def captain
-	    cap = User.find(:all,:conditions => [" captain_usership_id = ?",id])
-		if cap.length == 1
-		    cap.first
-		else
-		    nil
-		end
+        if !@t_captain
+			@t_captain = User.find(:all,:conditions => [" captain_usership_id = ?",id])
+			if @t_captain.length > 0
+				@t_captain = @t_captain.first
+			else
+				@t_captain = nil
+			end
+		else 
+		    @t_captain
+	    end
 end
 #@robrock = @user.r
 end
