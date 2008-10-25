@@ -1,7 +1,6 @@
 current_time = Time.now
 puts "start"
-puts Notice.find(:all, :conditions => ["  sented is null or noticed is null " ],:order => " updated_at desc ").length
-Notice.find(:all, :conditions => [" sented is null or noticed is null " ],:order => " updated_at desc ").each do |notice|
+Notice.find(:all, :conditions => [" sented is null  " ],:order => " updated_at desc ", :limit => 5000).each do |notice|
   begin
    # notifications = ["<xn:name uid='#{friend.user.xid}'/>在美容达人PK赛向你发出了站题，<a href='http://apps.xiaonei.com/beautypk/challenge/myreceive'>回答这些问题就可以和TA一决胜负了</]
    
