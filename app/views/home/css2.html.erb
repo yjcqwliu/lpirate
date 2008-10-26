@@ -25,8 +25,19 @@
 #sub-nav .pagerpro-title {
 	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 5px; PADDING-TOP: 0px;
 }
+#notice-1{
+BORDER-RIGHT: #693310 7px solid; BORDER-TOP: #693310 7px solid; MARGIN: 0px 0px 10px; BORDER-LEFT: #693310 7px solid; LINE-HEIGHT: 20px; BORDER-BOTTOM: #693310 7px solid;width:700px;
+}
+#notice-2{
+BORDER-RIGHT: #3b5888 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #3b5888 1px solid; PADDING-LEFT: 10px;  PADDING-BOTTOM: 10px; BORDER-LEFT: #3b5888 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #3b5888 1px solid; POSITION: relative;text-align:center;
+}
+
 #showgoldinfo{
-text-align:right;
+color:#ffffff;
+text-align:center;
+background-image:url(<%= Ml.image("weblpirate_12",false) %>);
+background-repeat: no-repeat;
+height:25px;
 }
 .goldcolor{
 color:red;
@@ -41,14 +52,14 @@ width:150px;
 text-align:center;
 }
 .myshipbody {
-	width: 800px;
+	width: 700px;
 	float:left;
 	padding: 5px;
 }
 
 #mybody {
-	width: 620px;
-	float:left;
+	width: 530px;
+	float:right;
 	padding: 5px;
 }
 #docklist{
@@ -57,7 +68,7 @@ text-align:center;
 }
 .dock {
 	float: left;
-	width:150px;
+	width:120px;
 	text-align:center;
 }
 
@@ -83,7 +94,7 @@ width:500px;
 }
 .shiplist{
 float:left;
-width:180px;
+width:130px;
 text-align:center;
 }
 
@@ -96,13 +107,21 @@ float:right;
 }
 #notify
 {
-float:right;
-width:160px;
+float:left;
+width:148px;
 height:100px;
+}
+#notify-title{
+vertical-align:middle;
+background-image:url(<%= Ml.image("weblpirate_16",false)%>);
+width:148px;
+height:29px;
+text-align:center;
+color:#FFFFFF;
+font-size:14px;font-weight:bold;line-height:25px;font-weight:bold;
 }
 #business_dock
 {
-border:2px solid #225599;
 float: left;
 width:150px;
 text-align:center;
@@ -111,22 +130,30 @@ text-align:center;
 float:right;
 text-size:15px;
 }
+
+#friendselect{
+width:480px;
+float:right;
+}
+#buy_friendselect{
+width:360px;
+float:right;
+}
+#xnfriendselect{
+width:300px;
+float:left;
+}
+
+h4 {
+text-align:center;height:25px;background:#693310 none repeat scroll 0%;
+border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;font-weight:bold;
+color:#FFFFFF;
+}
 .friendlist{
 width:120px;
 float:left;
 }
-#friendselect{
-width:480px;
-float:left;
-}
-#xnfriendselect{
-width:300px;
-float:right;
-}
-h4 {
-text-align:center;height:25px;background:#D8DFEA none repeat scroll 0%;
-border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;font-weight:bold;
-}
+
 .pm{
 font-size:20px;
 color:red;
@@ -155,20 +182,18 @@ float:right;
 	color:green;
 	font-weight: bold;
 }
-#xnfriendselect{
-width:300px;
-float:right;
-}
 #shiplist {
 float:left;
 }
 .selllink {border:1px solid #3B5888;
 }
 #friendlist {
-width:160px;
+width:148px;
 height:300px;
 overflow:auto;
-float:right;
+float:left;
+padding:0px 3px 0px 3px;
+background-image:url(<%= Ml.image("weblpirate_19",false)%>)
 }
 .linkbutton {
 	height:20px;
@@ -181,7 +206,25 @@ float:right;
 color:#FFFFFF;
 }
 #captain_show_friendselect{
-width:480px;
-float:left;
+width:360px;
+float:right;
 text-align:center;
+}
+#yield_content
+{
+	padding-right: 55px;
+	padding-left: 45px;
+	
+}
+#yield_content_div{
+width:700px;
+overflow:hidden;
+}
+.right-back{
+padding:0px 3px 0px 3px;
+background-image:url(<%= Ml.image("weblpirate_19",false)%>);
+}
+#captain_right{
+width:200px;
+float:left;
 }

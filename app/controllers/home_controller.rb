@@ -147,6 +147,9 @@ class HomeController < ApplicationController
 		end
 		xn_redirect_to("home/index",{"notice" => "成功返航，抢劫了#{l_gold}金币"})
 	end
+	def css2
+	    render :layout => false
+	end
 private	
 	def isrobself
 		if @user.xid == @current_user.xid 
@@ -157,4 +160,5 @@ private
 				# xn_redirect_to("home/friend",{:notice => "不能抢劫自己"})
 	
 	end
+	
 end

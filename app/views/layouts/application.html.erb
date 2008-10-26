@@ -1,5 +1,66 @@
-<link href="http://58.215.65.224/stylesheets/lpirate.css" />
-<div id = "sub-nav" style = "height:21px; overflow:hidden;" >
+<link href="http://58.215.65.224/home/css2" />
+<table id="Table_01" width="800" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="8">
+			<%= Ml.image("weblpirate_01") %></td>
+	</tr>
+	<tr>
+		<td  rowspan="2">
+			<%= Ml.image("weblpirate_02") %></td>
+		<td>
+			<%= link_to Ml.image("weblpirate_03"),:controller => :home ,:action => :index %></td>
+		<td>
+			<%= link_to  Ml.image("weblpirate_04"),:controller => :home ,:action => :friend,:id => nil %></td>
+		<td>
+			<%= link_to  Ml.image("weblpirate_05"),:controller => :home ,:action => :myship %></td>
+		<td>
+			<%= link_to  Ml.image("weblpirate_06"),:controller => :shop ,:action => :index %></td>
+		<td>
+			<%= link_to  Ml.image("weblpirate_07"),:controller => :captain ,:action => :index %></td>
+		<td>
+			<%= link_to  Ml.image("weblpirate_08"),:controller => :lorder ,:action => :index %></td>
+		<td  rowspan="2"><%= Ml.image("weblpirate_09") %></td>
+	</tr>
+	<tr>
+		<td colspan="6">
+			<%= Ml.image("weblpirate_10") %></td>
+	</tr>
+</table>
+<table background="<%= Ml.image("weblpirate_23",false) %>" width="800" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><%= Ml.image("weblpirate_11") %></td>
+<td width="590" valign="top"><div id="showgoldinfo">&nbsp;&nbsp;&nbsp;&nbsp;您的资产 金币：<span class="goldcolor"><%= @current_user.gold%></span>  海盗币：<span class="goldcolor"><%= @current_user.pgold%></span>  今日贸易：<%= @current_user.business_count %>/<%= @current_user.business_top %> </div>
+<div><%= link_to Ml.image("buttoninvite"),:controller => :home, :action => :invite %>&nbsp;<a href="http://group.xiaonei.com/GetThreadList.do?id=254748934&curpage=0&label=0" target="_blank"><%= Ml.image("buttonbbs") %></a>&nbsp;<%= link_to Ml.image("buttonhelp"),:controller => :home, :action => :help %></div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<% #帮助系统开始
+   gamehelp = Gamehelp.new 
+   gamehelp.controller = controller
+   helpid = params[:help] || 0
+%>
+<%= gamehelp.help(helpid) %>
+<% #帮助系统结束 %>
+<% 
+@notice ||= params[:notice]
+if @notice != nil and @notice != "" then %>
+  <center><div id="notice-1">
+    <div id="notice-2">
+      <p><strong>
+          <%= @notice %>
+        </strong></p>
+    </div>
+  </div>
+  </center>
+<% end %></td>
+</tr>
+<tr>
+<td colspan="2" id="yield_content"><div id="yield_content_div"><%= yield -%></div></td>
+</tr>
+<tr><td colspan="2"><%= Ml.image("weblpirate_25") %></td></tr>
+</table>
+<div id = "sub-nav" style = "height:21px; overflow:hidden; display:none" >
 			<ul >
     <li ><%= link_to "我的岛屿",:controller => :home ,:action => :index %></li>
     <li ><%= link_to "好友岛屿",:controller => :home ,:action => :friend,:id => nil %></li>
@@ -12,23 +73,4 @@
 	<li ><a href="http://group.xiaonei.com/GetThreadList.do?id=254748934&curpage=0&label=0" target="_blank">意见和建议</a></li>
 </ul>
 </div>
-<% #帮助系统开始
-   gamehelp = Gamehelp.new 
-   gamehelp.controller = controller
-   helpid = params[:help] || 0
-%>
-<%= gamehelp.help(helpid) %>
-<% #帮助系统结束 %>
-<% 
-@notice ||= params[:notice]
-if @notice != nil and @notice != "" then %>
-  <div style="BORDER-RIGHT: #d8dfea 7px solid; BORDER-TOP: #d8dfea 7px solid; BACKGROUND: #fff; MARGIN: 0px 0px 10px; BORDER-LEFT: #d8dfea 7px solid; LINE-HEIGHT: 20px; BORDER-BOTTOM: #d8dfea 7px solid">
-    <div style="BORDER-RIGHT: #3b5888 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #3b5888 1px solid; PADDING-LEFT: 10px; BACKGROUND: #fffeed; PADDING-BOTTOM: 10px; BORDER-LEFT: #3b5888 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #3b5888 1px solid; POSITION: relative;text-align:center">
-      <p><strong>
-          <%= @notice %>
-        </strong></p>
-    </div>
-  </div>
-<% end %>
-<div id="showgoldinfo">您的资产 金币：<span class="goldcolor"><%= @current_user.gold%></span>  海盗币：<span class="goldcolor"><%= @current_user.pgold%></span>  今日贸易：<%= @current_user.business_count %>/<%= @current_user.business_top %> </div>
-<%= yield -%>
+

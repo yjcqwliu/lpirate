@@ -27,17 +27,7 @@
 金币<strong>:<span class="gold"><%= user.gold %></span></strong>&nbsp;
 海盗币<strong>:<span class="pgold"><%= user.pgold %></span></strong>
 </div>
-<% user.usership.each do |ship|  -%>
-	<div class="shiplist">
-    
-	<%= usershipimg(ship)%><br>
-	<%= ship.name %>
-	<% if ship.robof && ship.robof > 0   %>
-	<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :friend ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
-     <% if ship.robtime %>已经掠夺了<%= conversion(Time.now - ship.robtime,ship.capacity,ship.robspeed).to_i %>个金币<% end %>
-	<% end %>
-	</div>
-<% end -%>
+<%= render(:partial => "home_usership", :object => @current_user.usership )%>
 <div style="clear:both;"></div>
 <hr style="width:95%"/>
 </div>

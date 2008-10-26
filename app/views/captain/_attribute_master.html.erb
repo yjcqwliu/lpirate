@@ -9,21 +9,17 @@
 				  <% if  attribute_master.captain_lattribute > 0 && attribute_master.captain_master == @current_user.xid %>
 				  <%= link_to Ml.image("add_att"),:action => :add_capacity, :id => attribute_master.xid %>
 				  <% end %>
-				  <span class="gray">(每点增加100金币货舱容量)
-				  </span>
-			  </li>
+				  <span class="gray">(100金币货舱容量)				  </span>			  </li>
 			  <li>抢劫速度:<%= attribute_master.captain_robspeed %>
 				  <% if  attribute_master.captain_lattribute > 0  && attribute_master.captain_master == @current_user.xid %>
 				  <%= link_to Ml.image("add_att"),:action => :add_robspeed, :id => attribute_master.xid%>
 				  <% end %>
-				  <span class="gray">(每点增加50金币/小时)</span>
-			  </li>
+				  <span class="gray">(50金币/小时)</span>			  </li>
 			  <li>攻　　击:<%= attribute_master.captain_attack %>
 			      <% if  attribute_master.captain_lattribute > 0  && attribute_master.captain_master == @current_user.xid %>
 				  <%= link_to Ml.image("add_att"),:action => :add_attack ,:id => attribute_master.xid %>
 				  <% end %>
-				  <span class="gray">(每点增加攻击2点)</span>
-			  </li>
+				  <span class="gray">(攻击2点)</span>			  </li>
 			  </ul>
 			  可分配属性点：<%= attribute_master.captain_lattribute %><br>
 			  升级经验：<%= attribute_master.captain_exp %>/<%= attribute_master.captain_aexp %><br>

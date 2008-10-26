@@ -1,0 +1,193 @@
+#sub-nav {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; PADDING-TOP: 14px; BORDER-BOTTOM: #ccc 1px solid; ZOOM: 1;
+}
+#sub-nav UL {
+	PADDING-LEFT: 2px; OVERFLOW: auto; ZOOM: 1; LIST-STYLE-TYPE: none;
+}
+#sub-nav UL LI {
+	FLOAT: left; MARGIN-LEFT: -1px;
+}
+#sub-nav UL LI A {
+	BORDER-RIGHT: #898989 1px solid; PADDING-RIGHT: 1em; BORDER-TOP: #898989 1px solid; MIN-WIDTH: 60px; DISPLAY: block; PADDING-LEFT: 1em; BACKGROUND:  #f1f1f1 repeat-x; PADDING-BOTTOM: 3px; BORDER-LEFT: #898989 1px solid; COLOR: #333; PADDING-TOP: 3px; BORDER-BOTTOM: #898989 0px solid; TEXT-ALIGN: center;
+}
+
+
+
+#sub-nav .selected {
+	Z-INDEX: 99; POSITION: relative;
+}
+#sub-nav .selected A {
+	BORDER-RIGHT: #5973a9 1px solid; BORDER-TOP: #3b5888 1px solid; BACKGROUND: #6d84b4; BORDER-LEFT: #5973a9 1px solid; COLOR: #fff; BORDER-BOTTOM: #3b5888 0px solid;
+}
+#sub-nav .snav {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 5px; PADDING-TOP: 0px;
+}
+#sub-nav .pagerpro-title {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 5px; PADDING-TOP: 0px;
+}
+#showgoldinfo{
+color:#ffffff;
+
+}
+.goldcolor{
+color:red;
+}
+.gray{
+color:#BBBBBB;
+}
+.redlink {color:red;}
+.eachfriend{
+float:left;
+width:150px;
+text-align:center;
+}
+.myshipbody {
+	width: 800px;
+	float:left;
+	padding: 5px;
+}
+
+#mybody {
+	width: 620px;
+	float:left;
+	padding: 5px;
+}
+#docklist{
+}
+#roblist{
+}
+.dock {
+	float: left;
+	width:120px;
+	text-align:center;
+}
+
+#islandinfo{
+	color:red;
+	font-weight: bold;
+}
+#piratenews{
+	color:green;
+	font-weight: bold;
+}
+#mybody #noticelist #noticeone {
+height:25px;
+}
+#mybody #noticelist #noticecontent {
+float:left;
+height:28px;
+width:500px;
+}
+#myshipspan{
+	color:blue;
+	font-weight: bold;
+}
+.shiplist{
+float:left;
+width:130px;
+text-align:center;
+}
+
+.gotofriend{
+color:#0000ff;
+text-align:right;
+}
+#mybody #noticelist #noticetime {
+float:right;
+}
+#notify
+{
+float:right;
+width:160px;
+height:100px;
+}
+#business_dock
+{
+border:2px solid #225599;
+float: left;
+width:150px;
+text-align:center;
+}
+.gorob{
+float:right;
+text-size:15px;
+}
+.friendlist{
+width:120px;
+float:left;
+}
+#friendselect{
+width:480px;
+float:left;
+}
+#xnfriendselect{
+width:300px;
+float:right;
+}
+h4 {
+text-align:center;height:25px;background:#D8DFEA none repeat scroll 0%;
+border-top:1px solid #3B5888;font-size:14px;font-weight:bold;line-height:25px;font-weight:bold;
+}
+.pm{
+font-size:20px;
+color:red;
+}
+.gold{
+font-size:16px;
+color:yellow;
+}
+.pgold{
+font-size:16px;
+color:blue;
+}
+
+#noticelist #noticeone {
+height:25px;
+}
+#noticelist #noticecontent {
+float:left;
+height:28px;
+width:500px;
+}
+#noticelist #noticetime {
+float:right;
+}
+#piratenews{
+	color:green;
+	font-weight: bold;
+}
+#xnfriendselect{
+width:300px;
+float:right;
+}
+#shiplist {
+float:left;
+}
+.selllink {border:1px solid #3B5888;
+}
+#friendlist {
+width:160px;
+height:300px;
+overflow:auto;
+float:right;
+}
+.linkbutton {
+	height:20px;
+	width:100px;
+	background-color:#2B4878;
+	text-align:center;
+	float: right;
+}
+.linkbutton a{
+color:#FFFFFF;
+}
+#captain_show_friendselect{
+width:480px;
+float:left;
+text-align:center;
+}
+#yield_content
+{
+	padding-right: 45px;
+	padding-left: 45px;
+}

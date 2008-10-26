@@ -13,9 +13,10 @@ class Gamehelp < ActionView::Base
 	    #pp "-------------helpid:#{helpid}--------------"
 		
 	    if helpid != 0 
-			@help = '<div style="BORDER-RIGHT: #d8dfea 7px solid; BORDER-TOP: #d8dfea 7px solid; BACKGROUND: #fff; MARGIN: 0px 0px 10px; BORDER-LEFT: #d8dfea 7px solid; LINE-HEIGHT: 20px; BORDER-BOTTOM: #d8dfea 7px solid"><div style="BORDER-RIGHT: #3b5888 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #3b5888 1px solid; PADDING-LEFT: 10px; BACKGROUND: #fffeed; PADDING-BOTTOM: 10px; BORDER-LEFT: #3b5888 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #3b5888 1px solid; POSITION: relative;text-align:center"><p><strong>'
+			@help = '<center><div id="notice-1">
+			<div id="notice-2"><p><strong>'
 			@help += helpmsg[helpid-1]
-			@help += '</strong></p></div></div>'
+			@help += '</strong></p></div></div></center>'
 			cookies[:help] = "#{helpid +1}"
 		end
 		#pp "-------------@cookies[:help]:#{cookies[:help]}--------------"

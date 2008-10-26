@@ -1,9 +1,8 @@
-current_time = Time.now
+
 puts "start"
 Notice.find(:all, :conditions => [" sented is null  " ],:order => " updated_at desc ", :limit => 5000).each do |notice|
   begin
-   # notifications = ["<xn:name uid='#{friend.user.xid}'/>在美容达人PK赛向你发出了站题，<a href='http://apps.xiaonei.com/beautypk/challenge/myreceive'>回答这些问题就可以和TA一决胜负了</]
-   
+   current_time = Time.now
     res_note = notice.user.xn_session.invoke_method("xiaonei.notifications.send", 
                                                     :to_ids => notice.to_xid, 
                                                     :notification => notice.content)
@@ -14,7 +13,7 @@ Notice.find(:all, :conditions => [" sented is null  " ],:order => " updated_at d
                                                     :body_data => { 
                                                       :content => notice.content
                                                     }.to_json,
-                                                    :template_id => 1)
+                                                    :template_id => (rand(10)+1))
     end
     puts "#{current_time}: process user #{notice.user.id}:  #{res_feed.inspect} #{res_note.inspect}"
     

@@ -1,0 +1,26 @@
+<ul>
+<% i =0 %>
+<% home_usership.each do |ship|%>
+<% i += 1 %>
+	<li class="shiplist">
+	        <%= usershipimg(ship)%><br>
+			船长：<% if ship.captain %>
+			     <%= link_to Ml.name({"uid" => ship.captain.xid}),:controller => :captain,:action => :show,:id => ship.captain.xid %>
+				 <% else %>
+				 <span class="gray">暂无</span>
+				 <% end %><br>
+			<% if !ship.robof || ship.robof <= 0   %>
+				<%= radio_button  "usership","id", ship.id , :checked => "checked" %> <%= ship.name %>
+			<% else %>
+				<span class="gray">不在港口不能分配船长</span><br>
+			<% end %>
+			<% if ship.robof && ship.robof > 0   %>
+			<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :friend ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
+			 <% if ship.robtime %>已经掠夺了<%= conversion(Time.now - ship.robtime,ship.capacity,ship.robspeed).to_i %>个金币<% end %>
+			<% end %>
+	</li>
+<% if i % 5 ==0 %>
+    <li style="clear:both"></li>
+<% end %>
+<% end %>
+</ul>

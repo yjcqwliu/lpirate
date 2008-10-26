@@ -1,11 +1,25 @@
-<div class="shiplist">
-<%= usershipimg(home_usership)%><br>
-<%= radio_button  "usership","id", home_usership.id , :checked => "checked" %>
-<%= home_usership.name %><br>
-货仓容量：<%=h home_usership.capacity %>金币	<br>
-满载时间：<%=h "%.2f" % fulltime(home_usership.capacity,home_usership.robspeed) %>小时<br>
-<% if home_usership.robof && home_usership.robof > 0   %>
-	<span class="gray">(正在<%= link_to "<xn:name uid=\"#{home_usership.robof}\" />", :controller => :home , :action => :friend ,:id => home_usership.robof %>的岛上烧杀抢掠)</span><br>
-     <% if home_usership.robtime %>已经掠夺了<%= conversion(Time.now - home_usership.robtime,home_usership.capacity,home_usership.robspeed).to_i %>个金币</br><span class="selllink"><%= link_to "返航",:action => :back_home,:id => home_usership.id %></span><% end %>
+<ul>
+<% i =0 %>
+<% home_usership.each do |ship|%>
+<% i += 1 %>
+	<li class="shiplist">
+	<%= usershipimg(ship)%><br>
+	<%= radio_button  "usership","id", ship.id , :checked => "checked" %>
+	<%= ship.name %><br>
+	船长：<% if ship.captain %>
+			     <%= link_to Ml.name({"uid" => ship.captain.xid}),:controller => :captain,:action => :show,:id => ship.captain.xid %>
+				 <% else %>
+				 <span class="gray">暂无</span>
+				 <% end %><br>
+	货仓容量：<%=h ship.capacity %>金币	<br>
+	满载时间：<%=h "%.2f" % fulltime(ship.capacity,ship.robspeed) %>小时<br>
+	<% if ship.robof && ship.robof > 0   %>
+		<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :friend ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
+		 <% if ship.robtime %>已经掠夺了<%= conversion(Time.now - ship.robtime,ship.capacity,ship.robspeed).to_i %>个金币</br><span class="selllink"><%= link_to "返航",:action => :back_home,:id => ship.id %></span><% end %>
+	<% end %>
+	</li>
+<% if i % 4 ==0 %>
+    <li style="clear:both"></li>
 <% end %>
-</div>
+<% end %>
+</ul>
