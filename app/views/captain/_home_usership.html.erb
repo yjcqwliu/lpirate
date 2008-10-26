@@ -10,10 +10,12 @@
 				 <span class="gray">暂无</span>
 				 <% end %><br>
 			<% if !ship.robof || ship.robof <= 0   %>
-				<%= radio_button  "usership","id", ship.id , :checked => "checked" %> <%= ship.name %>
+				<%= radio_button  "usership","id", ship.id , :checked => "checked" %> <%= ship.name %><br>
 			<% else %>
 				<span class="gray">不在港口不能分配船长</span><br>
 			<% end %>
+			货仓容量：<%=h ship.capacity %>金币	<br>
+        	满载时间：<%=h "%.2f" % fulltime(ship.capacity,ship.robspeed) %>小时<br>
 			<% if ship.robof && ship.robof > 0   %>
 			<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :friend ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
 			 <% if ship.robtime %>已经掠夺了<%= conversion(Time.now - ship.robtime,ship.capacity,ship.robspeed).to_i %>个金币<% end %>

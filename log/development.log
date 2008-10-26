@@ -15043,3 +15043,468 @@ Rendered lorder/_home_usership (0.09400)
   [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE ( captain_usership_id = 736) [0m
 Rendered lorder/_home_usership (0.01500)
 Completed in 0.48500 (2 reqs/sec) | Rendering: 0.18900 (38%) | DB: 0.17200 (35%) | 200 OK [http://61.172.255.117/lorder]
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mNotice Load (0.047000)[0m   [0mSELECT * FROM `notices` WHERE ( sented is null ) ORDER BY updated_at desc LIMIT 5000[0m
+  [4;36;1mNotice Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `notices`[0m
+  [4;35;1mUser Columns (0.000000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.015000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:12' WHERE `id` = 138[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:16' WHERE `id` = 137[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:19' WHERE `id` = 117[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:19' WHERE `id` = 116[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:20' WHERE `id` = 115[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:20' WHERE `id` = 114[0m
+  [4;35;1mSQL (0.094000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:20' WHERE `id` = 113[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:20' WHERE `id` = 112[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:21' WHERE `id` = 111[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:21' WHERE `id` = 110[0m
+  [4;35;1mSQL (0.015000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:21' WHERE `id` = 109[0m
+  [4;35;1mSQL (0.015000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.016000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.125000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:22' WHERE `id` = 108[0m
+  [4;35;1mSQL (0.078000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:22' WHERE `id` = 107[0m
+  [4;35;1mSQL (0.016000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:22' WHERE `id` = 106[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:23' WHERE `id` = 105[0m
+  [4;35;1mSQL (0.094000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:23' WHERE `id` = 104[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:23' WHERE `id` = 103[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:23' WHERE `id` = 102[0m
+  [4;35;1mSQL (0.094000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:24' WHERE `id` = 101[0m
+  [4;35;1mSQL (0.250000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:24' WHERE `id` = 100[0m
+  [4;35;1mSQL (0.015000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:24' WHERE `id` = 99[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:24' WHERE `id` = 98[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:24' WHERE `id` = 97[0m
+  [4;35;1mSQL (0.141000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:25' WHERE `id` = 96[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:25' WHERE `id` = 95[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:25' WHERE `id` = 94[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.016000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:25' WHERE `id` = 93[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:26' WHERE `id` = 92[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:26' WHERE `id` = 91[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:26' WHERE `id` = 90[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.016000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:26' WHERE `id` = 89[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:26' WHERE `id` = 88[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:29' WHERE `id` = 87[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:30' WHERE `id` = 86[0m
+  [4;35;1mSQL (0.063000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:30' WHERE `id` = 85[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 158) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:30' WHERE `id` = 84[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 157) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:30' WHERE `id` = 83[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 155) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:34' WHERE `id` = 82[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:34' WHERE `id` = 81[0m
+  [4;35;1mSQL (0.078000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:34' WHERE `id` = 80[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:34' WHERE `id` = 79[0m
+  [4;35;1mSQL (0.063000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:35' WHERE `id` = 78[0m
+  [4;35;1mSQL (0.125000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 151) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:38' WHERE `id` = 77[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.016000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:41' WHERE `id` = 76[0m
+  [4;35;1mSQL (0.015000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:41' WHERE `id` = 75[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:41' WHERE `id` = 74[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:44' WHERE `id` = 73[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:45' WHERE `id` = 72[0m
+  [4;35;1mSQL (0.016000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:45' WHERE `id` = 71[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:45' WHERE `id` = 70[0m
+  [4;35;1mSQL (0.063000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:45' WHERE `id` = 69[0m
+  [4;35;1mSQL (0.063000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:45' WHERE `id` = 68[0m
+  [4;35;1mSQL (0.062000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:46' WHERE `id` = 67[0m
+  [4;35;1mSQL (0.094000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:46' WHERE `id` = 66[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:46' WHERE `id` = 65[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:46' WHERE `id` = 64[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:46' WHERE `id` = 63[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:46' WHERE `id` = 62[0m
+  [4;35;1mSQL (0.078000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:50' WHERE `id` = 61[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:50' WHERE `id` = 60[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:50' WHERE `id` = 59[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:50' WHERE `id` = 58[0m
+  [4;35;1mSQL (0.094000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:51' WHERE `id` = 57[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.016000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:51' WHERE `id` = 56[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:51' WHERE `id` = 55[0m
+  [4;35;1mSQL (0.078000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:51' WHERE `id` = 54[0m
+  [4;35;1mSQL (0.015000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:51' WHERE `id` = 53[0m
+  [4;35;1mSQL (0.078000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.015000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:51' WHERE `id` = 52[0m
+  [4;35;1mSQL (0.063000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:52' WHERE `id` = 51[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.016000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:52' WHERE `id` = 50[0m
+  [4;35;1mSQL (0.046000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:52' WHERE `id` = 49[0m
+  [4;35;1mSQL (0.016000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:52' WHERE `id` = 48[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:53' WHERE `id` = 47[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:53' WHERE `id` = 46[0m
+  [4;35;1mSQL (0.015000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:53' WHERE `id` = 45[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:53' WHERE `id` = 44[0m
+  [4;35;1mSQL (0.078000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:53' WHERE `id` = 43[0m
+  [4;35;1mSQL (0.015000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.015000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:54' WHERE `id` = 42[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.031000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:54' WHERE `id` = 41[0m
+  [4;35;1mSQL (0.094000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:55' WHERE `id` = 40[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:55' WHERE `id` = 39[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:55' WHERE `id` = 38[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.015000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:55' WHERE `id` = 37[0m
+  [4;35;1mSQL (0.141000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:55' WHERE `id` = 36[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:56' WHERE `id` = 35[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:56' WHERE `id` = 34[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:56' WHERE `id` = 33[0m
+  [4;35;1mSQL (0.094000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:56' WHERE `id` = 32[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:57' WHERE `id` = 31[0m
+  [4;35;1mSQL (0.110000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:57' WHERE `id` = 30[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:57' WHERE `id` = 29[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:57' WHERE `id` = 28[0m
+  [4;35;1mSQL (0.079000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.015000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:57' WHERE `id` = 27[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.016000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:58' WHERE `id` = 26[0m
+  [4;35;1mSQL (0.062000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:58' WHERE `id` = 25[0m
+  [4;35;1mSQL (0.093000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:35:58' WHERE `id` = 24[0m
+  [4;35;1mSQL (0.016000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:01' WHERE `id` = 23[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:02' WHERE `id` = 22[0m
+  [4;35;1mSQL (0.125000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.015000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:02' WHERE `id` = 21[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:02' WHERE `id` = 20[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:02' WHERE `id` = 19[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:02' WHERE `id` = 18[0m
+  [4;35;1mSQL (0.093000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:03' WHERE `id` = 17[0m
+  [4;35;1mSQL (0.063000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:03' WHERE `id` = 16[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:03' WHERE `id` = 15[0m
+  [4;35;1mSQL (0.062000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:03' WHERE `id` = 14[0m
+  [4;35;1mSQL (0.079000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:03' WHERE `id` = 13[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:04' WHERE `id` = 12[0m
+  [4;35;1mSQL (0.125000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:04' WHERE `id` = 11[0m
+  [4;35;1mSQL (0.094000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.016000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:04' WHERE `id` = 10[0m
+  [4;35;1mSQL (0.094000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:07' WHERE `id` = 9[0m
+  [4;35;1mSQL (0.109000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:11' WHERE `id` = 8[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mNotice Update (0.000000)[0m   [0;1mUPDATE `notices` SET `sented` = 1, `noticed` = 1, `updated_at` = '2008-10-26 07:36:11' WHERE `id` = 7[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mNotice Load (0.000000)[0m   [0mSELECT * FROM `notices` WHERE ( sented is null ) ORDER BY updated_at desc LIMIT 5000[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mNotice Load (0.015000)[0m   [0mSELECT * FROM `notices` WHERE ( sented is not null ) ORDER BY updated_at desc LIMIT 5000[0m
+  [4;36;1mNotice Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `notices`[0m
+  [4;35;1mUser Columns (0.000000)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.015000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 72) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m

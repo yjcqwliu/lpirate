@@ -1,8 +1,12 @@
-
-puts "start"
+start_time = Time.now
+puts "start:#{start_time}"
 Notice.find(:all, :conditions => [" sented is null  " ],:order => " updated_at desc ", :limit => 5000).each do |notice|
   begin
    current_time = Time.now
+   if current_time - start_time > 9.minute
+   puts "end by timeout"
+   break
+   end
     res_note = notice.user.xn_session.invoke_method("xiaonei.notifications.send", 
                                                     :to_ids => notice.to_xid, 
                                                     :notification => notice.content)
