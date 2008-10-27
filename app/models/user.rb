@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 	
     def self.login(u_id,invite = 0)
 			if u_id 
-			user = User.find_by_xid(u_id])
+			user = User.find_by_xid(u_id)
 			if ! user then
 				 user = User.first_login(u_id)
 			end
