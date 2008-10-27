@@ -22,13 +22,9 @@ class User < ActiveRecord::Base
 	
     def self.login(u_id,invite = 0)
 			if u_id 
-			user = User.find(:all,
-							  :conditions => [" xid= ? ",u_id.to_s]
-							  )
-			if ! user or user.length == 0 then
+			user = User.find_by_xid(u_id])
+			if ! user then
 				 user = User.first_login(u_id)
-			else
-				 user=user.first
 			end
 			
 	
@@ -91,7 +87,7 @@ class User < ActiveRecord::Base
 		@xn_session ||= Xiaonei::Session.new("xn_sig_session_key" => session_key, "xn_sig_user" => xid)
 	end
     
-	def captain_buy(current_user)
+	def captain_buy(current_user) #被买
 	   self.captain_sell_count = 0 if captain_sell_updated_at.nil? || (Time.now.utc + 8.hour).to_i / 86400 > (captain_sell_updated_at + 8.hour).to_i / 86400
 	   save
 	   if self.captain_sell_count.to_i >= 3 
@@ -110,8 +106,8 @@ class User < ActiveRecord::Base
 						   master_user.gold += captain_price
 						   master_user.save
 					   end
-					   self.captain_usership_id = 0					   
 					   del_att_to_usership
+					   self.captain_usership_id = 0					   
 					   current_user.gold -= captain_price
 					   current_user.save
 					   self.captain_price = up_sell_price
@@ -168,6 +164,7 @@ class User < ActiveRecord::Base
 		   if captain_usership_id.to_i != usership_id.to_i
 			   #pp("*******current_user#{current_user.inspect}*******usership_id:#{captain_usership_id}****")
 			   User.distroy_appoint_ship(current_user,captain_usership_id)
+			   User.distroy_appoint_ship(current_user,usership_id)
 			   self.captain_usership_id = usership_id
 			   #pp("*******self.captain_usership_id#{self.captain_usership_id}***********")
 			   save
@@ -212,7 +209,7 @@ class User < ActiveRecord::Base
 	end
 	def self.find_by_xid(t_xid)
 	    t_u = User.find(:all,:conditions => [" xid = ?",t_xid.to_s])
-		if t_u.length == 1
+		if t_u.length >= 1
 		   t_u.first
 		else
 		   nil

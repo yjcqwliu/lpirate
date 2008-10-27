@@ -98,7 +98,7 @@ module Xiaonei
         end
 
         if @stack.size == s_size # nothing get push to stack
-          pp "unknown tag #{name}"
+          pp "unknown tag #{name}" if DEBUG
           @stack.push :no_op
         end
         

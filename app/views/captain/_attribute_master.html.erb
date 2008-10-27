@@ -29,7 +29,9 @@
 				        我自己
 				   <% else %>
 				        <%= link_to Ml.name("uid" => attribute_master.captain_master),:action => :show, :id => attribute_master.captain_master %>
-						<span class="linkbutton"><%= link_to "赎身",:action => :buy_back %></span>
+						<% if attribute_master.xid == @current_user.xid %>
+							<span class="linkbutton"><%= link_to "赎身",:action => :buy_back %></span>
+						<% end %>
 				   <% end %>
 			  <% end %>
 			  <br>

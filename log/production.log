@@ -94,3 +94,43 @@ Processing NoticeController#business (for 127.0.0.1 at 2008-10-23 15:45:53) [POS
 Rendering template within layouts/application
 Rendering notice/index
 Completed in 3.54700 (0 reqs/sec) | Rendering: 0.00000 (0%) | DB: 3.46900 (97%) | 200 OK [http://61.172.255.117/notice/business]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-10-27 01:55:40) [POST]
+  Session ID: 1403eee92e7477f7ef35ede6b2db35c6
+  Parameters: {"xn_sig_expires"=>"0", "xn_sig_session_key"=>"jAAdPC2tP3jBlvMtPk2z7OkZxIcBtVkiulsGbPVumc+hrQsx2qBmhsG5DfHxt35E-229615263", "xn_sig_user"=>"229615263", "xn_sig_method"=>"get", "xn_sig_time"=>"1225043757240", "action"=>"index", "controller"=>"home", "xn_sig_api_key"=>"8528a4a80ceb4febb3df66cb4d8f1f14", "xn_sig_in_iframe"=>"0", "xn_sig_app_id"=>"16966", "xn_sig_added"=>"1"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3.76600 (0 reqs/sec) | Rendering: 0.50000 (13%) | DB: 1.82800 (48%) | 200 OK [http://61.172.255.117/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-10-27 01:56:02) [POST]
+  Session ID: 39c94540ebfb348202493f639aab7ffc
+  Parameters: {"xn_sig_expires"=>"0", "xn_sig_session_key"=>"jAAdPC2tP3jBlvMtPk2z7OkZxIcBtVkiulsGbPVumc+hrQsx2qBmhsG5DfHxt35E-229615263", "xn_sig_user"=>"229615263", "xn_sig_method"=>"get", "xn_sig_time"=>"1225043779325", "action"=>"index", "controller"=>"home", "xn_sig_api_key"=>"8528a4a80ceb4febb3df66cb4d8f1f14", "xn_sig_in_iframe"=>"0", "xn_sig_app_id"=>"16966", "xn_sig_added"=>"1"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 0.28100 (3 reqs/sec) | Rendering: 0.15700 (55%) | DB: 0.07700 (27%) | 200 OK [http://61.172.255.117/]
+
+
+Processing NoticeController#index (for 127.0.0.1 at 2008-10-27 01:56:43) [POST]
+  Session ID: 892f00c31da2ef943dbc9f73f7383768
+  Parameters: {"xn_sig_expires"=>"0", "xn_sig_session_key"=>"jAAdPC2tP3jBlvMtPk2z7OkZxIcBtVkiulsGbPVumc+hrQsx2qBmhsG5DfHxt35E-229615263", "xn_sig_user"=>"229615263", "xn_sig_method"=>"get", "xn_sig_time"=>"1225043820159", "action"=>"index", "controller"=>"notice", "xn_sig_api_key"=>"8528a4a80ceb4febb3df66cb4d8f1f14", "xn_sig_in_iframe"=>"0", "xn_sig_app_id"=>"16966", "xn_sig_added"=>"1"}
+Rendering template within layouts/application
+Rendering notice/index
+Completed in 3.67200 (0 reqs/sec) | Rendering: 0.03100 (0%) | DB: 3.46900 (94%) | 200 OK [http://61.172.255.117/notice]
+
+
+Processing NoticeController#index (for 127.0.0.1 at 2008-10-27 01:57:35) [POST]
+  Session ID: 295a12c9248c725d4d1c017b0b51e129
+  Parameters: {"xn_sig_expires"=>"0", "xn_sig_session_key"=>"jAAdPC2tP3jBlvMtPk2z7OkZxIcBtVkiulsGbPVumc+hrQsx2qBmhsG5DfHxt35E-229615263", "xn_sig_user"=>"229615263", "xn_sig_method"=>"get", "xn_sig_time"=>"1225043872597", "action"=>"index", "controller"=>"notice", "xn_sig_api_key"=>"8528a4a80ceb4febb3df66cb4d8f1f14", "xn_sig_in_iframe"=>"0", "xn_sig_app_id"=>"16966", "xn_sig_added"=>"1"}
+Rendering template within layouts/application
+Rendering notice/index
+Completed in 3.54700 (0 reqs/sec) | Rendering: 0.01500 (0%) | DB: 3.48600 (98%) | 200 OK [http://61.172.255.117/notice]
+
+
+Processing NoticeController#index (for 127.0.0.1 at 2008-10-27 01:58:23) [POST]
+  Session ID: b44145c1aa60f3d57e0bfb414b6f5ae8
+  Parameters: {"xn_sig_expires"=>"0", "xn_sig_session_key"=>"jAAdPC2tP3jBlvMtPk2z7OkZxIcBtVkiulsGbPVumc+hrQsx2qBmhsG5DfHxt35E-229615263", "xn_sig_user"=>"229615263", "xn_sig_method"=>"get", "xn_sig_time"=>"1225043920183", "action"=>"index", "controller"=>"notice", "xn_sig_api_key"=>"8528a4a80ceb4febb3df66cb4d8f1f14", "xn_sig_in_iframe"=>"0", "xn_sig_app_id"=>"16966", "xn_sig_added"=>"1"}
+Rendering template within layouts/application
+Rendering notice/index
+Completed in 3.54700 (0 reqs/sec) | Rendering: 0.00000 (0%) | DB: 3.46900 (97%) | 200 OK [http://61.172.255.117/notice]

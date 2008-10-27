@@ -16,7 +16,7 @@
 		<td>
 			<%= link_to  Ml.image("weblpirate_06"),:controller => :shop ,:action => :index %></td>
 		<td>
-			<%= link_to  Ml.image("weblpirate_07"),:controller => :captain ,:action => :index %></td>
+			<%= link_to  Ml.image("weblpirate_07"),:controller => :captain ,:action => :index,:id => nil %></td>
 		<td>
 			<%= link_to  Ml.image("weblpirate_08"),:controller => :lorder ,:action => :index %></td>
 		<td  rowspan="2"><%= Ml.image("weblpirate_09") %></td>
@@ -60,17 +60,3 @@ if @notice != nil and @notice != "" then %>
 </tr>
 <tr><td colspan="2"><%= Ml.image("weblpirate_25") %></td></tr>
 </table>
-<div id = "sub-nav" style = "height:21px; overflow:hidden; display:none" >
-			<ul >
-    <li ><%= link_to "我的岛屿",:controller => :home ,:action => :index %></li>
-    <li ><%= link_to "好友岛屿",:controller => :home ,:action => :friend,:id => nil %></li>
-	<li ><%= link_to "我的船只",:controller => :home ,:action => :myship %></li>
-	<li class="redlink"><%= link_to "雇佣船长",:controller => :captain ,:action => :index %></li>
-	<li ><%= link_to "海盗商店",:controller => :shop ,:action => :index %></li>
-	<li ><%= link_to "排行",:controller => :lorder ,:action => :index %></li>
-	<li ><%= link_to "邀请好友",:controller => :home ,:action => :invite %></li>
-	<li ><%= link_to "游戏帮助",:controller => :home ,:action => :help %></li>
-	<li ><a href="http://group.xiaonei.com/GetThreadList.do?id=254748934&curpage=0&label=0" target="_blank">意见和建议</a></li>
-</ul>
-</div>
-

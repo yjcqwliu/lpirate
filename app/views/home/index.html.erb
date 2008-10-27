@@ -1,6 +1,6 @@
 <div>
 <div id="mybody">
-<div id="islandinfo"><%= Ml.userpic("uid" => @user.xid,"linked"=>"true") %><%= Ml.name("uid"=>@user.xid)%>的小岛<span class="gorob"><%= link_to ">>去抢劫好友",:controller => :home ,:action => :friend  %></span><br>
+<div id="islandinfo"><%= Ml.userpic("uid" => @user.xid,"linked"=>"true") %><%= Ml.name("uid"=>@user.xid)%>的小岛<span class="gorob"><%= link_to ">>去抢劫好友",:controller => :home ,:action => :friend ,:id => nil %></span><br>
 <hr /></div>
 <div id="docklist">
 <div id="dock1" class="dock"><%= Ml.image("dock") %><br>
