@@ -60,7 +60,7 @@ end
 
 
 def robtime
-    if !@robtime
+    if !@robtime and robuser
 		case self.id
 			 when robuser.dock1
 				  @robtime = robuser.dock1_time
