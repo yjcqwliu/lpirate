@@ -7,6 +7,7 @@ class CaptainController < ApplicationController
 		else
 			@now_user = @current_user
 		end 
+		#@captain_notice = Notice.find(:all,:conditions => ["( to_xid = ? or from_xid = ? ) and (ltype =12 or ltype =13)",@current_user.xid.to_s,@current_user.xid.to_s],:limit => 5,:order => " updated_at desc ")
 	end
 	
 	def buy

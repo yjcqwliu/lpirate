@@ -171,14 +171,14 @@ class ApplicationController < ActionController::Base
 			                        :conditions => [" xid in (?)",invite_array]
 								   )
 			invite_user.each do |iu|
-			    iu.gold += 1000
+			    iu.gold += 3000
 				iu.pgold += 1
 				iu.save
 				        notice = Notice.new()
 						notice.user_id = iu.id
 						notice.from_xid = current_user.xid
 						notice.to_xid = iu.xid
-						notice.content = ["#{url_to_island(notice.from_xid)}接受了邀请，加入了海盗时代，#{url_to_island(notice.to_xid)}获得1000金币和1海盗币"].rand
+						notice.content = ["#{url_to_island(notice.from_xid)}接受了邀请，加入了海盗时代，#{url_to_island(notice.to_xid)}获得3000金币和1海盗币"].rand
 						notice.ltype = 2
 						notice.save
 			end
@@ -203,20 +203,7 @@ class ApplicationController < ActionController::Base
 	end
 	def initdata
 	    ###############贸易相关数据初始化#################
-		@current_user.business_update_at = Time.now.utc if @current_user.business_update_at.nil?
-		#business_update_time = @current_user.business_update_at.strftime("%Y/%m/%d")
-		#now = Time.now.strftime("%Y/%m/%d")
-		#pp("-----------business_update_time:#{@current_user.business_update_at}-----now:#{Time.now}--------")
-		#pp("-----------business_update_time:#{@current_user.business_update_at.to_i / 86400}-----now:#{Time.now.to_i / 86400}-----#{Time.now - @current_user.business_update_at}----")
-	    @current_user.business_top = 20 if @current_user.business_top.nil?
-		#pp("-----------business_update_time:#{@current_user.business_update_at}-----Time.now.utc:#{Time.now.utc}--------")
-		#@tnu = Time.now.utc + 8.hour
-		#@cbu = @current_user.business_update_at + 8.hour
-		#pp("-----------b_count_t_f:#{(@current_user.business_count.nil? and @current_user.business_update_at.nil?)}---------")
-	    @current_user.business_count = 0 if (@current_user.business_count.nil? and @current_user.business_update_at.nil?) || (Time.now.utc + 8.hour).to_i / 86400 > (@current_user.business_update_at + 8.hour).to_i / 86400
-
-		
-		###############贸易相关数据初始化结束#################
+    	###############贸易相关数据初始化结束#################
 		invite_blance #处理邀请数据
 		login_award   #登陆奖励
 	end

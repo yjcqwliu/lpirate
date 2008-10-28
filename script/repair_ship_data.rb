@@ -6,7 +6,7 @@ usership.each do |ship|
 		ship.robspeed=ship.ship.robspeed
 		ship.save
         if ship.captain
-		     puts ("------ship.captain:#{ship.captain.inspect}-------------")
+		     #puts ("------ship.captain:#{ship.captain.inspect}-------------")
 		     ship.captain.add_att_to_usership
 		end
 		

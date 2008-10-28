@@ -27,6 +27,7 @@ def robuser
 end
 
 def robdock=(robof)
+    if robuser
 		case self.id
 			 when robuser.dock1
 				  robuser.dock1 = robof
@@ -37,10 +38,11 @@ def robdock=(robof)
 			 when robuser.dock4
 				  robuser.dock4 = robof
 		end
+	end
 end
 
 def robdock
-    if !@robdock
+    if !@robdock and robuser
 		case self.id
 			 when robuser.dock1
 				  @robdock = robuser.dock1

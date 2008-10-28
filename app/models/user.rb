@@ -105,6 +105,10 @@ class User < ActiveRecord::Base
 						   master_user = User.login(captain_master)
 						   master_user.gold += captain_price
 						   master_user.save
+						   
+						    #Notice.create({:user_id => current_user.xid,:from_xid => current_user.xid,:to_xid => master_user.xid,:content => xid,:ltype => 12})
+							else
+							#Notice.create({:user_id => current_user.xid,:from_xid => current_user.xid,:to_xid => xid,:content => nil,:ltype => 13})
 					   end
 					   del_att_to_usership
 					   self.captain_usership_id = 0					   
@@ -115,6 +119,7 @@ class User < ActiveRecord::Base
 					   self.captain_sell_updated_at = Time.now.utc
 					   self.captain_sell_count += 1
 					   save
+					    
 			       end
 			       resault = "雇佣成功"
 			   end
