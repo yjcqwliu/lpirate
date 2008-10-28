@@ -35,7 +35,7 @@ a:hover {position : relative; top : 1px; left :   1px }
 <td width="590" valign="top"><div id="showgoldinfo">&nbsp;&nbsp;&nbsp;&nbsp;您的资产 金币：<span class="goldcolor"><%= @current_user.gold%></span>  海盗币：<span class="goldcolor"><%= @current_user.pgold%></span>  今日贸易：<%= @current_user.business_count %>/<%= @current_user.business_top %> </div>
 <div><%= link_to Ml.image("buttoninvite"),:controller => :home, :action => :invite %>&nbsp;<a href="http://group.xiaonei.com/GetThreadList.do?id=254748934&curpage=0&label=0" target="_blank"><%= Ml.image("buttonbbs") %></a>&nbsp;<%= link_to Ml.image("buttonhelp"),:controller => :home, :action => :help %></div></td>
 </tr>
-<tr><td colspan="2"><xn:iframe src="http://61.172.255.117:8801/newfrm.html" height="163" width="800" frameborder="0" scrolling="no"/></td></tr>
+<tr><td colspan="2"><xn:iframe src="<%= ActionController::Base.asset_host %>/newfrm.html" height="163" width="800" frameborder="0" scrolling="no"/></td></tr>
 <tr>
 <td colspan="2">
 <% #帮助系统开始
