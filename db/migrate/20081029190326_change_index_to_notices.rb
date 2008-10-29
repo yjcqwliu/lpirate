@@ -1,6 +1,6 @@
 class ChangeIndexToNotices < ActiveRecord::Migration
   def self.up
-  create_table "notices", :force => true do |t|
+  create_table :notices, :force => true do |t|
     t.integer  "user_id"
     t.string   "from_xid"
     t.string   "to_xid"
@@ -19,6 +19,6 @@ class ChangeIndexToNotices < ActiveRecord::Migration
   add_index "notices", ["to_xid", "from_xid"], :name => "index_notices_on_to_xid_and_from_xid"
 
   def self.down
-  drop_table "create_table"
+  drop_table :notices
   end
 end
