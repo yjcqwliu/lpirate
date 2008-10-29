@@ -1,4 +1,7 @@
 <h4>我的船只</h4>
+<div style="text-align:center">
+<%= Ml.iframe({:src=>"#{ActionController::Base.asset_host}/newfrm.html",:height=>"60", :width=>"468" ,:frameborder=>"0", :scrolling=>"no"}) %>
+</div>
 <div class="myshipbody">
 <%= render(:partial => "usership", :object => @current_user.usership )%>
 </div>

@@ -13,6 +13,13 @@ def self.userpic(attribute)
    end
    ml += "/>"
 end
+def self.iframe(attribute)
+   ml = "<xn:iframe "
+   attribute.each do |key,value| 
+      ml += "#{key}=\"#{value}\" "
+   end
+   ml += "/>"
+end
 def self.image(imgcase,img=true)
    if img
    ml = "<img src=\""

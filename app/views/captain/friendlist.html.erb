@@ -22,7 +22,9 @@ n += 1 %>
 <% end %>
 </ul>
 </div>
-
+<div id="captain_right">
+<%= Ml.iframe({:src=>"#{ActionController::Base.asset_host}/capfrm.html",:height=>"200", :width=>"200" ,:frameborder=>"0", :scrolling=>"no"}) %>
+</div>
 <div id="xnfriendselect">
 <h4>在这里选择你想雇佣的船长</h4>
 <form action="captain/friendlist">

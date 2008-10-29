@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   def set_current_user
 	  	    
 	
-	  if params[:controller] != "ships" and params[:action] != "css2" then
+	  if params[:controller] != "ships" and params[:action] != "css3" then
 			if @current_user.nil?
 			  @current_user = User.login(xiaonei_session.user)
 			  if @current_user.session_key != xiaonei_session.session_key

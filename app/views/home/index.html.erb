@@ -133,7 +133,7 @@
 </div>
 <div id="notify">
 <div id="notify-title" >公告</div>
-<ul class="right-back">
+<ul >
 <li><a href="http://group.xiaonei.com/GetThread.do?id=327839940&parentpage=0&curpage=0&label=&tribeId=254748934" target="_blank"><span style="color:red" title="点击查看活动详情">“雇佣船长”功能开放</span></a>
 </li>
 <li><a href="http://group.xiaonei.com/GetThread.do?id=327758612&tribeId=254748934" target="_blank">“海盗总动员活动”最终获奖公布</a>
@@ -141,7 +141,9 @@
 <li><a href="http://group.xiaonei.com/GetThread.do?id=327711718&curpage=0&tribeId=254748934" target="_blank">贸易功能上线</a>
 </li>
 </ul>
-<%= Ml.image("weblpirate_20") %>
+</div>
+<div id="home-index">
+<%= Ml.iframe({:src=>"#{ActionController::Base.asset_host}/leftfrm.html",:height=>"270", :width=>"148" ,:frameborder=>"0", :scrolling=>"no"}) %>
 </div>
 <div id="friendlist" >
 <div id="notify-title">海盗好友</div>
@@ -150,6 +152,5 @@
 <%= link_to Ml.name({"uid" => friend}),:controller => :home,:action => :friend,:id => friend %>
 </div>
 <% end %>
-<%= Ml.image("weblpirate_20") %>
 </div>
 </div>

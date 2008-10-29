@@ -2,7 +2,7 @@ development:
   api_key: a6e0ed5549164ad0acc0d1324397b520 
   secret_key: a7d2764b787e4935a81194b863043b3c 
   canvas_page_name: jjjjjjj
-  callback_url: http://58.215.65.224
+  callback_url: http://61.172.255.117:8801
   tunnel:
     public_host_username: 
     public_host: 

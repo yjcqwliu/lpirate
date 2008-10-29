@@ -147,7 +147,7 @@ class HomeController < ApplicationController
 		end
 		xn_redirect_to("home/index",{"notice" => "成功返航，抢劫了#{l_gold}金币"})
 	end
-	def css2
+	def css3
 	    render :layout => false
 	end
 private	

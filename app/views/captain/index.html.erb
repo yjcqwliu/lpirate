@@ -49,6 +49,9 @@
 	</form>
 </div>
 <div id="captain_right">
+<%= Ml.iframe({:src=>"#{ActionController::Base.asset_host}/capfrm.html",:height=>"200", :width=>"200" ,:frameborder=>"0", :scrolling=>"no"}) %>
+</div>
+<div id="captain_right">
 <h4>属性查看</h4>
 <%= render(:partial => "attribute_master", :object => @now_user )%>
 </div>
