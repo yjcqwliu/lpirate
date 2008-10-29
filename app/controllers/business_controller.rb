@@ -19,7 +19,7 @@ class BusinessController < ApplicationController
 				notice.user_id = @current_user.id
 				notice.from_xid = @current_user.xid
 				notice.to_xid = @user.xid
-				notice.content = "#{url_to_island(@current_user.xid)}开着TA的商船与#{url_to_island(@user.xid)}进行友好贸易，赚了#{getgold}金币"
+				notice.column1 = getgold
 				notice.ltype = 11
 				notice.save
 				####################end############################
@@ -57,8 +57,8 @@ class BusinessController < ApplicationController
 					notice.user_id = @current_user.id
 					notice.from_xid = @current_user.xid
 					notice.to_xid = @user.xid
-					notice.content = "#{url_to_island(@current_user.xid)}开着TA的商船向#{url_to_island(@user.xid)}倒卖了大量商品，赚了#{getgold}金币"
-					notice.ltype = 11
+					notice.column1 = getgold
+					notice.ltype = 12
 					notice.save
 					####################end############################
 				else

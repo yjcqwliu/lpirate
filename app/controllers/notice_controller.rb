@@ -2,7 +2,7 @@ class NoticeController < ApplicationController
 	def all
 	    limit_friend_ids = []
 	    u=User.find(:all,
-				  :conditions => [" session_key is not null and xid in (?) ",@current_user.friend_ids],
+				  :conditions => [" xid in (?) ",@current_user.friend_ids],
 				  :order => " updated_at desc ",
 				  :limit => 10
 				  )
@@ -52,7 +52,7 @@ class NoticeController < ApplicationController
 	def ltest
         limit_friend_ids = []
 	    User.find(:all,
-				  :conditions => [" session_key is not null and xid in (?)",@current_user.friend_ids],
+				  :conditions => [" xid in (?)",@current_user.friend_ids],
 				  :limit => 3,
 				  :order => " updated_at desc "
 				  ).each do |u|

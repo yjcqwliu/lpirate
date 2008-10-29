@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081023070624) do
+ActiveRecord::Schema.define(:version => 20081029190326) do
 
   create_table "assignments", :force => true do |t|
     t.string   "title"
@@ -31,20 +31,20 @@ ActiveRecord::Schema.define(:version => 20081023070624) do
   create_table "notices", :force => true do |t|
     t.integer  "user_id"
     t.string   "from_xid"
-    t.text     "content"
     t.string   "to_xid"
     t.boolean  "sented"
     t.boolean  "noticed"
     t.integer  "ltype"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "column1"
+    t.string   "column2"
   end
 
-  add_index "notices", ["from_xid", "to_xid"], :name => "index_notices_on_from_xid_and_to_xid"
   add_index "notices", ["from_xid"], :name => "index_notices_on_from_xid"
-  add_index "notices", ["to_xid"], :name => "index_notices_on_to_xid"
   add_index "notices", ["updated_at"], :name => "index_notices_on_updated_at"
   add_index "notices", ["user_id"], :name => "index_notices_on_user_id"
+  add_index "notices", ["to_xid", "from_xid"], :name => "index_notices_on_to_xid_and_from_xid"
 
   create_table "ships", :force => true do |t|
     t.string   "name"

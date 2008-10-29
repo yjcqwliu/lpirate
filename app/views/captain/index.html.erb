@@ -56,6 +56,14 @@
 <%= render(:partial => "attribute_master", :object => @now_user )%>
 </div>
 <div id="captain_right">
+<h4>雇佣资讯</h4>
+<ul>
+<% @captain_notice.each do |cn| %>
+<li><%= show_notice(cn) %></li>
+<% end %>
+</ul>
+</div>
+<div id="captain_right">
 <h4>帮助</h4>
 雇佣船长：<br>
   你的任何好友都可以被你雇佣来作为船长，雇佣的船长可以分配到你的船只上，然后用船带着你的船长去抢劫就可以获得经验（每100金币可获得1点经验），然后船长就可以升级<br>

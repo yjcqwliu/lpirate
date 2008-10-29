@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   def set_current_user
 	  	    
 	
-	  if params[:controller] != "ships" and params[:action] != "css3" then
+	  if params[:controller] != "ships" and params[:action] != "css5" then
 			if @current_user.nil?
 			  @current_user = User.login(xiaonei_session.user)
 			  if @current_user.session_key != xiaonei_session.session_key
@@ -132,10 +132,8 @@ class ApplicationController < ActionController::Base
 			notice.from_xid = current_user.xid
 			notice.to_xid = usership.robof 
 			money = balance(usership)
-			notice.content = ["#{url_to_island(notice.from_xid)}船长驾驶他的#{usership.name}在#{url_to_island(notice.to_xid)}的岛上烧杀抢掠一番，抢劫了#{money}金币",
-			"#{url_to_island(notice.from_xid)}船长一边唱着“我是个大盗贼，什么都不怕”一边开着他的#{usership.name}带着从#{url_to_island(notice.to_xid)}的岛上抢来的#{money}金币和一群美女悠闲的离开了"].rand
-		
-			
+			notice.column1 = money
+			notice.column2 = usership.name
 			notice.ltype = 1
 			notice.save
 			#增加经验
@@ -153,8 +151,8 @@ class ApplicationController < ActionController::Base
 		notice.from_xid = current_user.xid
 		notice.to_xid = usership.user.xid
 		money = balance(usership)
-		notice.content = ["#{url_to_island(notice.from_xid)}船长成功的击退了#{url_to_island(notice.to_xid)}的进攻，夺回了#{money}金币","#{url_to_island(notice.to_xid)}被#{url_to_island(notice.from_xid)}船长一炮打回老家，抢劫行动宣告失败，留下了#{money}金币归#{url_to_island(notice.from_xid)}所有了"].rand
-		notice.ltype = 1
+		notice.column1 = money
+		notice.ltype = 2
 		notice.save
 		
 	end
@@ -178,8 +176,7 @@ class ApplicationController < ActionController::Base
 						notice.user_id = iu.id
 						notice.from_xid = current_user.xid
 						notice.to_xid = iu.xid
-						notice.content = ["#{url_to_island(notice.from_xid)}接受了邀请，加入了海盗时代，#{url_to_island(notice.to_xid)}获得3000金币和1海盗币"].rand
-						notice.ltype = 2
+						notice.ltype = 3
 						notice.save
 			end
 					
@@ -196,7 +193,6 @@ class ApplicationController < ActionController::Base
 			notice.user_id = current_user.id
 			notice.from_xid = current_user.xid
 			notice.to_xid = current_user.xid
-			notice.content = ["#{url_to_island(notice.from_xid)}踏入了海盗时代，从自己的港口收取了300金币保护费"].rand
 			notice.ltype = 10
 			notice.save
 		end

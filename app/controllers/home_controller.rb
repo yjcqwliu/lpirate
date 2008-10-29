@@ -1,7 +1,23 @@
 class HomeController < ApplicationController
 	def index
 		@user = @current_user
-	    @mynotice = nil
+	    limit_friend_ids = []
+	    u=User.find(:all,
+				  :conditions => [" xid in (?) ",@current_user.friend_ids],
+				  :order => " updated_at desc ",
+				  :limit => 10
+				  )
+	    u.each do |u|
+		limit_friend_ids << u.xid 
+		end
+	
+	#@current_user.friend_ids,
+	   @mynotice = Notice.find(:all,
+								 :conditions => [" ltype <> 11 and ( from_xid in (?,?) or to_xid in (?,?) )",limit_friend_ids,@current_user.xid.to_s,limit_friend_ids,@current_user.xid.to_s],
+								  :order => " updated_at desc ",
+								  :limit => 30
+								 )
+		
 		
 	end
 	
@@ -147,7 +163,7 @@ class HomeController < ApplicationController
 		end
 		xn_redirect_to("home/index",{"notice" => "成功返航，抢劫了#{l_gold}金币"})
 	end
-	def css3
+	def css5
 	    render :layout => false
 	end
 private	

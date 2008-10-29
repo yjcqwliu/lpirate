@@ -106,9 +106,9 @@ class User < ActiveRecord::Base
 						   master_user.gold += captain_price
 						   master_user.save
 						   
-						    #Notice.create({:user_id => current_user.xid,:from_xid => current_user.xid,:to_xid => master_user.xid,:content => xid,:ltype => 12})
+						    Notice.create({:user_id => current_user.xid,:from_xid => current_user.xid,:to_xid => master_user.xid,:column1 => captain_price,:column2 => xid,:ltype => 14})
 							else
-							#Notice.create({:user_id => current_user.xid,:from_xid => current_user.xid,:to_xid => xid,:content => nil,:ltype => 13})
+							Notice.create({:user_id => current_user.xid,:from_xid => current_user.xid,:to_xid => xid,:column1 => captain_price,:ltype => 13})
 					   end
 					   del_att_to_usership
 					   self.captain_usership_id = 0					   
