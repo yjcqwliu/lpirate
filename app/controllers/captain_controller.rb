@@ -8,7 +8,7 @@ class CaptainController < ApplicationController
 			@now_user = @current_user
 		end 
 		@captain_notice = Notice.find(:all,:conditions => ["( to_xid = ? or from_xid = ? ) and (ltype =12 or ltype =13)",@current_user.xid.to_s,@current_user.xid.to_s],:limit => 10,:order => " updated_at desc ")
-		pp "-----------@captain_notice:#{@captain_notice.inspect}---------"
+		#pp "-----------@captain_notice:#{@captain_notice.inspect}---------"
 	end
 	
 	def buy
@@ -47,7 +47,8 @@ class CaptainController < ApplicationController
 					@friend_list << f if !@friend_list.include?(f)
 				}
 		end
-		pp ("-------------@friend_list:#{@friend_list.inspect}--------")
+		@recommend_captain = User.find(:all,:conditions => [" xid in (?) and captain_sell_count < 3 ",@current_user.friend_ids],:order => " captain_level desc , captain_price asc ",:limit => 3)
+		pp ("-------------@recommend_captain:#{@recommend_captain.inspect}--------")
 		#@friend = User.find(:all,
 		#                    :conditions => [" xid in (?) ",friend_list]
 	    #					    )

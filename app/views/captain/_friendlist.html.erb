@@ -1,0 +1,19 @@
+<ul>
+<% 
+n = 0
+@friend_list.each do |f| 
+n += 1 %>
+   <li class="friendlist" >
+	  <%= link_to Ml.userpic({"uid" => f}) + Ml.name({"uid" => f}),:action => :show ,:id => f %><br>
+	  <%  u = User.login(f) 
+	      if u %>
+			  等级：<%= u.captain_level %><br>
+			  身价：<%= u.captain_price %>
+	  <%  end  %><br>
+	  <span class="selllink" ><%= link_to " 雇佣船长 ",:action=>:buy,:id=>f %></span>
+   </li>
+   <% if n % 3 == 0 %>
+	 <li><hr style="clear:both"/></li>
+   <% end %>
+<% end %>
+</ul>

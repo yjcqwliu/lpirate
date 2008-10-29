@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 	    u=User.find(:all,
 				  :conditions => [" xid in (?) ",@current_user.friend_ids],
 				  :order => " updated_at desc ",
-				  :limit => 10
+				  :limit => 3
 				  )
 	    u.each do |u|
 		limit_friend_ids << u.xid 

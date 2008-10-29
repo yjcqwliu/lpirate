@@ -1,3 +1,9 @@
+<style type="text/css">
+.special_friendlist{
+width:100px;
+float:left;
+}
+</style>
 <div id="buy_friendselect">
   <h4>雇佣船长</h4>
   <span class="linkbutton"><%= link_to "下一页",:action => :friendlist %></span>
@@ -25,6 +31,26 @@ n += 1 %>
 <div id="captain_right">
 <%= Ml.iframe({:src=>"#{ActionController::Base.asset_host}/capfrm.html",:height=>"200", :width=>"200" ,:frameborder=>"0", :scrolling=>"no"}) %>
 </div>
+<div id="xnfriendselect">
+<h4>也许你会想雇佣他们</h4>
+ <ul>
+
+<% @recommend_captain.each do |u| %>
+
+   <li class="special_friendlist" >
+	  <%= link_to Ml.userpic({"uid" => u.xid}) + "<br>" + Ml.name({"uid" => u.xid}),:action => :show ,:id => u.xid %><br>
+
+			  等级：<%= u.captain_level %><br>
+			  身价：<%= u.captain_price %><br>
+          
+	  <span class="selllink" ><%= link_to " 雇佣船长 ",:action=>:buy,:id=>u.xid %></span>
+   </li>
+  
+<% end %>
+<li><hr style="clear:both"/></li>
+</ul>
+</div>
+
 <div id="xnfriendselect">
 <h4>在这里选择你想雇佣的船长</h4>
 <form action="captain/friendlist">

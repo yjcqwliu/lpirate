@@ -100,28 +100,32 @@ class User < ActiveRecord::Base
 			   if  current_user.mycaptain.length >= current_user.usership.length 
 			       resault = "你已经不能再雇佣更多的船长了，你每多拥有一艘船可以多雇佣一个船长"
 			   else
-			       begin
-					   if captain_master != xid
-						   master_user = User.login(captain_master)
-						   master_user.gold += captain_price
-						   master_user.save
-						   
-						    Notice.create({:user_id => current_user.xid,:from_xid => current_user.xid,:to_xid => master_user.xid,:column1 => captain_price,:column2 => xid,:ltype => 14})
-							else
-							Notice.create({:user_id => current_user.xid,:from_xid => current_user.xid,:to_xid => xid,:column1 => captain_price,:ltype => 13})
+			       if captain_master == current_user.xid 
+				       resault = "TA已经是你的雇佣船长了，不能重复雇佣"
+				   else
+					   begin
+						   if captain_master != xid
+							   master_user = User.login(captain_master)
+							   master_user.gold += captain_price
+							   master_user.save
+							   
+								Notice.create({:user_id => current_user.xid,:from_xid => current_user.xid,:to_xid => master_user.xid,:column1 => captain_price,:column2 => xid,:ltype => 14})
+								else
+								Notice.create({:user_id => current_user.xid,:from_xid => current_user.xid,:to_xid => xid,:column1 => captain_price,:ltype => 13})
+						   end
+						   del_att_to_usership
+						   self.captain_usership_id = 0					   
+						   current_user.gold -= captain_price
+						   current_user.save
+						   self.captain_price = up_sell_price
+						   self.captain_master = current_user.xid
+						   self.captain_sell_updated_at = Time.now.utc
+						   self.captain_sell_count += 1
+						   save
+							
 					   end
-					   del_att_to_usership
-					   self.captain_usership_id = 0					   
-					   current_user.gold -= captain_price
-					   current_user.save
-					   self.captain_price = up_sell_price
-					   self.captain_master = current_user.xid
-					   self.captain_sell_updated_at = Time.now.utc
-					   self.captain_sell_count += 1
-					   save
-					    
-			       end
-			       resault = "雇佣成功"
+					   resault = "雇佣成功"
+				    end
 			   end
 		   end 	   
 	        

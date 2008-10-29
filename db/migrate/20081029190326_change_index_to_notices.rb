@@ -1,24 +1,19 @@
 class ChangeIndexToNotices < ActiveRecord::Migration
   def self.up
-	  create_table :notices, :force => true do |t|
-		t.integer  "user_id"
-		t.string   "from_xid"
-		t.string   "to_xid"
-		t.boolean  "sented"
-		t.boolean  "noticed"
-		t.integer  "ltype"
-		t.datetime "created_at"
-		t.datetime "updated_at"
-		t.string   "column1"
-		t.string   "column2"
-	  end
-	
-	  add_index "notices", ["from_xid"], :name => "index_notices_on_from_xid"
-	  add_index "notices", ["updated_at"], :name => "index_notices_on_updated_at"
-	  add_index "notices", ["user_id"], :name => "index_notices_on_user_id"
-	  add_index "notices", ["to_xid", "from_xid"], :name => "index_notices_on_to_xid_and_from_xid"
-  end 
+  remove_index :notices, [:from_xid,:to_xid]
+  remove_index :notices, :to_xid
+  add_index :notices, [:to_xid,:from_xid]
+  remove_column :notices, :content
+  add_column :notices, :column1 ,:string
+  add_column :notices, :column2 ,:string
+  end
+
   def self.down
-	  drop_table :notices
+  add_index :notices, [:from_xid,:to_xid]
+  add_index :notices, :to_xid
+  remove_index :notices, [:to_xid,:from_xid]
+  add_column :notices, :content ,:text
+  remove_column :notices, :column1 ,:string
+  remove_column :notices, :column2 ,:string
   end
 end
