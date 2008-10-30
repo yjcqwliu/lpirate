@@ -13,7 +13,7 @@
 			
 				<%@mynotice.each do |n|%>
 
-					<div id="noticecontent"><%= n.content %></div><div id="noticetime"><%= distance_of_time_in_words(Time.now,n.updated_at) %></div><div style="clear:both;"></div>
+					<div id="noticecontent"><%= show_notice(n) %></div><div id="noticetime"><%= distance_of_time_in_words(Time.now,n.updated_at) %></div><div style="clear:both;"></div>
 
 				<% end %>
 			
