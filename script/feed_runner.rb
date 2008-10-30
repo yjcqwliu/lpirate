@@ -40,17 +40,20 @@ Notice.find(:all, :conditions => [" sented is null  " ],:order => " updated_at d
    break
    end
    content = show_notice(notice)
-    res_note = notice.user.xn_session.invoke_method("xiaonei.notifications.send", 
-                                                    :to_ids => notice.to_xid, 
-                                                    :notification => content)
+    if notice.ltype != 10 
+		res_note = notice.user.xn_session.invoke_method("xiaonei.notifications.send", 
+														:to_ids => notice.to_xid, 
+														:notification => content)
+
+	end
     if notice.ltype != 11 
-    res_feed = notice.user.xn_session.invoke_method("xiaonei.feed.publishTemplatizedAction", 
-                                                    :title_data => { 
-                                                    }.to_json,
-                                                    :body_data => { 
-                                                      :content => content
-                                                    }.to_json,
-                                                    :template_id => (rand(10)+1))
+		res_feed = notice.user.xn_session.invoke_method("xiaonei.feed.publishTemplatizedAction", 
+														:title_data => { 
+														}.to_json,
+														:body_data => { 
+														  :content => content
+														}.to_json,
+														:template_id => (rand(10)+1))
     end
     puts "#{current_time}: process user #{notice.user.id}:  #{res_feed.inspect} #{res_note.inspect}"
     
