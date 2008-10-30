@@ -13,7 +13,7 @@ class HomeController < ApplicationController
 	
 	#@current_user.friend_ids,
 	   @mynotice = Notice.find(:all,
-								 :conditions => [" ltype <> 11 and ( from_xid in (?,?) or to_xid in (?,?) )",limit_friend_ids,@current_user.xid.to_s,limit_friend_ids,@current_user.xid.to_s],
+								 :conditions => [" ltype < 11 and ltype >12 and ( from_xid in (?,?) or to_xid in (?,?) )",limit_friend_ids,@current_user.xid.to_s,limit_friend_ids,@current_user.xid.to_s],
 								  :order => " updated_at desc ",
 								  :limit => 30
 								 )
