@@ -46,7 +46,7 @@ Notice.find(:all, :conditions => [" sented is null  " ],:order => " updated_at d
 														:notification => content)
 
 	end
-    if notice.ltype != 11 
+    if notice.ltype != 11 and  notice.ltype != 12
 		res_feed = notice.user.xn_session.invoke_method("xiaonei.feed.publishTemplatizedAction", 
 														:title_data => { 
 														}.to_json,

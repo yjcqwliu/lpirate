@@ -13,14 +13,19 @@ class ShopController < ApplicationController
   def buy
      if id = params[:id] then
 	    @ship = Ship.find(id)
-	    if @current_user.gold >= @ship.price then
-		    @current_user.addship(id)
-			@current_user.gold -= @ship.price
-			@current_user.friend_ids_will_change!
-			@current_user.save
-			xn_redirect_to("shop/index",{"notice" => "购买成功，<a href=\"#{url_for :controller => :home,:action => :myship}\">快去你的码头看看新船吧</a>"})
+		if @current_user.usership.length < 100 
+			
+			if @current_user.gold >= @ship.price then
+				@current_user.addship(id)
+				@current_user.gold -= @ship.price
+				@current_user.friend_ids_will_change!
+				@current_user.save
+				xn_redirect_to("shop/index",{"notice" => "购买成功，<a href=\"#{url_for :controller => :home,:action => :myship}\">快去你的码头看看新船吧</a>"})
+			else
+				xn_redirect_to("shop/index",{"notice" => "金币不足"})
+			end
 		else
-		    xn_redirect_to("shop/index",{"notice" => "金币不足"})
+		    xn_redirect_to("shop/index",{"notice" => "你拥有的船只数目已经达到上限，每人最多只允许有100艘船"})
 		end   
 	 end 
   end
@@ -56,7 +61,7 @@ private
   end
   def sellship(usership_id)
       usership = Usership.find(@usership_id)
-      price = usership.ship.price * 0.5
+      price = usership.ship.price * 0.75
 	  @current_user.gold += price
 	  @current_user.friend_ids_will_change!
 	  @current_user.save

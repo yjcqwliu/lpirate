@@ -315,6 +315,21 @@ class User < ActiveRecord::Base
 		end
 		
 	end
+	
+	def upkeep
+	    case usership.length
+		    when 0..20
+			    u_p = 0
+			when 21..50
+			    u_p = 0.2
+			when 51..80
+			    u_p = 0.5
+			when 81..10000
+			    u_p = 0.8			
+		end
+		u_p
+	end
+	
 private
     def up_sell_price
 	    @sell_price = captain_price * 1.31 + 323

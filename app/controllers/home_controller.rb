@@ -44,7 +44,7 @@ class HomeController < ApplicationController
 			ids.each do |id|
 				User.login(id,@current_user.xid)
 			end
-			 xn_redirect_to("home/invite",{"notice" => "成功邀请了#{ids.length}个人，只要他们加入游戏，你就可以获得奖励哦^_^ 谢谢你的支持"})
+			 xn_redirect_to("home/invite#ad",{"notice" => "成功邀请了#{ids.length}个人，只要他们加入游戏，你就可以获得奖励哦^_^ 谢谢你的支持"})
 		else
 			@isappuser = User.find(:all,
 									:conditions => [" xid in (?) and session_key is not null ",@current_user.friend_ids]
@@ -149,7 +149,7 @@ class HomeController < ApplicationController
 						   
 						   end
 				     end
-				 xn_redirect_to("home/friend/#{@user.xid}")
+				 xn_redirect_to("home/friend/#{@user.xid}#ad")
 				 end 
 				
 			 end
@@ -161,7 +161,7 @@ class HomeController < ApplicationController
 		if u_ship.user_id == @current_user.id
 			l_gold = rob_balance(u_ship)
 		end
-		xn_redirect_to("home/index",{"notice" => "成功返航，抢劫了#{l_gold}金币"})
+		xn_redirect_to("home/index#myship",{"notice" => "成功返航，抢劫了#{l_gold}金币"})
 	end
 	def css5
 	    render :layout => false

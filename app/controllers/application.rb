@@ -86,14 +86,14 @@ class ApplicationController < ActionController::Base
 	#render :text => "你没有权限操作"
   end
 
-  def balance(usership)
+  def balance(usership,upkeep = 0)
 	 #结算之前抢劫赚的钱
 
 					 if usership.robof && usership.robof >0 
 					     
 							   if usership.robtime then
 											cmp_time = Time.now - usership.robtime	
-											cmp_money = conversion(cmp_time,usership.capacity,usership.robspeed)	
+											cmp_money = ( conversion(cmp_time,usership.capacity,usership.robspeed)*(1 - upkeep) ).to_i
 											@current_user.gold += cmp_money	
 											@current_user.friend_ids_will_change!							
 											@current_user.save
@@ -131,7 +131,7 @@ class ApplicationController < ActionController::Base
 			notice.user_id = current_user.id
 			notice.from_xid = current_user.xid
 			notice.to_xid = usership.robof 
-			money = balance(usership)
+			money = balance(usership,@current_user.upkeep)
 			notice.column1 = money
 			notice.column2 = usership.name
 			notice.ltype = 1
