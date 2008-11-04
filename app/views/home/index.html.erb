@@ -1,6 +1,12 @@
 <div>
 <div id="mybody">
-<div id="islandinfo"><%= Ml.userpic("uid" => @user.xid,"linked"=>"true") %><%= Ml.name("uid"=>@user.xid)%>的小岛<span class="gorob"><%= link_to ">>去抢劫好友",:controller => :home ,:action => :friend ,:id => nil %></span><br>
+<div id="islandinfo"><%= Ml.userpic("uid" => @user.xid,"linked"=>"true") %> <%= Ml.name("uid"=>@user.xid)%>的小岛
+<span class="gorob"><%= link_to ">>去抢劫好友",:controller => :home ,:action => :friend ,:id => nil %></span>
+<% if controller.action_name == "friend" %>
+      <span class="gorob goldcolor"><a href="http://huodong.kadang.com/200809/love/index.html?from=haidao" target="_blank">>>送TA礼物</a></span>
+<% end %>
+
+<br>
 <hr /></div>
 <div id="docklist">
 <div id="dock1" class="dock"><%= Ml.image("dock") %><br>

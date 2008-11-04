@@ -33,20 +33,8 @@ class ApplicationController < ActionController::Base
 			  
 			end
 			
-			tem_friend_ids = @current_user.friend_ids
-			if tem_friend_ids.nil? or tem_friend_ids.type == String or tem_friend_ids.length == 0 or @current_user.updated_at < (Time.now - 48.hour) 
-			pp("-----------use friends API---------")
-				res = xiaonei_session.invoke_method("xiaonei.friends.get")
-			    if res.kind_of? Xiaonei::Error
-				  @current_user.friend_ids = [] if @current_user.friend_ids.empty?
-				else
-				  @current_user.friend_ids = res
-				end
-			else
-			pp("-----------didn't use friends API---------")
-			end
-			initdata #登陆游戏时的一些数据初始化 
-			
+			update_friend #更新好友数据
+			initdata #登陆游戏时的一些数据初始化 			
 			@current_user.friend_ids_will_change!
 			@current_user.save
 	   else
@@ -216,13 +204,27 @@ class ApplicationController < ActionController::Base
 	end
 
 	def rescue_action_locally(exception)
-    case exception.class.name
-    when 'ActiveRecord::RecordNotFound','::ActionController::UnknownAction','::ActionController::RoutingError' 
-        RAILS_DEFAULT_LOGGER.error("404 displayed")
-        render(:file => "#{RAILS_ROOT}/public/404.html") 
-     else
-        RAILS_DEFAULT_LOGGER.error("500 displayed")
-        render(:file => "#{RAILS_ROOT}/public/500.html")
+		case exception.class.name
+		when 'ActiveRecord::RecordNotFound','::ActionController::UnknownAction','::ActionController::RoutingError' 
+			RAILS_DEFAULT_LOGGER.error("404 displayed")
+			render(:file => "#{RAILS_ROOT}/public/404.html") 
+		 else
+			RAILS_DEFAULT_LOGGER.error("500 displayed")
+			render(:file => "#{RAILS_ROOT}/public/500.html")
+		end
     end
-end
+	def update_friend
+	    tem_friend_ids = @current_user.friend_ids
+			if tem_friend_ids.nil? or tem_friend_ids.type == String or tem_friend_ids.length == 0 or @current_user.updated_at < (Time.now - 3.hour) 
+			pp("-----------use friends API---------")
+				res = xiaonei_session.invoke_method("xiaonei.friends.get")
+			    if res.kind_of? Xiaonei::Error
+				  @current_user.friend_ids = [] if @current_user.friend_ids.empty?
+				else
+				  @current_user.friend_ids = res
+				end
+			else
+				pp("-----------didn't use friends API---------")
+			end
+	end
 end
