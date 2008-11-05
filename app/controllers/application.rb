@@ -65,7 +65,8 @@ class ApplicationController < ActionController::Base
   end
   
   def xn_redirect_to(to_url,feilds={})
-    path = "#{to_url}?"
+    path = to_url
+	path += "?" if ! feilds.blank?
         feilds.each do |key,value|
 	     path += "#{key}=#{URI.escape(value)}&"
         end
