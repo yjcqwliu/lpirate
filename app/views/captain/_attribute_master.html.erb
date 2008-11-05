@@ -23,6 +23,7 @@
 			  </ul>
 			  可分配属性点：<%= attribute_master.captain_lattribute %><br>
 			  升级经验：<%= attribute_master.captain_exp %>/<%= attribute_master.captain_aexp %><br>
+			  
 			  <% if attribute_master.xid = @now_user.xid %>
 			       雇主：
 				   <% if attribute_master.captain_master == attribute_master.xid %>
@@ -34,6 +35,7 @@
 						<% end %>
 				   <% end %>
 			  <% end %>
-			  <br>
+			  <br><br>
+			  <span class="linkbutton"><%= link_to "花费5海盗币洗点",:action => :clear_att , :id => attribute_master.id%></span>
 
 	  

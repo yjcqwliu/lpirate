@@ -11,7 +11,7 @@
 	<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :friend ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
      <% if ship.robtime %>已经掠夺了<%= conversion(Time.now - ship.robtime,ship.capacity,ship.robspeed).to_i %>个金币</br><% end %>
 <% end %>
-<span class="selllink"><%= link_to "卖掉" , :controller => "shop", :action => "sell" , :id => ship.id %></span>
+<span class="selllink"><%= link_to "改名" , :controller => "home", :action => "change_ship_name" , :id => ship.id %></span>&nbsp;&nbsp;<span class="selllink"><%= link_to "卖掉" , :controller => "shop", :action => "sell" , :id => ship.id %></span>
 	</li>
 <% if i % 5 ==0 %>
     <li style="clear:both"></li>

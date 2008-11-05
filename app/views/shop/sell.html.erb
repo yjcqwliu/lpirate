@@ -1,8 +1,4 @@
 <h4>出售船只</h4>
-<div style="text-align:center">
-<%= Ml.iframe({:src=>"#{ActionController::Base.asset_host}/newfrm.html",:height=>"0", :width=>"0" ,:frameborder=>"0", :scrolling=>"no"}) %>
-</div>
-
  <div style="text-align:center">
         <img src="<%=h @usership.ship.img_url %>" border="0" title="价格:<%=h @usership.ship.price %>  <%=h @usership.ship.intro %>"><br>
 	<%=h @usership.name %>	<br>

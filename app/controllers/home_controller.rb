@@ -34,7 +34,38 @@ class HomeController < ApplicationController
 	def myship
 	   
 	end
-	
+	def change_ship_name
+	    if id = params[:id] 
+		     @usership = Usership.find(id)
+		end
+	end
+	def save_change_ship_name
+	    if id = params[:ship_id] 
+		    @usership = Usership.find(id)
+			if @usership.user.xid == @current_user.xid
+				 if @current_user.pgold > 0 
+					 if ship_name = params[:ship_name]
+						  ship_name += "号"
+						  pp "------------ship_name:#{ship_name.length}-------------"
+						  begin
+							  @current_user.pgold -= 1
+							  @current_user.save
+							  @usership.name = ship_name
+							  @usership.save
+						  end
+						  @notice = "船只名称修改成功"
+					 else
+						  @notice = "请输入需要修改的船只名称"
+					 end
+				 else
+					 @notice = "对不起，您的海盗币不够"
+				 end
+			else
+				 @notice = "对不起，你没有权限修改别人的船只"
+			end
+		end
+		xn_redirect_to("home/change_ship_name/#{id}",{:notice => @notice})
+	end
 	def help
 	    @friend = current_user.friend_ids.rand
 	end

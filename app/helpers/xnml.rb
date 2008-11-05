@@ -78,11 +78,13 @@ def self.image(imgcase,img=true)
 	   when "weblpirate_25"
 	      ml += "http://i170.photobucket.com/albums/u258/taweili/weblpirate_25.jpg"
 	   when "buttonhelp"
-	      ml += "http://fmn022.xnimg.cn/fmn022/groupalbum/20081026/14/26/L239324144229YAN.jpg"
+	      ml += "http://fmn023.xnimg.cn/fmn023/groupalbum/20081106/03/18/L270335290725TON.jpg"
 	   when "buttonbbs"
-	      ml += "http://fmn019.xnimg.cn/fmn019/groupalbum/20081026/13/55/L055104885646TON.jpg"
+	      ml += "http://fmn023.xnimg.cn/fmn023/groupalbum/20081106/03/18/L271488770584TON.jpg"
+	   when "buttonpgold"
+	      ml += "http://fmn022.xnimg.cn/fmn022/groupalbum/20081106/03/18/L270297043112TON.jpg"
 	   when "buttoninvite"
-	      ml += "http://fmn019.xnimg.cn/fmn019/groupalbum/20081026/13/55/L055098862810TON.jpg"
+	      ml += "http://fmn022.xnimg.cn/fmn022/groupalbum/20081106/03/18/L270112766738TON.jpg"
 	   
    end
    if img

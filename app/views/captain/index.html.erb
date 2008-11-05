@@ -49,9 +49,6 @@
 	</form>
 </div>
 <div id="captain_right">
-<%= Ml.iframe({:src=>"#{ActionController::Base.asset_host}/capfrm.html",:height=>"0", :width=>"0" ,:frameborder=>"0", :scrolling=>"no"}) %>
-</div>
-<div id="captain_right">
 <h4>属性查看</h4>
 <%= render(:partial => "attribute_master", :object => @now_user )%>
 </div>
@@ -69,7 +66,9 @@
   你的任何好友都可以被你雇佣来作为船长，雇佣的船长可以分配到你的船只上，然后用船带着你的船长去抢劫就可以获得经验（每100金币可获得1点经验），然后船长就可以升级<br>
   同样别人可以雇下你已经雇佣的船长，只有TA有足够的钱，每个人最多每天可以被雇佣三次<br><br>
 属性分配：<br>
+  点击船长头像即可在左侧对船长进行属性点分配了（如果船长还有剩余属性点的话）。<br>
   船长通过抢劫升级后即可获得1点属性点，这一点，雇主有权利加到任意的三个属性上（容量，抢劫速度，攻击）<br>
-  这些属性对船长所在的船有加成作用
-
+  这些属性对船长所在的船有加成作用<br><br>
+洗点：<br>
+  花费5个海盗币，就可以把之前给船长的所有属性全部清理，可以自由的重新给船长分配属性<br>
 </div>

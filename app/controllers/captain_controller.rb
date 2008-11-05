@@ -85,4 +85,31 @@ class CaptainController < ApplicationController
 	   notice = @current_user.buy_back
 	   xn_redirect_to("captain/index",{"notice" => notice})
 	end
+	
+	def clear_att
+	   if id = params[:id] 
+		    @user = User.find(id)
+			if @user.captain_master == @current_user.xid
+				 if @current_user.pgold > 5 
+						  begin
+							  @current_user.pgold -= 5
+							  @current_user.save
+							  @user.captain_capacity = 0
+							  @user.captain_robspeed = 0
+							  @user.captain_attack = 0
+							  @user.captain_lattribute = @user.captain_level
+							  @user.save
+						  end
+						  @notice = "洗点成功，TA的属性点已经恢复到了未分配状态"
+				 else
+					 @notice = "对不起，您的海盗币不够"
+				 end
+			else
+				 @notice = "对不起，你没有权限洗点，TA不是你的雇佣船长"
+			end
+		else
+		    @notice = "对不起，您提交的数据有误"
+		end
+		xn_redirect_to("captain/index/#{@user.xid}",{:notice => @notice})
+	end
 end
