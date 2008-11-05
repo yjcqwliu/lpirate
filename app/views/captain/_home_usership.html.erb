@@ -10,7 +10,7 @@
 				 <span class="gray">暂无</span>
 				 <% end %><br>
 			<% if !ship.robof || ship.robof <= 0   %>
-				<%= radio_button  "usership","id", ship.id , :checked => "checked" %> <%= ship.name %><br>
+				<%= radio_button  "usership","id", ship.id , :checked => "checked" %> <%=h ship.name %><br>
 			<% else %>
 				<span class="gray">不在港口不能分配船长</span><br>
 			<% end %>

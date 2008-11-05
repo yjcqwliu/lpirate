@@ -4,7 +4,7 @@
 <% i += 1 %>
 	<li class="shiplist">
 <%= usershipimg(ship)%><br>
-<%= ship.name %><br>
+<%=h ship.name %><br>
 货仓容量：<%=h ship.capacity %>金币	<br>
 满载时间：<%=h "%.2f" % fulltime(ship.capacity,ship.robspeed) %>小时<br>
 <% if ship.robof && ship.robof > 0   %>

@@ -5,7 +5,7 @@
 	<li class="shiplist">
 	<%= usershipimg(ship)%><br>
 	<%= radio_button  "usership","id", ship.id , :checked => "checked" %>
-	<%= ship.name %><br>
+	<%=h ship.name %><br>
 	船长：<% if ship.captain %>
 			     <%= link_to Ml.name({"uid" => ship.captain.xid}),:controller => :captain,:action => :show,:id => ship.captain.xid %>
 				 <% else %>
