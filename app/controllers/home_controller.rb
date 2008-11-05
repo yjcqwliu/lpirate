@@ -180,7 +180,7 @@ class HomeController < ApplicationController
 						   
 						   end
 				     end
-				 xn_redirect_to("home/friend/#{@user.xid}#ad")
+				 xn_redirect_to("home/friend/#{@user.xid}#app21066_ad")
 				 end 
 				
 			 end
