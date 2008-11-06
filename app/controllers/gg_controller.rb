@@ -5,8 +5,8 @@ def callback
 	uid = params[:uid]
 	orderid = params[:orderid]
 	sign = params[:sign]
-	#pp "-------------sign:#{sign}--money:#{money}--uid:#{uid}--orderid:#{orderid}--"
-	#pp "-------------- Digest::MD5.hexdigest(money+uid+orderid+adapikey)#{ Digest::MD5.hexdigest(money+uid+orderid+adapikey)}---------"
+	pp "-------------sign:#{sign}--money:#{money}--uid:#{uid}--orderid:#{orderid}--"
+	pp "-------------- Digest::MD5.hexdigest(money+uid+orderid+adapikey)#{ Digest::MD5.hexdigest(money+uid+orderid+adapikey)}---------"
 	if sign == Digest::MD5.hexdigest(money + uid + orderid + adapikey)
 	    user = User.find_by_xid(uid)
 		if user

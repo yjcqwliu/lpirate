@@ -20,7 +20,7 @@ def show_notice(notice)
 	   when 13
 	       re = "#{url_to_captain(notice.from_xid)}花了#{notice.column1}金币把#{url_to_captain(notice.to_xid)}雇佣成了船长"
 	   when 14
-	       re = "#{url_to_captain(notice.from_xid)}花了#{notice.column1}金币把#{url_to_captain(notice.to_xid)}从#{url_to_captain(notice.column2)}手上雇佣了下来"
+	       re = "#{url_to_captain(notice.from_xid)}花了#{notice.column1}金币把#{url_to_captain(notice.column2)}从#{url_to_captain(notice.to_xid)}手上雇佣了下来"
 	   end
        re
    end
