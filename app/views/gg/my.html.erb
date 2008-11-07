@@ -1,0 +1,33 @@
+<div><h4>我的海盗币使用记录</h4>
+<center>
+  <%if @page.to_i > 1 then %>
+    <%= link_to "上一页", {:controller => :gg, :action => my, :page => (@page.to_i - 1)}, {:class => "chn"} %>
+  <% else %>
+    上一页
+  <% end %>
+  &nbsp;
+  <%if @page.to_i < @bmorder.total_pages then %>
+    <%= link_to "下一页", {:controller => :gg, :action => my, :page => (@page.to_i + 1)}, {:class => "chn"} %>
+  <% else %>
+    下一页
+  <% end %>
+
+<hr />
+<span class="linkbutton"><%= link_to "返回赚取海盗币", :action => :index %></span>
+<table border="1" width="600" align="center">
+<tr>
+  <td>金额</td>
+  <td>时间</td>
+  <td>详情</td>
+</tr>
+<% @bmorder.each do |o| %>
+<tr>
+  <td><%= o.money %></td>
+  <td><%= o.updated_at.to_date %></td>
+  <td><%= o.info %></td>
+</tr>
+<% end %>
+
+</table>
+</center>
+</div>

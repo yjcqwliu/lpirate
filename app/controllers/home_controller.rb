@@ -46,12 +46,13 @@ class HomeController < ApplicationController
 				 if @current_user.pgold > 0 
 					 if ship_name = params[:ship_name]
 						  ship_name += "号"
-						  pp "------------ship_name:#{ship_name.length}-------------"
+						  #pp "------------ship_name:#{ship_name.length}-------------"
 						  begin
 							  @current_user.pgold -= 1
 							  @current_user.save
 							  @usership.name = ship_name
 							  @usership.save
+							  Bmorder.create(:uid => @current_user.xid, :money => -1, :orderid => -1, :info => "修改船只名称")
 						  end
 						  @notice = "船只名称修改成功"
 					 else
@@ -180,7 +181,7 @@ class HomeController < ApplicationController
 						   
 						   end
 				     end
-				 xn_redirect_to("home/friend/#{@user.xid}#app21066_nav")
+				 xn_redirect_to("home/friend/#{@user.xid}#nav")
 				 end 
 				
 			 end

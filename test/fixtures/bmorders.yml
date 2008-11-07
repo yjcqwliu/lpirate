@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  uid: MyString
+  money: 1
+  info: MyString
+  orderid: 1
+  sign: MyString
+
+two:
+  uid: MyString
+  money: 1
+  info: MyString
+  orderid: 1
+  sign: MyString

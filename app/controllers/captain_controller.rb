@@ -99,6 +99,7 @@ class CaptainController < ApplicationController
 							  @user.captain_attack = 0
 							  @user.captain_lattribute = @user.captain_level
 							  @user.save
+							  Bmorder.create(:uid => @current_user.xid, :money => -5, :orderid => -2, :info => "雇佣船长洗点")
 						  end
 						  @notice = "洗点成功，TA的属性点已经恢复到了未分配状态"
 				 else
