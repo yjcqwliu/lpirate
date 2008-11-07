@@ -4,7 +4,7 @@ class CreateBmorders < ActiveRecord::Migration
       t.string :uid
       t.integer :money
       t.string :info
-      t.integer :orderid
+      t.string :orderid
       t.string :sign
 
       t.timestamps

@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20081107010324) do
     t.string   "uid"
     t.integer  "money"
     t.string   "info"
-    t.integer  "orderid"
+    t.string   "orderid"
     t.string   "sign"
     t.datetime "created_at"
     t.datetime "updated_at"
