@@ -5,8 +5,9 @@
 	<li class="shiplist">
 <%= usershipimg(ship)%><br>
 <%=h ship.name %><br>
-货仓容量：<%=h ship.capacity %>金币	<br>
-满载时间：<%=h "%.2f" % fulltime(ship.capacity,ship.robspeed) %>小时<br>
+货仓容量：<%= ship.capacity %>金币	<br>
+满载时间：<%= "%.2f" % fulltime(ship.capacity,ship.robspeed) %>小时<br>
+攻　　击：<%= ship.attack %><br>
 <% if ship.robof && ship.robof > 0   %>
 	<span class="gray">(正在<%= link_to "<xn:name uid=\"#{ship.robof}\" />", :controller => :home , :action => :friend ,:id => ship.robof %>的岛上烧杀抢掠)</span><br>
      <% if ship.robtime %>已经掠夺了<%= conversion(Time.now - ship.robtime,ship.capacity,ship.robspeed).to_i %>个金币</br><% end %>
