@@ -1,0 +1,40 @@
+<div class="body_left">
+	<div>
+		<div id="notify-title">我的属性</div>
+		<strong><ul>
+			<li>战 斗 力：<span style="color:green"><%= @current_user.fight.maxthew - @current_user.fight.thew %>/<%= @current_user.fight.maxthew %></span></li>
+			<li>总 攻 击：<span style="color:red"><%= @current_user.fight.attack %></span></li>
+			<li>船只数目：<span style="color:blue"><%= @current_user.fight.ship_count %></span></li>
+		</ul></strong><br>
+<br>
+<br>
+	</div>
+	<div>
+		<div id="notify-title">战场帮助</div>
+		只有拥有船只超过三艘的人才能进入战场<br>
+		战斗力大于0时才可以战斗，每2小时回复1点，直到上限<br>
+	</div>
+</div>		
+<div class="body_right">
+<div class="digg_pagination"><%= will_paginate @fight_teg %></div>
+<table width="100%" border="1" align="center" class="fight_list_table" style="clear:both">
+  <tr>
+    <th width="282">海盗</th>
+    <th width="227">船只数目</th>
+    <th width="69">操作</th>
+  </tr>
+<% 
+@fight_teg.each do |f| 
+if f.user.xid != @current_user.xid 
+
+%>
+  <tr>
+    <td><%= link_to Ml.userpic({"uid" => f.user.xid}) + Ml.name({"uid" => f.user.xid}),:controller => :home, :action => :friend, :id => f.user.xid %></td>
+    <td><%= f.ship_count %></td>
+    <td><span class="linkbutton"><%= link_to "攻击",:controller => :fight, :action => :fight, :id => f.user.xid %></span></td>
+  </tr>
+<% 
+end
+end %>
+</table>
+</div>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081107010324) do
+ActiveRecord::Schema.define(:version => 20081118164902) do
 
   create_table "assignments", :force => true do |t|
     t.string   "title"
@@ -31,6 +31,24 @@ ActiveRecord::Schema.define(:version => 20081107010324) do
   add_index "bmorders", ["uid"], :name => "index_bmorders_on_uid"
   add_index "bmorders", ["orderid"], :name => "index_bmorders_on_orderid"
   add_index "bmorders", ["updated_at"], :name => "index_bmorders_on_updated_at"
+
+  create_table "fights", :force => true do |t|
+    t.integer  "attack"
+    t.string   "ship_ids"
+    t.integer  "thew"
+    t.integer  "maxthew"
+    t.integer  "user_id"
+    t.boolean  "fighted"
+    t.integer  "ship_count"
+    t.datetime "last_add_thew"
+    t.boolean  "death_mode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "fights", ["user_id"], :name => "index_fights_on_user_id"
+  add_index "fights", ["attack"], :name => "index_fights_on_attack"
+  add_index "fights", ["ship_count"], :name => "index_fights_on_ship_count"
 
   create_table "messages", :force => true do |t|
     t.string   "title"

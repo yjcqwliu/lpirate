@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
     
 	has_many :usership,:order => 'updated_at desc ' 
 	has_many :notice
+	has_one :fight
 	
     def self.login(u_id,invite = 0)
 			if u_id 
@@ -206,11 +207,12 @@ class User < ActiveRecord::Base
 		    notice = "你不是TA的船长，经验无法获得"
 		else
 		    self.captain_exp += lexp
-			while self.captain_exp >= self.captain_aexp 
+			while self.captain_exp >= self.captain_aexp    #升级
 			    self.captain_exp -= self.captain_aexp
 				self.captain_lattribute += 1 
 				self.captain_level += 1
 				self.captain_aexp = (1.5 **(self.captain_level-1)) * 10 
+				self.captain_price = up_sell_price
 			end 
 			save
 		end
@@ -301,6 +303,11 @@ class User < ActiveRecord::Base
 	def buy_back
 	    if captain_master != xid
 		    if gold >= captain_price
+				if captain_master 
+							   master_user = User.login(captain_master)
+							   master_user.gold += captain_price
+							   master_user.save
+				end
 			    self.gold -= self.captain_price
 			    self.del_att_to_usership
 				self.captain_master = self.xid
@@ -329,10 +336,42 @@ class User < ActiveRecord::Base
 		end
 		u_p
 	end
-	
+	def init_fight
+		if !fight
+			new_fight = Fight.create()
+			total_attack = 0
+			total_ships = []
+			usership.each {|s| total_attack += s.attack; total_ships << s.id }
+			new_fight.attack = total_attack
+			new_fight.ship_ids = total_ships.join(",")
+			new_fight.thew = 0
+			new_fight.maxthew = 10
+			new_fight.fighted = 1
+			new_fight.death_mode = 0
+			new_fight.ship_count = usership.length
+			new_fight.last_add_thew = Time.now	
+			self.fight = new_fight	
+			self.save	
+			
+		end
+	end
+	def update_fight
+		total_attack = 0
+		total_ships = []
+		usership.each {|s| total_attack += s.attack; total_ships << s.id }
+		fight.attack = total_attack
+		fight.ship_ids = total_ships.join(",")
+		fight.thew = 0
+		fight.maxthew = 10
+		fight.fighted = 1
+		fight.death_mode = 0
+		fight.ship_count = usership.length
+		fight.last_add_thew = Time.now	
+		self.fight.save	
+	end
 private
     def up_sell_price
-	    @sell_price = captain_price * 1.31 + 323
+	    sell_price = captain_price * 1.31 + 323
 	end
 	
 	

@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  attack: 1
+  ship_ids: MyString
+
+two:
+  attack: 1
+  ship_ids: MyString
