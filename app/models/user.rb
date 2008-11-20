@@ -361,12 +361,7 @@ class User < ActiveRecord::Base
 		usership.each {|s| total_attack += s.attack; total_ships << s.id }
 		fight.attack = total_attack
 		fight.ship_ids = total_ships.join(",")
-		fight.thew = 0
-		fight.maxthew = 10
-		fight.fighted = 1
-		fight.death_mode = 0
-		fight.ship_count = usership.length
-		fight.last_add_thew = Time.now	
+		fight.ship_count = total_ships.length
 		self.fight.save	
 	end
 private
