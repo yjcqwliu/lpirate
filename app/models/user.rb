@@ -356,6 +356,7 @@ class User < ActiveRecord::Base
 		end
 	end
 	def update_fight
+                if fight
 		total_attack = 0
 		total_ships = []
 		usership.each {|s| total_attack += s.attack; total_ships << s.id }
@@ -363,6 +364,7 @@ class User < ActiveRecord::Base
 		fight.ship_ids = total_ships.join(",")
 		fight.ship_count = total_ships.length
 		self.fight.save	
+                end
 	end
 private
     def up_sell_price
