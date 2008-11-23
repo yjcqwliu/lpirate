@@ -5,6 +5,7 @@
 			<li>战 斗 力：<span style="color:green"><%= @current_user.fight.maxthew - @current_user.fight.thew %>/<%= @current_user.fight.maxthew %></span></li>
 			<li>总 攻 击：<span style="color:red"><%= @current_user.fight.attack %></span></li>
 			<li>船只数目：<span style="color:blue"><%= @current_user.fight.ship_count %></span></li>
+			<li>胜&nbsp;&nbsp;&nbsp;&nbsp;率：<span style="color:#996633"><%= "%.2f" % (100 * @current_user.fight.win_percent)   %>%</span></li>
 		</ul></strong><br>
 <br>
 <br>
@@ -20,7 +21,8 @@
 <table width="100%" border="1" align="center" class="fight_list_table" style="clear:both">
   <tr>
     <th width="282">海盗</th>
-    <th width="227">船只数目</th>
+    <th width="112">船只数目</th>
+    <th width="113">胜率</th>
     <th width="69">操作</th>
   </tr>
 <% 
@@ -31,10 +33,20 @@ if f.user.xid != @current_user.xid
   <tr>
     <td><%= link_to Ml.userpic({"uid" => f.user.xid}) + Ml.name({"uid" => f.user.xid}),:controller => :home, :action => :friend, :id => f.user.xid %></td>
     <td><%= f.ship_count %></td>
-    <td><span class="linkbutton"><%= link_to "攻击",:controller => :fight, :action => :fight, :id => f.user.xid %></span></td>
+	<td><% if f.win_percent %><%= "%.2f" % (100 * f.win_percent)   %>%<% end %></td>
+    <td><span class="linkbutton"><%= link_to "攻击",:controller => :fight, :action => :fight, :id => f.user.xid, :page => @page %></span></td>
   </tr>
 <% 
 end
 end %>
 </table>
+</div>
+<div id="noticelist">
+  <hr style="clear:both;"/>
+<% if @fight_info %>
+  <span id="piratenews">战场快讯</span>
+<% @fight_info.each do |f| %>
+<div id="noticecontent"><%= show_fight_info(f) %></div><div id="noticetime"><%= distance_of_time_in_words(Time.now,f.updated_at) %></div><div style="clear:both;"></div>
+<% end 
+end %>
 </div>

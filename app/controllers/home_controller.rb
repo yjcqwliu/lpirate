@@ -17,8 +17,6 @@ class HomeController < ApplicationController
 								  :order => " updated_at desc ",
 								  :limit => 30
 								 )
-		
-		
 	end
 	
 	def friend

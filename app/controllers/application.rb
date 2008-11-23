@@ -68,8 +68,10 @@ class ApplicationController < ActionController::Base
     path = to_url
 	path += "?" if ! feilds.blank?
         feilds.each do |key,value|
-	     path += "#{key}=#{URI.escape(value)}&"
-        end
+			if key && value
+				 path += "#{key}=#{URI.escape(value)}&"
+			end
+		end
     render :text => "
     <xn:redirect url=\"#{path}\"/>"
 	#render :text => "你没有权限操作"

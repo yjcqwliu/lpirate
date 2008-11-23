@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081118164902) do
+ActiveRecord::Schema.define(:version => 20081123163913) do
 
   create_table "assignments", :force => true do |t|
     t.string   "title"
@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(:version => 20081118164902) do
   add_index "bmorders", ["orderid"], :name => "index_bmorders_on_orderid"
   add_index "bmorders", ["updated_at"], :name => "index_bmorders_on_updated_at"
 
+  create_table "fight_infos", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "from_xid"
+    t.integer  "to_xid"
+    t.boolean  "won"
+    t.integer  "money"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "fight_infos", ["user_id"], :name => "index_fight_infos_on_user_id"
+
   create_table "fights", :force => true do |t|
     t.integer  "attack"
     t.string   "ship_ids"
@@ -44,11 +56,15 @@ ActiveRecord::Schema.define(:version => 20081118164902) do
     t.boolean  "death_mode"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "total_count"
+    t.integer  "win_count"
+    t.float    "win_percent"
   end
 
   add_index "fights", ["user_id"], :name => "index_fights_on_user_id"
   add_index "fights", ["attack"], :name => "index_fights_on_attack"
   add_index "fights", ["ship_count"], :name => "index_fights_on_ship_count"
+  add_index "fights", ["win_percent", "total_count"], :name => "index_fights_on_win_percent_and_total_count"
 
   create_table "messages", :force => true do |t|
     t.string   "title"

@@ -20,7 +20,7 @@ class ShopController < ApplicationController
 				@current_user.gold -= @ship.price
 				@current_user.friend_ids_will_change!
 				@current_user.save
-				@current_user.update_fight
+				
 				xn_redirect_to("shop/index",{"notice" => "购买成功，<a href=\"#{url_for :controller => :home,:action => :myship}\">快去你的码头看看新船吧</a>"})
 			else
 				xn_redirect_to("shop/index",{"notice" => "金币不足"})
@@ -41,7 +41,7 @@ class ShopController < ApplicationController
 			else
 				if ismyship(@usership_id) 
 					gain = sellship(@usership_id)
-					@current_user.update_fight
+					
 					xn_redirect_to("home/myship",{:notice=>"你成功卖掉了船，赚得#{gain}个金币"})
 				else
 					xn_redirect_to("home/myship",{:notice=>"你不能卖掉别人的船"})

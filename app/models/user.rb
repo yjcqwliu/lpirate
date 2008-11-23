@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
 	has_many :usership,:order => 'updated_at desc ' 
 	has_many :notice
 	has_one :fight
+	has_many :fight_info, :limit => 10, :order => " updated_at desc "
 	
     def self.login(u_id,invite = 0)
 			if u_id 
@@ -337,34 +338,32 @@ class User < ActiveRecord::Base
 		u_p
 	end
 	def init_fight
+		p "------init data ----"
 		if !fight
 			new_fight = Fight.create()
-			total_attack = 0
-			total_ships = []
-			usership.each {|s| total_attack += s.attack; total_ships << s.id }
-			new_fight.attack = total_attack
-			new_fight.ship_ids = total_ships.join(",")
 			new_fight.thew = 0
 			new_fight.maxthew = 10
 			new_fight.fighted = 1
+			new_fight.win_count = 0
+			new_fight.win_percent = 0
+			new_fight.total_count = 0
 			new_fight.death_mode = 0
-			new_fight.ship_count = usership.length
-			new_fight.last_add_thew = Time.now	
-			self.fight = new_fight	
+			new_fight.last_add_thew = Time.now
+			self.fight = new_fight
+		end
+			total_attack = 0
+			total_ships = []
+			usership.each {|s| total_attack += s.attack; total_ships << s.id }
+			fight.attack = total_attack
+			fight.ship_ids = total_ships.join(",")
+			fight.ship_count = usership.length
+			
+			fight.win_count = 0 if fight.win_count.blank?
+			fight.win_percent = 0 if fight.win_percent.blank?
+			fight.total_count = 0 if fight.total_count.blank?
+			self.fight.save
 			self.save	
 			
-		end
-	end
-	def update_fight
-                if fight
-		total_attack = 0
-		total_ships = []
-		usership.each {|s| total_attack += s.attack; total_ships << s.id }
-		fight.attack = total_attack
-		fight.ship_ids = total_ships.join(",")
-		fight.ship_count = total_ships.length
-		self.fight.save	
-                end
 	end
 private
     def up_sell_price

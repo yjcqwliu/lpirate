@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  from_xid: 1
+  to_xid: 1
+  won: false
+
+two:
+  user_id: 1
+  from_xid: 1
+  to_xid: 1
+  won: false

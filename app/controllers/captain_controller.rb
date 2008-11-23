@@ -18,7 +18,7 @@ class CaptainController < ApplicationController
 			    notice = "TA已经是你的雇佣船长了"
 			else
 			    notice = @user.captain_buy(@current_user)
-				@current_user.update_fight #更新海战数据
+				
 			end
 			xn_redirect_to("captain/show/#{uid}",{"notice" => notice})
 		end
@@ -28,7 +28,7 @@ class CaptainController < ApplicationController
 	    if uid = params[:id]
 		    @user = User.login(uid)
 			notice = @user.captain_disbuy(@current_user)
-			@current_user.update_fight #更新海战数据
+			
 			xn_redirect_to("captain/show/#{uid}",{"notice" => notice})
 		end
 	end
@@ -62,34 +62,34 @@ class CaptainController < ApplicationController
 	    usership = params[:usership] 
 	    captain = User.find(usership[:captain])
 		notice =captain.appoint_ship(@current_user,usership[:id])
-		@current_user.update_fight #更新海战数据
+		
 		xn_redirect_to("captain/index",{"notice" => notice})
 	end
 	
 	def add_capacity
 	    id = params[:id]
 	    notice = User.find_by_xid(id).add_capacity(@current_user)
-		@current_user.update_fight #更新海战数据
+		
 		xn_redirect_to("captain/index/#{id}",{"notice" => notice})
 	end
 	
 	def add_robspeed
 	    id = params[:id]
 	    notice = User.find_by_xid(id).add_robspeed(@current_user)
-		@current_user.update_fight #更新海战数据
+		
 		xn_redirect_to("captain/index/#{id}",{"notice" => notice})
 	end
 	
 	def add_attack
 	   id = params[:id]
 	   notice = User.find_by_xid(id).add_attack(@current_user)
-	   @current_user.update_fight #更新海战数据
+	   
 	   xn_redirect_to("captain/index/#{id}",{"notice" => notice})
 	end
 	
 	def buy_back
 	   notice = @current_user.buy_back
-	   @current_user.update_fight #更新海战数据
+	   
 	   xn_redirect_to("captain/index",{"notice" => notice})
 	end
 	
@@ -109,7 +109,7 @@ class CaptainController < ApplicationController
 							  Bmorder.create(:uid => @current_user.xid, :money => -5, :orderid => -2, :info => "雇佣船长洗点")
 						  end
 						  @notice = "洗点成功，TA的属性点已经恢复到了未分配状态"
-						  @current_user.update_fight #更新海战数据
+						  
 						  
 				 else
 					 @notice = "对不起，您的海盗币不够"
