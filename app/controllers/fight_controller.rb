@@ -44,6 +44,7 @@ class FightController < ApplicationController
 					else
 						rob_money = rand(1000) + 1000
 						@current_user.gold -= rob_money
+						@current_user.gold = 0 if @current_user.gold < 0
 						@current_user.fight.total_count += 1
 						@current_user.fight.win_percent = @current_user.fight.win_count / ( @current_user.fight.total_count * 1.0 ) 
 						

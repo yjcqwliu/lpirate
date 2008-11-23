@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(:version => 20081123163913) do
   end
 
   add_index "fight_infos", ["user_id"], :name => "index_fight_infos_on_user_id"
+  add_index "fight_infos", ["to_xid", "from_xid"], :name => "index_fight_infos_on_to_xid_and_from_xid"
+  add_index "fight_infos", ["from_xid"], :name => "index_fight_infos_on_from_xid"
 
   create_table "fights", :force => true do |t|
     t.integer  "attack"
