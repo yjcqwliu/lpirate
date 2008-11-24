@@ -87,8 +87,8 @@ class User < ActiveRecord::Base
 	end
 	def xn_session
 		@xn_session ||= Xiaonei::Session.new("xn_sig_session_key" => session_key, "xn_sig_user" => xid)
-	end
-    
+	end		
+			
 	def captain_buy(current_user) #被买
 	   self.captain_sell_count = 0 if captain_sell_updated_at.nil? || (Time.now.utc + 8.hour).to_i / 86400 > (captain_sell_updated_at + 8.hour).to_i / 86400
 	   save

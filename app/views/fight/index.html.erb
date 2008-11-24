@@ -27,8 +27,7 @@
   </tr>
 <% 
 @fight_teg.each do |f| 
-if f.user.xid != @current_user.xid 
-
+if f.user && f.user.xid != @current_user.xid 
 %>
   <tr>
     <td><%= link_to Ml.userpic({"uid" => f.user.xid}) + Ml.name({"uid" => f.user.xid}),:controller => :home, :action => :friend, :id => f.user.xid %></td>

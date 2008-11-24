@@ -1,7 +1,5 @@
-<link href="<%= ActionController::Base.asset_host %>/home/css5?v=1.0" />
-<style type="text/css">
-a:hover {position : relative; top : 1px; left :   1px }
-</style>
+<script src="<%= ActionController::Base.asset_host %>/javascripts/lpirate.js?v=0.3" ></script>
+<link href="<%= ActionController::Base.asset_host %>/home/css5?v=1.1" />
 <table id="Table_01" width="800" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td colspan="8">
@@ -64,4 +62,4 @@ if @notice != nil and @notice != "" then %>
 </tr>
 <tr><td colspan="2"><%= Ml.image("weblpirate_25") %></td></tr>
 </table>
-<%= Ml.iframe({:src=>"#{ActionController::Base.asset_host}/capfrm.html",:height=>"0", :width=>"0" ,:frameborder=>"0", :scrolling=>"no"}) %>
+<%= Ml.iframe({:src=>"#{ActionController::Base.asset_host}/home/tongji?help=#{params[:help]}",:height=>"0", :width=>"0" ,:frameborder=>"0", :scrolling=>"no"}) %>

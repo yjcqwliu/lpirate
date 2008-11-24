@@ -50,7 +50,6 @@ class CaptainController < ApplicationController
 				}
 		end
 		@recommend_captain = User.find(:all,:conditions => [" xid in (?) and captain_sell_count < 3 ",@current_user.friend_ids],:order => " captain_level desc , captain_price asc ",:limit => 3)
-		pp ("-------------@recommend_captain:#{@recommend_captain.inspect}--------")
 		#@friend = User.find(:all,
 		#                    :conditions => [" xid in (?) ",friend_list]
 	    #					    )

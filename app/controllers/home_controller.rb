@@ -193,6 +193,22 @@ class HomeController < ApplicationController
 		end
 		xn_redirect_to("home/index#myship",{"notice" => "成功返航，抢劫了#{l_gold}金币"})
 	end
+	def tongji
+		if params[:help] == '5'
+			tem_friend_ids = @current_user.friend_ids
+				p "---------use friend api"
+					res = xiaonei_session.invoke_method("xiaonei.friends.get")
+					if res.kind_of? Xiaonei::Error
+					  @current_user.friend_ids = [] if @current_user.friend_ids.empty?
+					else
+					  @current_user.friend_ids = res
+					end
+					@current_user.save
+		else
+			p "------------didn't use friend api"
+		end
+		render :layout => false
+	end
 	def css5
 	    render :layout => false
 	end

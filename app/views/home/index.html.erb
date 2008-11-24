@@ -154,10 +154,11 @@ if @mynotice %>
 </div>
 <div id="friendlist" >
 <div id="notify-title">海盗好友</div>
+<input name="friend_name_key" id="friend_name_key" type="text" onkeyup="friend_name_key_on_change()" size="15"/>
+<ul id="friend_box_select">
 <% @current_user.friend_ids.each do |friend| %>
-<div>
-<%= link_to Ml.name({"uid" => friend}),:controller => :home,:action => :friend,:id => friend %>
-</div>
+<li id="friend_select_li_<%= friend %>"><%= link_to Ml.name({"uid" => friend}),:controller => :home,:action => :friend,:id => friend %></li>
 <% end %>
+</ul>
 </div>
 </div>
