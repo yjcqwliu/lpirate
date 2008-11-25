@@ -1,7 +1,6 @@
 function friend_name_key_on_change()
 {
 	name_key = document.getElementById("friend_name_key");
-	friend_show_all();
 	if(name_key.getValue() != "")
 	{
 		friend_name_node_array = document.getElementById("friend_box_select").getChildNodes();
@@ -9,8 +8,12 @@ function friend_name_key_on_change()
 		{
 		if(remove_html_tag(friend_name_node_array[i].getInnerHTML()).indexOf(name_key.getValue()) < 0)
 			friend_name_node_array[i].setStyle("display",'none');
+		else
+			friend_name_node_array[i].setStyle("display",'block');
 		}
 	}
+	else
+		friend_show_all();
 }
 function friend_show_all()
 {

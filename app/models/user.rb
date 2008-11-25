@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
     serialize :friend_ids
 	serialize :invite
     
-	has_many :usership,:order => 'updated_at desc ' 
+	has_many :usership,:order => 'updated_at desc ' ,:include => [:ship,:captain]
 	has_many :notice
 	has_one :fight
 	has_many :fight_info, :limit => 10, :order => " updated_at desc "
@@ -338,7 +338,6 @@ class User < ActiveRecord::Base
 		u_p
 	end
 	def init_fight
-		p "------init data ----"
 		if !fight
 			new_fight = Fight.create()
 			new_fight.thew = 0

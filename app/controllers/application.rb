@@ -217,15 +217,17 @@ class ApplicationController < ActionController::Base
     end
 	
 	def update_friend_ids
+			
 			if @current_user.friend_ids.blank? or @current_user.friend_ids.type == String
-					
+					pp "-----use friend api--@current_user.friend_ids.type:#{@current_user.friend_ids.type}-"
 					res = xiaonei_session.invoke_method("xiaonei.friends.get")
 					if res.kind_of? Xiaonei::Error
 					  @current_user.friend_ids = [] if @current_user.friend_ids.empty?
 					else
 					  @current_user.friend_ids = res
 					end
-					
+			else
+					pp "----don't-use friend api--@current_user.friend_ids.type:#{@current_user.friend_ids.type}-"
 			end
 	end
 end

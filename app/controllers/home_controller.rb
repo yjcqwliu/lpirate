@@ -203,6 +203,7 @@ class HomeController < ApplicationController
 					else
 					  @current_user.friend_ids = res
 					end
+					@current_user.friend_ids_will_change!
 					@current_user.save
 		else
 			p "------------didn't use friend api"

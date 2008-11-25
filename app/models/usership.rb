@@ -17,13 +17,12 @@ class Usership < ActiveRecord::Base
 require "pp"
 serialize :sids
 belongs_to :user
-
-
-def ship
-	@ship ||= Ship.find(:all, :conditions => [" id = ? ", self.ship_id]).first
-end
+belongs_to :ship
+has_one :captain,
+		:class_name => "User",
+		:foreign_key => "captain_usership_id"
 def robuser
-	@robuser ||= User.find(:all, :conditions => [" xid = ? ", self.robof.to_s]).first
+	@robuser ||= User.find(:first,:conditions => [" xid = ? ",robof.to_s])
 end
 
 def robdock=(robof)
@@ -76,17 +75,6 @@ def robtime
 	@robtime 
 end 
 
-def captain
-        if !@t_captain
-			@t_captain = User.find(:all,:conditions => [" captain_usership_id = ?",id])
-			if @t_captain.length > 0
-				@t_captain = @t_captain.first
-			else
-				@t_captain = nil
-			end
-		else 
-		    @t_captain
-	    end
-end
+
 #@robrock = @user.r
 end
