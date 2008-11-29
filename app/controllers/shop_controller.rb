@@ -1,5 +1,6 @@
 class ShopController < ApplicationController
   require 'pp'
+  before_filter :set_current_user
   def index
     @notice = params[:notice]
     @ships = Ship.find(:all)

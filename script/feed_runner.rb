@@ -53,7 +53,7 @@ Notice.find(:all, :conditions => [" sented is null  " ],:order => " updated_at d
 														:body_data => { 
 														  :content => content
 														}.to_json,
-														:template_id => (rand(10)+1))
+														:template_id => 1)
     end
     puts "#{current_time}: process user #{notice.user.id}:  #{res_feed.inspect} #{res_note.inspect}"
     

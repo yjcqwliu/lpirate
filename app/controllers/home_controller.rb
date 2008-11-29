@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+	before_filter :set_current_user,:except => :login
+	before_filter :login_current_user,:only => :login
 	def index
 		@user = @current_user
 	    limit_friend_ids = []
@@ -15,7 +17,7 @@ class HomeController < ApplicationController
 	   @mynotice = Notice.find(:all,
 								 :conditions => [" (ltype < 11 or ltype >12) and ( from_xid in (?,?) or to_xid in (?,?) )",limit_friend_ids,@current_user.xid.to_s,limit_friend_ids,@current_user.xid.to_s],
 								  :order => " updated_at desc ",
-								  :limit => 30
+								  :limit => 15
 								 )
 	end
 	
@@ -185,7 +187,6 @@ class HomeController < ApplicationController
 			 end
 		 
 	end
-	
 	def back_home
 	    u_ship = Usership.find(params[:id])
 		if u_ship.user_id == @current_user.id
@@ -193,26 +194,10 @@ class HomeController < ApplicationController
 		end
 		xn_redirect_to("home/index#myship",{"notice" => "成功返航，抢劫了#{l_gold}金币"})
 	end
-	def tongji
-		if params[:help] == '5'
-			tem_friend_ids = @current_user.friend_ids
-				p "---------use friend api"
-					res = xiaonei_session.invoke_method("xiaonei.friends.get")
-					if res.kind_of? Xiaonei::Error
-					  @current_user.friend_ids = [] if @current_user.friend_ids.empty?
-					else
-					  @current_user.friend_ids = res
-					end
-					@current_user.friend_ids_will_change!
-					@current_user.save
-		else
-			p "------------didn't use friend api"
-		end
-		render :layout => false
+	def login
+		render :layout => false 
 	end
-	def css5
-	    render :layout => false
-	end
+
 private	
 	def isrobself
 		if @user.xid == @current_user.xid 
@@ -223,5 +208,6 @@ private
 				# xn_redirect_to("home/friend",{:notice => "不能抢劫自己"})
 	
 	end
+	
 	
 end

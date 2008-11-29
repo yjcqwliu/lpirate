@@ -1,0 +1,105 @@
+<%# cache "home_login" do %>
+<!--script src="<%= ActionController::Base.asset_host %>/javascripts/lpirate.js?v=0.3" ></script-->
+<script type="text/javascript">
+function friend_name_key_on_change()
+{
+	name_key = document.getElementById("friend_name_key");
+	if(name_key.getValue() != "")
+	{
+		friend_name_node_array = document.getElementById("friend_box_select").getChildNodes();
+		for(i = 0 ; i < friend_name_node_array.length ; i++ )
+		{
+		if(remove_html_tag(friend_name_node_array[i].getInnerHTML()).indexOf(name_key.getValue()) < 0)
+			friend_name_node_array[i].setStyle("display",'none');
+		else
+			friend_name_node_array[i].setStyle("display",'block');
+		}
+	}
+	else
+		friend_show_all();
+}
+function friend_show_all()
+{
+	friend_name_node_array = document.getElementById("friend_box_select").getChildNodes();
+	for(i = 0 ; i < friend_name_node_array.length ; i++ )
+	{
+		friend_name_node_array[i].setStyle("display",'block');
+	}
+}
+function remove_html_tag(html)
+{
+	  html = html.replace(/<.*?>/g,"");
+	  return html;
+}
+
+</script>
+<link href="<%= ActionController::Base.asset_host %>/other/css5?v=1.1" />
+<%#= Ml.iframe({:src=> "#{ActionController::Base.asset_host}/other/friends",:height=>"200", :width=>"800" ,:frameborder=>"0", :scrolling=>"no"}) %>
+<table id="Table_01" width="800" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="8">
+			<%= Ml.image("weblpirate_01") %></td>
+	</tr>
+	<tr>
+		<td  rowspan="2">
+			<%= Ml.image("weblpirate_02") %></td>
+		<td>
+			<%= link_to Ml.image("weblpirate_03"),{:controller => :home ,:action => :index},:name => "nav" %></td>
+		<td>
+			<%= link_to  Ml.image("weblpirate_04"),:controller => :home ,:action => :friend,:id => nil %></td>
+		<td>
+			<%= link_to  Ml.image("weblpirate_05"),:controller => :home ,:action => :myship %></td>
+		<td>
+			<%= link_to  Ml.image("weblpirate_06"),:controller => :shop ,:action => :index %></td>
+		<td>
+			<%= link_to  Ml.image("weblpirate_07"),:controller => :captain ,:action => :index,:id => nil %></td>
+		<td>
+			<%= link_to  Ml.image("weblpirate_08"),:controller => :lorder ,:action => :index %></td>
+		<td  rowspan="2"><%= Ml.image("weblpirate_09") %></td>
+	</tr>
+	<tr>
+		<td colspan="6">
+			<%= Ml.image("weblpirate_10") %></td>
+	</tr>
+</table>
+<table background="<%= Ml.image("weblpirate_23",false) %>" width="800" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><%= Ml.image("weblpirate_11") %></td>
+<td width="590" valign="top"><div id="showgoldinfo">欢迎来到海盗时代，来成为一名出色的海盗吧</div></td>
+</tr>
+<tr>
+<td colspan="2">
+<% #帮助系统开始
+   gamehelp = Gamehelp.new 
+   gamehelp.controller = controller
+   helpid = params[:help] || 0
+%>
+<%= gamehelp.help(helpid) %>
+<% #帮助系统结束 %>
+<% 
+@notice ||= params[:notice]
+if @notice != nil and @notice != "" then %>
+  <center><div id="notice-1">
+    <div id="notice-2">
+      <p><strong>
+          <%= @notice %>
+        </strong></p>
+    </div>
+  </div>
+  </center>
+<% end %></td>
+</tr>
+<tr>
+<td colspan="2" id="yield_content"><div id="yield_content_div" style="line-height:30px;padding:20px">
+<p><strong><%= link_to "我的岛屿",{:controller => :home ,:action => :index},:name => "nav" %></strong>查看我的岛屿情况，看看是否有人在我的岛屿上抢劫</p>
+<p><strong><%= link_to  "好友岛屿",:controller => :home ,:action => :friend,:id => nil %></strong>去好友的岛屿抢劫金币</p>
+<p><strong><%= link_to  "我的船只",:controller => :home ,:action => :myship %></strong>查看我拥有的船只信息，可以对船只进行改名、卖掉等操作</p>
+<p><strong><%= link_to  "海盗商店",:controller => :shop ,:action => :index %></strong>购买更多船只</p>
+<p><strong><%= link_to  "雇佣船长",:controller => :captain ,:action => :index,:id => nil %></strong>把好友雇佣成自己的船长，可以给TA升级、加属性</p>
+<p><strong><%= link_to  "排行",:controller => :lorder ,:action => :index %></strong>查看海盗好友们的排行</p>
+</div></td>
+</tr>
+<tr><td colspan="2"><%= Ml.image("weblpirate_25") %></td></tr>
+</table>
+<%= Ml.iframe({:src=>"#{ActionController::Base.asset_host}/capfrm.html",:height=>"0", :width=>"0" ,:frameborder=>"0", :scrolling=>"no"}) %>
+<%# end %>

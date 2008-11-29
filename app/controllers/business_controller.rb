@@ -1,4 +1,5 @@
 class BusinessController < ApplicationController
+	before_filter :set_current_user
 	def business
 	    if id = params[:id] 
 		    @user = User.find(id)

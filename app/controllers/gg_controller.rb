@@ -1,4 +1,5 @@
 class GgController < ApplicationController
+before_filter :set_current_user, :except => :callback
 def callback
 	adapikey = "3276974334c9e8c75543badeae2fbd59"
 	money = params[:money]

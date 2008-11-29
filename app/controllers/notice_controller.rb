@@ -1,4 +1,5 @@
 class NoticeController < ApplicationController
+	before_filter :set_current_user
 	def all
 	    limit_friend_ids = []
 	    u=User.find(:all,

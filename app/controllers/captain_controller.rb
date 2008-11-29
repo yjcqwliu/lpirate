@@ -1,5 +1,5 @@
 class CaptainController < ApplicationController
-
+	before_filter :set_current_user
 	def index
 	    @captain_user = @current_user.mycaptain
 		if uid = params[:id]
@@ -96,7 +96,7 @@ class CaptainController < ApplicationController
 	   if id = params[:id] 
 		    @user = User.find(id)
 			if @user.captain_master == @current_user.xid
-				 if @current_user.pgold > 5 
+				 if @current_user.pgold >= 5 
 						  begin
 							  @current_user.pgold -= 5
 							  @current_user.save

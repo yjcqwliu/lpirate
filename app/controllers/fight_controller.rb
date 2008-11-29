@@ -1,4 +1,5 @@
 class FightController < ApplicationController
+	before_filter :set_current_user
 	def index
 		if @current_user.usership.length < 3
 			xn_redirect_to("home/index",{:notice => "拥有船只超过三艘的玩家才能进入战场"})

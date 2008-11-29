@@ -17,51 +17,30 @@ class ApplicationController < ActionController::Base
      
   #require  "platform/#{platform}.rb"
   acts_as_xiaonei_controller
-  
-      before_filter :set_current_user
-   
   def set_current_user
-	  	    
-	
-	  if params[:controller] != "ships" and params[:action] != "css5" and params[:action] != "callback" then
-			if @current_user.nil?
-			  @current_user = User.login(xiaonei_session.user)
-			  if @current_user.session_key != xiaonei_session.session_key
-			  @current_user.session_key = xiaonei_session.session_key
-			   #@current_user.save
-			  end
-			  
-			end
-			update_friend_ids
-			initdata #登陆游戏时的一些数据初始化			
-			@current_user.friend_ids_will_change!
-			@current_user.save			
-	   else
-	     #pp("-----cookie:#{cookies[:admin]}---")
-		 @admin = cookies[:admin]
-		 if !@admin or @admin == ""  then
-			 @admin = params[:admin]
-			 cookies[:admin] = @admin 
-		 end 
-	   end
-	
-
+		  @current_user = User.login(xiaonei_session.user)
+		  if @current_user.session_key != xiaonei_session.session_key
+		  	@current_user.session_key = xiaonei_session.session_key
+		  	@current_user.save
+		  end
   end
-  #before_filter :set_current_user
-  #def set_current_user
-  #@current_user=User.login(1)
-  #end
-  
+  def login_current_user
+		if @current_user.nil?
+		  @current_user = User.login(xiaonei_session.user)
+		  if @current_user.session_key != xiaonei_session.session_key
+		  @current_user.session_key = xiaonei_session.session_key
+		  end
+		  
+		end
+		update_friend_ids
+		initdata if action_name == "login"#登陆游戏时的一些数据初始化			
+		@current_user.friend_ids_will_change!
+		@current_user.save		
+  end
   def current_user
     @current_user
   end
-  def ensure_admin
-    #if not @current_user.admin
-	 if @admin != "yjcqwliu" 
-      #xn_redirect_to("homes/index",{:notice => "你没有权限"})
-	  redirect_to(:controller => :home,:action => :index)
-    end
-  end
+
   
   def xn_redirect_to(to_url,feilds={})
     path = to_url
@@ -71,8 +50,7 @@ class ApplicationController < ActionController::Base
 				 path += "#{key}=#{URI.escape(value)}&"
 			end
 		end
-    render :text => "
-    <xn:redirect url=\"#{path}\"/>"
+    render :text => "<xn:redirect url=\"#{path}\"/>"
 	#render :text => "你没有权限操作"
   end
 
@@ -151,6 +129,27 @@ class ApplicationController < ActionController::Base
 	    url = "<a href=\"#{url_for  :controller => :home , :action => :friend ,:id => xid }\"><xn:name uid=\"#{xid}\" /></a>"
 	end
 	
+	
+
+	def initdata
+		pp "-----init data---"
+	    ###############贸易相关数据初始化#################
+    	###############贸易相关数据初始化结束#################
+		invite_blance #处理邀请数据
+		login_award   #登陆奖励
+	end
+	def login_award 
+	    if !@current_user.award_updated_at or @current_user.award_updated_at < (Time.now - 3.hour)
+		    @current_user.gold += 300
+			@current_user.award_updated_at=Time.now
+			notice = Notice.new()
+			notice.user_id = current_user.id
+			notice.from_xid = current_user.xid
+			notice.to_xid = current_user.xid
+			notice.ltype = 10
+			notice.save
+		end
+	end
 	def invite_blance
 	#邀请奖励
 	    if @current_user.invite && @current_user.invite != 0
@@ -172,26 +171,6 @@ class ApplicationController < ActionController::Base
 					
 		end 
         @current_user.invite = 0
-		#@current_user.friend_ids_will_change!
-		#@current_user.save
-	end
-	def login_award 
-	    if !@current_user.award_updated_at or @current_user.award_updated_at < (Time.now - 3.hour)
-		    @current_user.gold += 300
-			@current_user.award_updated_at=Time.now
-			notice = Notice.new()
-			notice.user_id = current_user.id
-			notice.from_xid = current_user.xid
-			notice.to_xid = current_user.xid
-			notice.ltype = 10
-			notice.save
-		end
-	end
-	def initdata
-	    ###############贸易相关数据初始化#################
-    	###############贸易相关数据初始化结束#################
-		invite_blance #处理邀请数据
-		login_award   #登陆奖励
 	end
 	def rescue_action_in_public(exception)
 		case exception.class.name
@@ -217,12 +196,11 @@ class ApplicationController < ActionController::Base
     end
 	
 	def update_friend_ids
-			
-			if @current_user.friend_ids.blank? or @current_user.friend_ids.type == String
+			if (@current_user.friend_ids.blank? or @current_user.friend_ids.type == String) or (params[:controller] == "other" && params[:action] == "friends" && @current_user.updated_at < Time.now - 8.hour)
 					pp "-----use friend api--@current_user.friend_ids.type:#{@current_user.friend_ids.type}-"
 					res = xiaonei_session.invoke_method("xiaonei.friends.get")
 					if res.kind_of? Xiaonei::Error
-					  @current_user.friend_ids = [] if @current_user.friend_ids.empty?
+					  @current_user.friend_ids = [] if @current_user.friend_ids.blank?
 					else
 					  @current_user.friend_ids = res
 					end

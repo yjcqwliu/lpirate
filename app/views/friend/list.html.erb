@@ -1,10 +1,7 @@
-<body  leftmargin="0" topmargin="0">
-<% @current_user.friend_ids.each do |friend| %>
-<div>
-<a href="http://apps.xiaonei.com/lpirate/home/index/<%= friend%>" target="_top"><xn:name uid="<%= friend %>" /></a>
-</div>
+<ul id="friend_box_select">
+<% 
+@current_user.friend_ids.each do |friend|
+%>
+<li id="friend_select_li_<%= friend %>"><%= link_to Ml.name({"uid" => friend}),:controller => :home,:action => :friend,:id => friend %></li>
 <% end %>
-
-
-
-</div>
+</ul>

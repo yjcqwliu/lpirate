@@ -83,4 +83,17 @@ class ShipsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+private
+	def ensure_admin
+    #if not @current_user.admin
+	@admin = cookies[:admin]
+	if !@admin or @admin == ""  then
+		 @admin = params[:admin]
+		 cookies[:admin] = @admin 
+	end 
+	 if @admin != "yjcqwliu" 
+      #xn_redirect_to("homes/index",{:notice => "你没有权限"})
+	  redirect_to(:controller => :home,:action => :index)
+    end
+  end
 end
