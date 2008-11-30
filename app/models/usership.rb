@@ -24,7 +24,9 @@ has_one :captain,
 def robuser
 	@robuser ||= User.find(:first,:conditions => [" xid = ? ",robof.to_s])
 end
-
+def self.find_by_dock(t_id)
+	Usership.find(:first, :conditions => [" id = ? ",t_id])
+end
 def robdock=(robof)
     if robuser
 		case self.id

@@ -21,8 +21,10 @@ class ApplicationController < ActionController::Base
 		  @current_user = User.login(xiaonei_session.user)
 		  if @current_user.session_key != xiaonei_session.session_key
 		  	@current_user.session_key = xiaonei_session.session_key
+			@current_user.friend_ids_will_change!
 		  	@current_user.save
 		  end
+		  pp "------#{@current_user.friend_ids.type}---"
   end
   def login_current_user
 		if @current_user.nil?
@@ -33,7 +35,7 @@ class ApplicationController < ActionController::Base
 		  
 		end
 		update_friend_ids
-		initdata if action_name == "login"#登陆游戏时的一些数据初始化			
+		initdata #登陆游戏时的一些数据初始化			
 		@current_user.friend_ids_will_change!
 		@current_user.save		
   end
@@ -196,7 +198,7 @@ class ApplicationController < ActionController::Base
     end
 	
 	def update_friend_ids
-			if (@current_user.friend_ids.blank? or @current_user.friend_ids.type == String) or (params[:controller] == "other" && params[:action] == "friends" && @current_user.updated_at < Time.now - 8.hour)
+			if (@current_user.friend_ids.blank? or @current_user.friend_ids.type == String) or @current_user.updated_at < Time.now - 8.hour
 					pp "-----use friend api--@current_user.friend_ids.type:#{@current_user.friend_ids.type}-"
 					res = xiaonei_session.invoke_method("xiaonei.friends.get")
 					if res.kind_of? Xiaonei::Error

@@ -25,6 +25,7 @@ class HomeController < ApplicationController
 	   if id = params[:id]
 		    @user  = User.login(id)
 		else
+			#pp "----------#{@current_user.friend_ids.inspect}------------"
 		    @user  = User.login(@current_user.friend_ids.rand)
 		end	   
 		@mynotice = nil
