@@ -1,7 +1,7 @@
 class Gamehelp < ActionView::Base
     require 'pp'
 	def help(helpid)
-	    helpid = (cookies[:help] || helpid).to_i
+	    helpid = helpid.to_i
 		
 	    helpmsg = ["你好，船长，欢迎来到海盗时代<br>
     如果你是第一次玩这个游戏，请务必仔细阅读一下教程，当然如果你迫不及待的想要自己尝试，也可跳过，并且可以随时通过右上方的“游戏帮助”按钮查看该教程</br>#{link_to '点击这里继续教程' , :controller => :home,:action => :index ,:help => (helpid+1)}",
@@ -15,12 +15,9 @@ class Gamehelp < ActionView::Base
 	    #pp "-------------helpid:#{helpid}--------------"
 		
 	    if helpid && helpid != 0 
-			@help = '
-	    <center><div id="notice-1">
-			<div id="notice-2"><p><strong>'
+			@help = '<center><div id="notice-1"><div id="notice-2"><p><strong>'
 			@help += helpmsg[helpid-1]
 			@help += '</strong></p></div></div></center>'
-			cookies[:help] = "#{helpid +1}"
 		end
 		#pp "-------------@cookies[:help]:#{cookies[:help]}--------------"
 		@help
