@@ -14,7 +14,7 @@ class Gamehelp < ActionView::Base
 	             ]
 	    #pp "-------------helpid:#{helpid}--------------"
 		
-	    if helpid != 0 
+	    if helpid && helpid != 0 
 			@help = '
 	    <center><div id="notice-1">
 			<div id="notice-2"><p><strong>'
