@@ -221,3 +221,905 @@ Rendering home/index
 Rendered home/_home_usership (0.18800)
   [4;35;1mNotice Columns (0.000000)[0m   [0mSHOW FIELDS FROM `notices`[0m
 Completed in 0.32800 (3 reqs/sec) | Rendering: 0.25100 (76%) | DB: 0.01500 (4%) | 200 OK [http://61.172.255.117/]
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE ( updated_at = created_at ) LIMIT 10000[0m
+  [4;36;1mUser Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE ( updated_at = created_at ) LIMIT 10000[0m
+  [4;36;1mUser Columns (0.015000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE ( updated_at = created_at ) LIMIT 10000[0m
+  [4;36;1mUser Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE ( updated_at = created_at ) LIMIT 10000[0m
+  [4;36;1mUser Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE ( updated_at = created_at ) LIMIT 10000[0m
+  [4;36;1mUser Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUsership Load (0.062000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 3) ORDER BY updated_at desc [0m
+  [4;36;1mUsership Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `userships`[0m
+  [4;35;1mShip Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ships`[0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (998,568,464)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE ( updated_at = created_at ) LIMIT 10000[0m
+  [4;36;1mUser Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 3) ORDER BY updated_at desc [0m
+  [4;36;1mUsership Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `userships`[0m
+  [4;35;1mShip Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ships`[0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (998,568,464)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 4) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (999,569,465)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 5) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1000,570,466)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 6) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1001,571,467)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 7) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1002,572,468)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 8) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1003,573,469)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 9) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1004,574,470)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 10) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1005,575,471)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 11) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1006,576,472)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 12) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1007,577,473)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 13) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1008,578,474)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 14) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1009,579,475)) [0m
+  [4;35;1mSQL (0.016000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 15) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1010,580,476)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 17) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.015000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1012,582,478)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 18) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1013,583,479)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 19) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1014,584,480)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 20) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1015,585,481)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 21) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1016,586,482)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 22) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1017,587,483)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 23) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.016000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1018,588,484)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 24) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1019,589,485)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 25) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1020,590,486)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 26) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1021,591,487)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 27) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1022,592,488)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 28) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1023,593,489)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE ( updated_at = created_at ) LIMIT 10000[0m
+  [4;36;1mUser Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 3) ORDER BY updated_at desc [0m
+  [4;36;1mUsership Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `userships`[0m
+  [4;35;1mShip Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ships`[0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (998,568,464)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 4) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (999,569,465)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 5) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1000,570,466)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 6) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1001,571,467)) [0m
+  [4;35;1mSQL (0.016000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 7) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1002,572,468)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 8) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1003,573,469)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 9) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1004,574,470)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 10) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1005,575,471)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 11) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1006,576,472)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 12) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1007,577,473)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 13) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1008,578,474)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.015000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 14) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1009,579,475)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 15) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1010,580,476)) [0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 17) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1012,582,478)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 18) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.016000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1013,583,479)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 19) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1014,584,480)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 20) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1015,585,481)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 21) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1016,586,482)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 22) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1017,587,483)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 23) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1018,588,484)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.016000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 24) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1019,589,485)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 25) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1020,590,486)) [0m
+  [4;35;1mSQL (0.015000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 26) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1021,591,487)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mUsership Load (0.000000)[0m   [0;1mSELECT * FROM `userships` WHERE (`userships`.user_id = 27) ORDER BY updated_at desc [0m
+  [4;35;1mShip Load (0.000000)[0m   [0mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1022,592,488)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 28) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1023,593,489)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE ( updated_at = created_at ) LIMIT 10000[0m
+  [4;36;1mUser Columns (0.015000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 3) ORDER BY updated_at desc [0m
+  [4;36;1mUsership Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `userships`[0m
+  [4;35;1mShip Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ships`[0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (998,568,464)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE ( updated_at = created_at ) LIMIT 10000[0m
+  [4;36;1mUser Columns (0.015000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 3) ORDER BY updated_at desc [0m
+  [4;36;1mUsership Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `userships`[0m
+  [4;35;1mShip Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ships`[0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (998,568,464)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.047000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 998
+[0m
+  [4;36;1mSQL (0.046000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 568
+[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 464
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 4) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (999,569,465)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 999
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 569
+[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 465
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 5) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1000,570,466)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1000
+[0m
+  [4;36;1mSQL (0.062000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 570
+[0m
+  [4;35;1mSQL (0.063000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 466
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 6) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1001,571,467)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1001
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 571
+[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 467
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 7) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1002,572,468)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1002
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 572
+[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 468
+[0m
+  [4;36;1mSQL (0.016000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 8) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1003,573,469)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1003
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 573
+[0m
+  [4;35;1mSQL (0.016000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.015000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 469
+[0m
+  [4;36;1mSQL (0.032000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 9) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1004,574,470)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1004
+[0m
+  [4;36;1mSQL (0.046000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 574
+[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.016000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 470
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 10) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1005,575,471)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.016000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1005
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 575
+[0m
+  [4;35;1mSQL (0.047000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 471
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 11) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1006,576,472)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1006
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 576
+[0m
+  [4;35;1mSQL (0.078000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 472
+[0m
+  [4;36;1mSQL (0.063000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 12) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1007,577,473)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1007
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 577
+[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 473
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 13) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1008,578,474)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1008
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 578
+[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 474
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 14) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1009,579,475)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1009
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 579
+[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 475
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 15) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1010,580,476)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1010
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 580
+[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 476
+[0m
+  [4;36;1mSQL (0.046000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 17) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1012,582,478)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1012
+[0m
+  [4;36;1mSQL (0.032000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.015000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 582
+[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 478
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 18) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1013,583,479)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1013
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 583
+[0m
+  [4;35;1mSQL (0.078000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 479
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 19) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1014,584,480)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1014
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 584
+[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 480
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 20) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1015,585,481)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1015
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 585
+[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 481
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 21) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1016,586,482)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1016
+[0m
+  [4;36;1mSQL (0.032000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.016000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 586
+[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 482
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 22) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1017,587,483)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1017
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 587
+[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 483
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 23) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1018,588,484)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1018
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 588
+[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 484
+[0m
+  [4;36;1mSQL (0.046000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 24) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1019,589,485)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1019
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 589
+[0m
+  [4;35;1mSQL (0.032000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 485
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 25) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1020,590,486)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1020
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 590
+[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 486
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 26) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1021,591,487)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1021
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 591
+[0m
+  [4;35;1mSQL (0.093000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 487
+[0m
+  [4;36;1mSQL (0.032000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 27) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.015000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1022,592,488)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1022
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 592
+[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 488
+[0m
+  [4;36;1mSQL (0.032000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 28) ORDER BY updated_at desc [0m
+  [4;36;1mShip Load (0.000000)[0m   [0;1mSELECT * FROM `ships` WHERE (`ships`.`id` IN (1)) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT `users`.* FROM `users` WHERE (`users`.captain_usership_id IN (1023,593,489)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.015000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 1023
+[0m
+  [4;36;1mSQL (0.032000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsership Destroy (0.000000)[0m   [0;1m DELETE FROM `userships`
+ WHERE `id` = 593
+[0m
+  [4;35;1mSQL (0.031000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsership Destroy (0.000000)[0m   [0m DELETE FROM `userships`
+ WHERE `id` = 489
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE ( updated_at = created_at ) LIMIT 10000[0m
+  [4;36;1mUser Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 3) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 3
+[0m
+  [4;36;1mSQL (0.047000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 4) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 4
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 5) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 5
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 6) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 6
+[0m
+  [4;36;1mSQL (0.032000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 7) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 7
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 8) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 8
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 9) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.016000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 9
+[0m
+  [4;36;1mSQL (0.015000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.016000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 10) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 10
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 11) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 11
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 12) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 12
+[0m
+  [4;36;1mSQL (0.032000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 13) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 13
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 14) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 14
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 15) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 15
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 17) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 17
+[0m
+  [4;36;1mSQL (0.079000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 18) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 18
+[0m
+  [4;36;1mSQL (0.109000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 19) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 19
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 20) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 20
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 21) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 21
+[0m
+  [4;36;1mSQL (0.032000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 22) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 22
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 23) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 23
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 24) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.016000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 24
+[0m
+  [4;36;1mSQL (0.015000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.016000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 25) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 25
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 26) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 26
+[0m
+  [4;36;1mSQL (0.032000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 27) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 27
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUsership Load (0.000000)[0m   [0mSELECT * FROM `userships` WHERE (`userships`.user_id = 28) ORDER BY updated_at desc [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Destroy (0.000000)[0m   [0m DELETE FROM `users`
+ WHERE `id` = 28
+[0m
+  [4;36;1mSQL (0.031000)[0m   [0;1mCOMMIT[0m
